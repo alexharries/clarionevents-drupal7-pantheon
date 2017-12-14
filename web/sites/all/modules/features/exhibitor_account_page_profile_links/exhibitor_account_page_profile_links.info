@@ -1,0 +1,13 @@
+name = Exhibitor Account Page Profile Links
+description = Adds links direct from an exhibitor's profile page to their exhibitor profile node(s).
+core = 7.x
+package = Clarion Events
+version = 7.x-1.0-20171006
+features[context][] = current_user_account_page
+features[ctools][] = context:context:3
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = exhibitor_account_page_profile_links
+features_exclude[dependencies][context] = context
+features_exclude[dependencies][views] = views
+project path = sites/all/modules/features
