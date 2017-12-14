@@ -1,0 +1,6 @@
+name = Buy Tickets Block
+description = Blocks for buy tickets link.
+package = Clarion Events Development
+core = 7.x
+version = 1.0
+files[] = buytickets.module

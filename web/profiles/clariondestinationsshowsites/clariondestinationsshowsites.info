@@ -1,0 +1,16 @@
+name = Clarion Destinations Shows Sites
+description = Common modules and other bits and bobs for Clarion Destinations Shows sites.
+version = 7.x-1.0-20170810
+core = 7.x
+project = "clariondestinationsshowsites"
+
+dependencies[] = block
+dependencies[] = dblog
+dependencies[] = features
+dependencies[] = common_base_modules
+dependencies[] = update_notifications_redirect
+dependencies[] = common_user_roles
+dependencies[] = login_toboggan_settings
+dependencies[] = drupal_search
+dependencies[] = paragraph_page
+dependencies[] = backup_migrate_daily

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Sponsors/Partners content type feature.
+ */
+
+include_once 'destinations_show_partners.features.inc';

@@ -1,0 +1,4828 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Exhibitor Profiles module.
+ */
+
+/**
+ * On the Caravan Show site, change the path of this module to
+ * sites/caravanshow/modules/features/exhibitor_profiles
+ */
+function exhibitor_profiles_update_7101() {
+  // The below update is not needed - use drush rr (probably needs to be run
+  // twice) to update the module path automagically.
+  //  if (conf_path() == 'sites/caravanshow') {
+  //    db_update('system')
+  //      ->fields([
+  //        'filename' => 'sites/caravanshow/modules/features/exhibitor_profiles/exhibitor_profiles.module',
+  //      ])
+  //      ->condition('filename', 'profiles/clariondestinationsshowsites/modules/features/exhibitor_profiles/exhibitor_profiles.module')
+  //      ->execute();
+  //  }
+}
+
+/**
+ * On Destinations London, batch re-add the bloodygoddamnedmotherfungling
+ * stand numbers. Arg...
+ */
+function exhibitor_profiles_update_7102() {
+  _exhibitor_profiles_update_london_deets();
+}
+
+//hook_requirements
+
+//hook_schema
+
+//hook_install
+
+//hook_uninstall
+
+//hook_enable
+
+//hook_disable
+
+/**
+ * Update details of exhibitors, because Alex is an idiot and deleted field
+ * data without migrating it across. Ack...
+ */
+function _exhibitor_profiles_update_london_deets() {
+  if (conf_path() != 'sites/destinationsshow.com.london') {
+    return;
+  }
+
+  $stand_numbers_mapped_to_exhibitor_nodes = [
+    804 =>
+      [
+        'title' => '2BY2 Holidays',
+        'nid' => '804',
+        'stand_number' => 'AF15',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3626 =>
+      [
+        'title' => '5 Star China Holidays Ltd',
+        'nid' => '3626',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1574 =>
+      [
+        'title' => '62N',
+        'nid' => '1574',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3846 =>
+      [
+        'title' => 'A Tent With A View Safaris',
+        'nid' => '3846',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1570 =>
+      [
+        'title' => 'Absolute Africa',
+        'nid' => '1570',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1716 =>
+      [
+        'title' => 'Abu Dhabi Tourism & Culture Authority',
+        'nid' => '1716',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1506 =>
+      [
+        'title' => 'Acacia Adventure',
+        'nid' => '1506',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1097 =>
+      [
+        'title' => 'Adagio',
+        'nid' => '1097',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4911 =>
+      [
+        'title' => 'Adams Beach Hotel',
+        'nid' => '4911',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2996 =>
+      [
+        'title' => 'Advance360 Group',
+        'nid' => '2996',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6051 =>
+      [
+        'title' => 'Adventure Alternative',
+        'nid' => '6051',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    807 =>
+      [
+        'title' => 'Aeolian Adventures',
+        'nid' => '807',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1507 =>
+      [
+        'title' => 'Africa and Beyond',
+        'nid' => '1507',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6081 =>
+      [
+        'title' => 'Africa Collection',
+        'nid' => '6081',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4091 =>
+      [
+        'title' => 'Africa Collection',
+        'nid' => '4091',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5051 =>
+      [
+        'title' => 'Africa Exclusive Ltd',
+        'nid' => '5051',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2676 =>
+      [
+        'title' => 'African Private Journeys Ltd',
+        'nid' => '2676',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5851 =>
+      [
+        'title' => 'African Star Tours',
+        'nid' => '5851',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1479 =>
+      [
+        'title' => 'Air Malta',
+        'nid' => '1479',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2051 =>
+      [
+        'title' => 'Air Malta Plc',
+        'nid' => '2051',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3466 =>
+      [
+        'title' => 'Air Namibia',
+        'nid' => '3466',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4851 =>
+      [
+        'title' => 'Air New Zealand',
+        'nid' => '4851',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    988 =>
+      [
+        'title' => 'Alabama',
+        'nid' => '988',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1316 =>
+      [
+        'title' => 'Albanian Trip ',
+        'nid' => '1316',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4166 =>
+      [
+        'title' => 'ALDO Travel Agency',
+        'nid' => '4166',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4806 =>
+      [
+        'title' => 'Aletsch Arena Tourism',
+        'nid' => '4806',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4191 =>
+      [
+        'title' => 'Alis Holidays',
+        'nid' => '4191',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    809 =>
+      [
+        'title' => 'All Iceland',
+        'nid' => '809',
+        'stand_number' => 'E131',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1226 =>
+      [
+        'title' => 'Alpine Expeditions',
+        'nid' => '1226',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    810 =>
+      [
+        'title' => 'AmaWaterways',
+        'nid' => '810',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1520 =>
+      [
+        'title' => 'America As You Like It',
+        'nid' => '1520',
+        'stand_number' => 'VUSA7',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5886 =>
+      [
+        'title' => 'Amtrak Vacations',
+        'nid' => '5886',
+        'stand_number' => 'VUSA9',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1731 =>
+      [
+        'title' => 'Anatolian Sky Holidays',
+        'nid' => '1731',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1751 =>
+      [
+        'title' => 'Andy Skillen Photography',
+        'nid' => '1751',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    812 =>
+      [
+        'title' => 'ANZCRO Australia & New Zealand',
+        'nid' => '812',
+        'stand_number' => 'AP67',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4896 =>
+      [
+        'title' => 'Aphrodite Hills',
+        'nid' => '4896',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5256 =>
+      [
+        'title' => 'APT Guided Tours & River Cruises',
+        'nid' => '5256',
+        'stand_number' => 'E112',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    813 =>
+      [
+        'title' => 'Archipelago Choice',
+        'nid' => '813',
+        'stand_number' => 'AF57',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4176 =>
+      [
+        'title' => 'Asociatia Judeteana de Turism SIBIU',
+        'nid' => '4176',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4181 =>
+      [
+        'title' => 'Asociatia Litoral-Delta Dunarii',
+        'nid' => '4181',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2681 =>
+      [
+        'title' => 'Association of Ecotourism in Romania',
+        'nid' => '2681',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1519 =>
+      [
+        'title' => 'Association of Independent Tour Operators',
+        'nid' => '1519',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1736 =>
+      [
+        'title' => 'ATI Holidays',
+        'nid' => '1736',
+        'stand_number' => 'AF70',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1269 =>
+      [
+        'title' => 'Atlantic Airways',
+        'nid' => '1269',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3496 =>
+      [
+        'title' => 'Atlantic City',
+        'nid' => '3496',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1741 =>
+      [
+        'title' => 'Atmosphere Hotels & Resorts',
+        'nid' => '1741',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    815 =>
+      [
+        'title' => 'Atmosphere Kanifushi Maldives',
+        'nid' => '815',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    816 =>
+      [
+        'title' => 'Audley Travel',
+        'nid' => '816',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5006 =>
+      [
+        'title' => 'Audley Travel Group',
+        'nid' => '5006',
+        'stand_number' => 'AF1',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5271 =>
+      [
+        'title' => 'Autograph Safaris',
+        'nid' => '5271',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1153 =>
+      [
+        'title' => 'Back-Roads Touring',
+        'nid' => '1153',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2531 =>
+      [
+        'title' => 'Balkan Holidays Ltd',
+        'nid' => '2531',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    818 =>
+      [
+        'title' => 'Bamboo Travel',
+        'nid' => '818',
+        'stand_number' => 'AP160',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5846 =>
+      [
+        'title' => 'Barbados Tourism Marketing Inc.',
+        'nid' => '5846',
+        'stand_number' => 'AC85',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1446 =>
+      [
+        'title' => 'Basilicata, Southern Italy',
+        'nid' => '1446',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3561 =>
+      [
+        'title' => 'Beauty Gate Ltd',
+        'nid' => '3561',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    841 =>
+      [
+        'title' => 'Bedouin Travel',
+        'nid' => '841',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2056 =>
+      [
+        'title' => 'BELLAIR HOLIDAYS',
+        'nid' => '2056',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1721 =>
+      [
+        'title' => 'Belle France',
+        'nid' => '1721',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1372 =>
+      [
+        'title' => 'Bergs International',
+        'nid' => '1372',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    819 =>
+      [
+        'title' => 'Bespoke Brazil',
+        'nid' => '819',
+        'stand_number' => 'AC33',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7166 =>
+      [
+        'title' => 'Bespoke India Travel',
+        'nid' => '7166',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6421 =>
+      [
+        'title' => 'Bespoke Latin America',
+        'nid' => '6421',
+        'stand_number' => 'AC33',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2231 =>
+      [
+        'title' => 'Best Served Scandinavia',
+        'nid' => '2231',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1941 =>
+      [
+        'title' => 'Big 5 Safaris',
+        'nid' => '1941',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1550 =>
+      [
+        'title' => 'Blacks Cheese',
+        'nid' => '1550',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6156 =>
+      [
+        'title' => 'Bloomon UK',
+        'nid' => '6156',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4171 =>
+      [
+        'title' => 'Blue AIR',
+        'nid' => '4171',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    820 =>
+      [
+        'title' => 'Blue Poppy Tours & Treks',
+        'nid' => '820',
+        'stand_number' => 'AA18',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1041 =>
+      [
+        'title' => 'Bon Voyage...The USA Tailor-Made Experts',
+        'nid' => '1041',
+        'stand_number' => 'VUSA19',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1227 =>
+      [
+        'title' => 'Bradt Travel Guides',
+        'nid' => '1227',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2891 =>
+      [
+        'title' => 'BRAZIL - Brazilian Tourist Board',
+        'nid' => '2891',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2556 =>
+      [
+        'title' => 'Bridge The World',
+        'nid' => '2556',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    822 =>
+      [
+        'title' => 'Brightsun Travel',
+        'nid' => '822',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    823 =>
+      [
+        'title' => 'Brightwater Holidays',
+        'nid' => '823',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2761 =>
+      [
+        'title' => 'Busanga Safaris',
+        'nid' => '2761',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    825 =>
+      [
+        'title' => 'Cadbury World',
+        'nid' => '825',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6096 =>
+      [
+        'title' => 'Can Be Done',
+        'nid' => '6096',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4096 =>
+      [
+        'title' => 'Can Be Done Limited',
+        'nid' => '4096',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1427 =>
+      [
+        'title' => 'Capital Region USA',
+        'nid' => '1427',
+        'stand_number' => 'VUSA17',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1524 =>
+      [
+        'title' => 'Caribbean Tourism Organization',
+        'nid' => '1524',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4161 =>
+      [
+        'title' => 'CARPATHIAN TRAVEL CENTER',
+        'nid' => '4161',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1065 =>
+      [
+        'title' => 'Carrick Craft',
+        'nid' => '1065',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4101 =>
+      [
+        'title' => 'Casas Cantabricas',
+        'nid' => '4101',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3501 =>
+      [
+        'title' => 'Casas Cantabricas',
+        'nid' => '3501',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6061 =>
+      [
+        'title' => 'Casas Cantabricas',
+        'nid' => '6061',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1282 =>
+      [
+        'title' => 'Catalunya Tourist Board',
+        'nid' => '1282',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    826 =>
+      [
+        'title' => 'Cats Protection',
+        'nid' => '826',
+        'stand_number' => 'AP127',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1313 =>
+      [
+        'title' => 'Cayman Islands Department of Tourism',
+        'nid' => '1313',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1761 =>
+      [
+        'title' => 'CEWE PHOTOBOOK',
+        'nid' => '1761',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1416 =>
+      [
+        'title' => 'Chameleon Holidays & Travel',
+        'nid' => '1416',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1310 =>
+      [
+        'title' => 'Chameleon Worldwide',
+        'nid' => '1310',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1551 =>
+      [
+        'title' => 'Charles Taylor Trading',
+        'nid' => '1551',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5666 =>
+      [
+        'title' => 'Charter Travel',
+        'nid' => '5666',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    830 =>
+      [
+        'title' => 'Chimu Adventures',
+        'nid' => '830',
+        'stand_number' => 'AC61',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    831 =>
+      [
+        'title' => 'China Holidays Ltd',
+        'nid' => '831',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    832 =>
+      [
+        'title' => 'China Links Travel',
+        'nid' => '832',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    833 =>
+      [
+        'title' => 'China National Tourist Office',
+        'nid' => '833',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5061 =>
+      [
+        'title' => 'Citalia',
+        'nid' => '5061',
+        'stand_number' => 'E52',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5066 =>
+      [
+        'title' => 'Citibond Travel',
+        'nid' => '5066',
+        'stand_number' => 'AP50',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5071 =>
+      [
+        'title' => 'Classic Car Holidays',
+        'nid' => '5071',
+        'stand_number' => 'E85',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2691 =>
+      [
+        'title' => 'Classic Car Journeys',
+        'nid' => '2691',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1228 =>
+      [
+        'title' => 'Classic Car Journeys',
+        'nid' => '1228',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4106 =>
+      [
+        'title' => 'Classic Collection Holidays',
+        'nid' => '4106',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6091 =>
+      [
+        'title' => 'Classic Collection Holidays',
+        'nid' => '6091',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1307 =>
+      [
+        'title' => 'CLIA UK & Ireland',
+        'nid' => '1307',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    834 =>
+      [
+        'title' => 'Collette',
+        'nid' => '834',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1425 =>
+      [
+        'title' => 'Colorado',
+        'nid' => '1425',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1366 =>
+      [
+        'title' => 'Colours of India and Indochina',
+        'nid' => '1366',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1523 =>
+      [
+        'title' => 'Conde Nast Traveller',
+        'nid' => '1523',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3556 =>
+      [
+        'title' => 'Conservatory Insulations',
+        'nid' => '3556',
+        'stand_number' => 'TA29',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4186 =>
+      [
+        'title' => 'Consiliul Judetean Mehedinti',
+        'nid' => '4186',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    835 =>
+      [
+        'title' => 'Constantinou Bros Hotels',
+        'nid' => '835',
+        'stand_number' => 'E156',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7206 =>
+      [
+        'title' => 'Continental Cottage',
+        'nid' => '7206',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6496 =>
+      [
+        'title' => 'Costa Rica Tourist Board',
+        'nid' => '6496',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    836 =>
+      [
+        'title' => 'Cox & Kings',
+        'nid' => '836',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2916 =>
+      [
+        'title' => 'Craghoppers Ltd',
+        'nid' => '2916',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4876 =>
+      [
+        'title' => 'Creative Getaways',
+        'nid' => '4876',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    837 =>
+      [
+        'title' => 'Cruise America & Canada RV Rentals',
+        'nid' => '837',
+        'stand_number' => 'AC49',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    838 =>
+      [
+        'title' => 'Cruise International',
+        'nid' => '838',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1278 =>
+      [
+        'title' => 'Cruise Lines International Association',
+        'nid' => '1278',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4051 =>
+      [
+        'title' => 'Cruise the Galapagos',
+        'nid' => '4051',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    839 =>
+      [
+        'title' => 'Cuba Tourist Board',
+        'nid' => '839',
+        'stand_number' => 'AC10',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1547 =>
+      [
+        'title' => 'Culture Routes in Turkey ',
+        'nid' => '1547',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1526 =>
+      [
+        'title' => 'Culture Smart!',
+        'nid' => '1526',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2926 =>
+      [
+        'title' => 'Cyclo Ssage Ltd',
+        'nid' => '2926',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1568 =>
+      [
+        'title' => 'Cyclo-ssage Ltd',
+        'nid' => '1568',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6936 =>
+      [
+        'title' => 'Cycology Travel Ltd',
+        'nid' => '6936',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    840 =>
+      [
+        'title' => 'Cyprus Tourism Organisation',
+        'nid' => '840',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1308 =>
+      [
+        'title' => 'CzechTourism',
+        'nid' => '1308',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5261 =>
+      [
+        'title' => 'Deep South USA ',
+        'nid' => '5261',
+        'stand_number' => 'VUSA14',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    991 =>
+      [
+        'title' => 'Deep South USA',
+        'nid' => '991',
+        'stand_number' => 'VUSA14',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1148 =>
+      [
+        'title' => 'Diamond Resorts International',
+        'nid' => '1148',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7171 =>
+      [
+        'title' => 'Discover Egypt',
+        'nid' => '7171',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1373 =>
+      [
+        'title' => 'Discover New England',
+        'nid' => '1373',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2751 =>
+      [
+        'title' => 'Discover New England',
+        'nid' => '2751',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    843 =>
+      [
+        'title' => 'Discover The World',
+        'nid' => '843',
+        'stand_number' => 'E120',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1771 =>
+      [
+        'title' => 'Distant Journeys',
+        'nid' => '1771',
+        'stand_number' => 'AP59',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3696 =>
+      [
+        'title' => 'Do The North',
+        'nid' => '3696',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2931 =>
+      [
+        'title' => 'Dominican Republic Tourist Board',
+        'nid' => '2931',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1314 =>
+      [
+        'title' => 'Donna Bella Ltd',
+        'nid' => '1314',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    845 =>
+      [
+        'title' => 'Dragoman',
+        'nid' => '845',
+        'stand_number' => 'AA78',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1776 =>
+      [
+        'title' => 'Drive Albania',
+        'nid' => '1776',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1315 =>
+      [
+        'title' => 'Drive Albania & The Endurance Vile Trail',
+        'nid' => '1315',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    846 =>
+      [
+        'title' => 'Dubrovnik & Neretva County Tourist Board',
+        'nid' => '846',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3841 =>
+      [
+        'title' => 'Earthbound Expeditions Ltd',
+        'nid' => '3841',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1549 =>
+      [
+        'title' => 'Eco Turkey',
+        'nid' => '1549',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1158 =>
+      [
+        'title' => 'Ecocamel Ltd',
+        'nid' => '1158',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    847 =>
+      [
+        'title' => 'Egyptian StateTourist Office',
+        'nid' => '847',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1856 =>
+      [
+        'title' => 'El Monte RV',
+        'nid' => '1856',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    893 =>
+      [
+        'title' => 'El Monte RV',
+        'nid' => '893',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1417 =>
+      [
+        'title' => 'Enjoy Illinois',
+        'nid' => '1417',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1429 =>
+      [
+        'title' => 'Enovative Technologies',
+        'nid' => '1429',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    848 =>
+      [
+        'title' => 'Escape To India...and beyond',
+        'nid' => '848',
+        'stand_number' => 'AP129',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1781 =>
+      [
+        'title' => 'Esplora Ltd',
+        'nid' => '1781',
+        'stand_number' => 'E87',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3421 =>
+      [
+        'title' => 'Etihad Airways',
+        'nid' => '3421',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1529 =>
+      [
+        'title' => 'Etihad Airways',
+        'nid' => '1529',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1530 =>
+      [
+        'title' => 'Etihad Holidays ',
+        'nid' => '1530',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    849 =>
+      [
+        'title' => 'Eurotherapy',
+        'nid' => '849',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5076 =>
+      [
+        'title' => 'Evaneos Travel',
+        'nid' => '5076',
+        'stand_number' => 'AC54',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1177 =>
+      [
+        'title' => 'Everywhere Travel',
+        'nid' => '1177',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5011 =>
+      [
+        'title' => 'Exodus',
+        'nid' => '5011',
+        'stand_number' => 'AA89',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    850 =>
+      [
+        'title' => 'Exodus Travels',
+        'nid' => '850',
+        'stand_number' => 'AA89',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5266 =>
+      [
+        'title' => 'Experience Holidays',
+        'nid' => '5266',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    851 =>
+      [
+        'title' => 'Expert Africa',
+        'nid' => '851',
+        'stand_number' => 'AF42',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    852 =>
+      [
+        'title' => 'Explore Worldwide Ltd',
+        'nid' => '852',
+        'stand_number' => 'AA44',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1510 =>
+      [
+        'title' => 'Ffestiniog Travel',
+        'nid' => '1510',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6056 =>
+      [
+        'title' => 'Fleewinter',
+        'nid' => '6056',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1229 =>
+      [
+        'title' => 'Flexicruise',
+        'nid' => '1229',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1104 =>
+      [
+        'title' => 'Flint & Flame',
+        'nid' => '1104',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1396 =>
+      [
+        'title' => 'Food And Travel Magazine',
+        'nid' => '1396',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1217 =>
+      [
+        'title' => 'Footprint Travel Guides',
+        'nid' => '1217',
+        'stand_number' => 'AC30',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    853 =>
+      [
+        'title' => 'Fortina Spa Resort',
+        'nid' => '853',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6116 =>
+      [
+        'title' => 'Fred Olsen Travel',
+        'nid' => '6116',
+        'stand_number' => 'CR20',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6136 =>
+      [
+        'title' => 'Fred River Cruises',
+        'nid' => '6136',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3851 =>
+      [
+        'title' => 'Frui Creative Holidays & Courses',
+        'nid' => '3851',
+        'stand_number' => 'AA61',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    854 =>
+      [
+        'title' => 'Furlongs Travel',
+        'nid' => '854',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    855 =>
+      [
+        'title' => 'G Adventures Inc',
+        'nid' => '855',
+        'stand_number' => 'AP144',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7176 =>
+      [
+        'title' => 'GATE8 Luggage',
+        'nid' => '7176',
+        'stand_number' => 'TA10',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    856 =>
+      [
+        'title' => 'Geodyssey',
+        'nid' => '856',
+        'stand_number' => 'AC36',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    989 =>
+      [
+        'title' => 'Georgia',
+        'nid' => '989',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    857 =>
+      [
+        'title' => 'Ginger and Garlic Grater Ltd',
+        'nid' => '857',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5081 =>
+      [
+        'title' => 'Go Andes - The South America Holiday Specialists',
+        'nid' => '5081',
+        'stand_number' => 'AC35',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1218 =>
+      [
+        'title' => 'Go Barefoot',
+        'nid' => '1218',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    859 =>
+      [
+        'title' => 'Go2Tanzania',
+        'nid' => '859',
+        'stand_number' => 'AF46',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6111 =>
+      [
+        'title' => 'GoCruise',
+        'nid' => '6111',
+        'stand_number' => 'VUSA13',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    860 =>
+      [
+        'title' => 'GoCruise (Fred Olsen Travel)',
+        'nid' => '860',
+        'stand_number' => 'VUSA13',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1205 =>
+      [
+        'title' => 'Golden Africa',
+        'nid' => '1205',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1283 =>
+      [
+        'title' => 'Golf Slovenia',
+        'nid' => '1283',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3701 =>
+      [
+        'title' => 'GOSHENI SAFARIS AFRICA',
+        'nid' => '3701',
+        'stand_number' => 'AF62',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3926 =>
+      [
+        'title' => 'Gousto',
+        'nid' => '3926',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    861 =>
+      [
+        'title' => 'Goyo Travel',
+        'nid' => '861',
+        'stand_number' => 'AP95',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2951 =>
+      [
+        'title' => 'Grand American Adventures',
+        'nid' => '2951',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3271 =>
+      [
+        'title' => 'Grand American Adventures',
+        'nid' => '3271',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1206 =>
+      [
+        'title' => 'Grape Escapes',
+        'nid' => '1206',
+        'stand_number' => 'AA19',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1309 =>
+      [
+        'title' => 'Great Golf Adventures',
+        'nid' => '1309',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5016 =>
+      [
+        'title' => 'Great Ormond Street Children’s Charity',
+        'nid' => '5016',
+        'stand_number' => 'TA11',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    862 =>
+      [
+        'title' => 'Great Rail Journeys',
+        'nid' => '862',
+        'stand_number' => 'E72',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1210 =>
+      [
+        'title' => 'Greek National Tourism Organisation',
+        'nid' => '1210',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1048 =>
+      [
+        'title' => 'GRJ Independent',
+        'nid' => '1048',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    970 =>
+      [
+        'title' => 'Guernsey',
+        'nid' => '970',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    828 =>
+      [
+        'title' => 'Guide Dogs',
+        'nid' => '828',
+        'stand_number' => 'TA6',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1548 =>
+      [
+        'title' => 'Gulet Escapes',
+        'nid' => '1548',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6431 =>
+      [
+        'title' => 'Guyana Tourism Authority',
+        'nid' => '6431',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2896 =>
+      [
+        'title' => 'Guyana Tourism Authority',
+        'nid' => '2896',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3706 =>
+      [
+        'title' => 'Hawai\'i Tourism Authority',
+        'nid' => '3706',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5086 =>
+      [
+        'title' => 'Hawai\'i Tourism Authority',
+        'nid' => '5086',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5091 =>
+      [
+        'title' => 'Hayes and Jarvis',
+        'nid' => '5091',
+        'stand_number' => 'AP151',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1178 =>
+      [
+        'title' => 'Headwater',
+        'nid' => '1178',
+        'stand_number' => 'AA86',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5611 =>
+      [
+        'title' => 'Heaven and Earth',
+        'nid' => '5611',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5616 =>
+      [
+        'title' => 'Hebridean Island Cruises',
+        'nid' => '5616',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1393 =>
+      [
+        'title' => 'Hello Fresh UK',
+        'nid' => '1393',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1272 =>
+      [
+        'title' => 'HF Holidays Ltd',
+        'nid' => '1272',
+        'stand_number' => 'AA30',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    863 =>
+      [
+        'title' => 'HighLives Travel',
+        'nid' => '863',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1896 =>
+      [
+        'title' => 'Hiking & Biking Slovenia',
+        'nid' => '1896',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    864 =>
+      [
+        'title' => 'Hinterland Travel',
+        'nid' => '864',
+        'stand_number' => 'AA52',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    865 =>
+      [
+        'title' => 'Historic Hotels - Keytel Int.',
+        'nid' => '865',
+        'stand_number' => 'E34',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1791 =>
+      [
+        'title' => 'Holiday Malta',
+        'nid' => '1791',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    866 =>
+      [
+        'title' => 'Holidays By Rail',
+        'nid' => '866',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2696 =>
+      [
+        'title' => 'HURTIGRUTEN LTD',
+        'nid' => '2696',
+        'stand_number' => 'AF6',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7211 =>
+      [
+        'title' => 'Husen Moda',
+        'nid' => '7211',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1284 =>
+      [
+        'title' => 'IBEROSTAR Hotels & Resorts',
+        'nid' => '1284',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1114 =>
+      [
+        'title' => 'Iceland Jona Tours',
+        'nid' => '1114',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1806 =>
+      [
+        'title' => 'Iceland ProTravel Ltd',
+        'nid' => '1806',
+        'stand_number' => 'E154',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    868 =>
+      [
+        'title' => 'Imaginative Traveller',
+        'nid' => '868',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3856 =>
+      [
+        'title' => 'Imperial Karlovy Vary Inc.',
+        'nid' => '3856',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    869 =>
+      [
+        'title' => 'incognito',
+        'nid' => '869',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    870 =>
+      [
+        'title' => 'India Tourist Office',
+        'nid' => '870',
+        'stand_number' => 'AP90',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1531 =>
+      [
+        'title' => 'Indian Ocean Retreats',
+        'nid' => '1531',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1801 =>
+      [
+        'title' => 'Inghams',
+        'nid' => '1801',
+        'stand_number' => 'E116',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    871 =>
+      [
+        'title' => 'Inntravel',
+        'nid' => '871',
+        'stand_number' => 'AA94',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1320 =>
+      [
+        'title' => 'InsideBurma Tours',
+        'nid' => '1320',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1318 =>
+      [
+        'title' => 'InsideJapan Tours',
+        'nid' => '1318',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1811 =>
+      [
+        'title' => 'Insider Journeys',
+        'nid' => '1811',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    958 =>
+      [
+        'title' => 'Insider Journeys formerly Travel Indochina',
+        'nid' => '958',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1319 =>
+      [
+        'title' => 'InsideVietnam Tours',
+        'nid' => '1319',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    872 =>
+      [
+        'title' => 'Insight Vacations',
+        'nid' => '872',
+        'stand_number' => 'AP80',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1066 =>
+      [
+        'title' => 'Inspirita Films and Espirita Travel',
+        'nid' => '1066',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    873 =>
+      [
+        'title' => 'Inspirita Films and Espirita Travel',
+        'nid' => '873',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1276 =>
+      [
+        'title' => 'Insulated Solutions Ltd',
+        'nid' => '1276',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4856 =>
+      [
+        'title' => 'Intelligent Pelican',
+        'nid' => '4856',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4801 =>
+      [
+        'title' => 'Interlaken Tourist Board',
+        'nid' => '4801',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    874 =>
+      [
+        'title' => 'Into Japan Specialist Tours',
+        'nid' => '874',
+        'stand_number' => 'AP115',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    876 =>
+      [
+        'title' => 'Intrepid Travel',
+        'nid' => '876',
+        'stand_number' => 'AP12',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1270 =>
+      [
+        'title' => 'Iranian Tours',
+        'nid' => '1270',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2061 =>
+      [
+        'title' => 'Island of Gozo',
+        'nid' => '2061',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1478 =>
+      [
+        'title' => 'Island of Gozo',
+        'nid' => '1478',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1816 =>
+      [
+        'title' => 'Isle of Man',
+        'nid' => '1816',
+        'stand_number' => 'E48',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    953 =>
+      [
+        'title' => 'Isle Of Wight Tourism',
+        'nid' => '953',
+        'stand_number' => 'UK2',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    877 =>
+      [
+        'title' => 'Israel Ministry of Tourism',
+        'nid' => '877',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4111 =>
+      [
+        'title' => 'Jagged Globe',
+        'nid' => '4111',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1821 =>
+      [
+        'title' => 'Jasmine Holidays',
+        'nid' => '1821',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1826 =>
+      [
+        'title' => 'Jessops',
+        'nid' => '1826',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6486 =>
+      [
+        'title' => 'Jet2holidays with Premier Travel',
+        'nid' => '6486',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1831 =>
+      [
+        'title' => 'Jona Tours',
+        'nid' => '1831',
+        'stand_number' => 'E46',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    878 =>
+      [
+        'title' => 'Jordan Tourism Board',
+        'nid' => '878',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    879 =>
+      [
+        'title' => 'Journey Latin America',
+        'nid' => '879',
+        'stand_number' => 'AC59',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1368 =>
+      [
+        'title' => 'Journeys Magazine',
+        'nid' => '1368',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    880 =>
+      [
+        'title' => 'Just Destinations Ltd',
+        'nid' => '880',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1836 =>
+      [
+        'title' => 'Just Seychelles',
+        'nid' => '1836',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1991 =>
+      [
+        'title' => 'Just You',
+        'nid' => '1991',
+        'stand_number' => 'AP134',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4906 =>
+      [
+        'title' => 'Kanika Hotels & Resorts',
+        'nid' => '4906',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    985 =>
+      [
+        'title' => 'Kansas / Oklahoma Travel & Tourism',
+        'nid' => '985',
+        'stand_number' => 'VUSA12',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    817 =>
+      [
+        'title' => 'Karma Royal Experience',
+        'nid' => '817',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    882 =>
+      [
+        'title' => 'Kentucky Tourism',
+        'nid' => '882',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4116 =>
+      [
+        'title' => 'Kirker Holidays',
+        'nid' => '4116',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6086 =>
+      [
+        'title' => 'Kirker Holidays',
+        'nid' => '6086',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6941 =>
+      [
+        'title' => 'Knowasyougo Ltd',
+        'nid' => '6941',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2721 =>
+      [
+        'title' => 'Korea Tourism Organisation',
+        'nid' => '2721',
+        'stand_number' => 'AP66',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1163 =>
+      [
+        'title' => 'Kuoni Travel',
+        'nid' => '1163',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1162 =>
+      [
+        'title' => 'Lake Maggiore Tourism',
+        'nid' => '1162',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1275 =>
+      [
+        'title' => 'Last Frontiers - Latin America',
+        'nid' => '1275',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3021 =>
+      [
+        'title' => 'LATA',
+        'nid' => '3021',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1428 =>
+      [
+        'title' => 'Latin Odyssey',
+        'nid' => '1428',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    883 =>
+      [
+        'title' => 'Latin Routes',
+        'nid' => '883',
+        'stand_number' => 'AC50',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    884 =>
+      [
+        'title' => 'Leger Holidays',
+        'nid' => '884',
+        'stand_number' => 'E102',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1271 =>
+      [
+        'title' => 'Little Jack Horner\'s',
+        'nid' => '1271',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1173 =>
+      [
+        'title' => 'Loch Awe Hotels',
+        'nid' => '1173',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1193 =>
+      [
+        'title' => 'Lonely Planet Traveller Magazine',
+        'nid' => '1193',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    885 =>
+      [
+        'title' => 'Lou Grey Cashmere Collection',
+        'nid' => '885',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    990 =>
+      [
+        'title' => 'Louisiana ',
+        'nid' => '990',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2726 =>
+      [
+        'title' => 'Love & Lilly Jewellery',
+        'nid' => '2726',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1069 =>
+      [
+        'title' => 'Love TEFL',
+        'nid' => '1069',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    886 =>
+      [
+        'title' => 'Luxury Holidays Direct',
+        'nid' => '886',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2221 =>
+      [
+        'title' => 'Madeira Island',
+        'nid' => '2221',
+        'stand_number' => 'E140',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1207 =>
+      [
+        'title' => 'Madventure',
+        'nid' => '1207',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5096 =>
+      [
+        'title' => 'Mahouts Elephant Foundation',
+        'nid' => '5096',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6951 =>
+      [
+        'title' => 'Majorca Direct ',
+        'nid' => '6951',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    887 =>
+      [
+        'title' => 'Malawi Tourism',
+        'nid' => '887',
+        'stand_number' => 'AF75',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1476 =>
+      [
+        'title' => 'Malta Direct',
+        'nid' => '1476',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    888 =>
+      [
+        'title' => 'Malta Tourism Authority',
+        'nid' => '888',
+        'stand_number' => 'E143',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2551 =>
+      [
+        'title' => 'Marriott Hotels',
+        'nid' => '2551',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6101 =>
+      [
+        'title' => 'Martin Randall Travel',
+        'nid' => '6101',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1159 =>
+      [
+        'title' => 'Maryland',
+        'nid' => '1159',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    889 =>
+      [
+        'title' => 'Massachusetts Office Of Travel & Tourism',
+        'nid' => '889',
+        'stand_number' => 'VUSA1',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5101 =>
+      [
+        'title' => 'Massachusetts Office of Travel and Tourism',
+        'nid' => '5101',
+        'stand_number' => 'VUSA1',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    891 =>
+      [
+        'title' => 'MASTA Travel Clinics',
+        'nid' => '891',
+        'stand_number' => 'MASTA',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1533 =>
+      [
+        'title' => 'MasterChef Travel',
+        'nid' => '1533',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1273 =>
+      [
+        'title' => 'Metropolitan Grand Lodge of London',
+        'nid' => '1273',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    892 =>
+      [
+        'title' => 'Mexico Tourism Board',
+        'nid' => '892',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    986 =>
+      [
+        'title' => 'Mississippi Tourism',
+        'nid' => '986',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5106 =>
+      [
+        'title' => 'Mongolian Secret History',
+        'nid' => '5106',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    894 =>
+      [
+        'title' => 'Mongolian Secret History Travel Company',
+        'nid' => '894',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    895 =>
+      [
+        'title' => 'Moroccan National Tourist Office',
+        'nid' => '895',
+        'stand_number' => 'AF63',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5891 =>
+      [
+        'title' => 'Moskito Guard®',
+        'nid' => '5891',
+        'stand_number' => 'E152',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1796 =>
+      [
+        'title' => 'Mosquito Nets 4 U',
+        'nid' => '1796',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    896 =>
+      [
+        'title' => 'Mountain Kingdoms',
+        'nid' => '896',
+        'stand_number' => 'AA92',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5671 =>
+      [
+        'title' => 'Mozzipatch',
+        'nid' => '5671',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    897 =>
+      [
+        'title' => 'Mundy Adventures',
+        'nid' => '897',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5111 =>
+      [
+        'title' => 'My Tailor-Made Holiday',
+        'nid' => '5111',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    898 =>
+      [
+        'title' => 'Mysteries of India',
+        'nid' => '898',
+        'stand_number' => 'AP96',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    899 =>
+      [
+        'title' => 'Namibia Tourism ',
+        'nid' => '899',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5856 =>
+      [
+        'title' => 'Namibia Tours & Safaris',
+        'nid' => '5856',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4231 =>
+      [
+        'title' => 'National Geographic',
+        'nid' => '4231',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1133 =>
+      [
+        'title' => 'National Geographic Traveller',
+        'nid' => '1133',
+        'stand_number' => 'AA10',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    903 =>
+      [
+        'title' => 'National Tourism Organisation of Serbia',
+        'nid' => '903',
+        'stand_number' => 'E89',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1367 =>
+      [
+        'title' => 'Natural Patches',
+        'nid' => '1367',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2216 =>
+      [
+        'title' => 'Naturally Belize ',
+        'nid' => '2216',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1149 =>
+      [
+        'title' => 'Naturetrek',
+        'nid' => '1149',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    900 =>
+      [
+        'title' => 'NEW BRUNSWICK',
+        'nid' => '900',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    901 =>
+      [
+        'title' => 'New Zealand In Depth',
+        'nid' => '901',
+        'stand_number' => 'AP61',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1156 =>
+      [
+        'title' => 'Newmarket Holidays',
+        'nid' => '1156',
+        'stand_number' => 'E91',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1876 =>
+      [
+        'title' => 'No News No Shoes Ltd',
+        'nid' => '1876',
+        'stand_number' => 'AP98',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1208 =>
+      [
+        'title' => 'No.1 Traveller',
+        'nid' => '1208',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4796 =>
+      [
+        'title' => 'Nomad Travel',
+        'nid' => '4796',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    994 =>
+      [
+        'title' => 'North America Travel Service',
+        'nid' => '994',
+        'stand_number' => 'VUSA3',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2276 =>
+      [
+        'title' => 'North American Representatives',
+        'nid' => '2276',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    992 =>
+      [
+        'title' => 'North Carolina',
+        'nid' => '992',
+        'stand_number' => 'VUSA11',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    902 =>
+      [
+        'title' => 'North Cyprus Tourism Centre Ltd',
+        'nid' => '902',
+        'stand_number' => 'E124',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1120 =>
+      [
+        'title' => 'Nova Scotia',
+        'nid' => '1120',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1532 =>
+      [
+        'title' => 'Nova Scotia Tourism',
+        'nid' => '1532',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    904 =>
+      [
+        'title' => 'Oakdale',
+        'nid' => '904',
+        'stand_number' => 'TA14',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    905 =>
+      [
+        'title' => 'Oasis Overland',
+        'nid' => '905',
+        'stand_number' => 'AA60',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5116 =>
+      [
+        'title' => 'Oceania Cruises',
+        'nid' => '5116',
+        'stand_number' => 'AP161',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    906 =>
+      [
+        'title' => 'Okavango Tours And Safaris',
+        'nid' => '906',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    907 =>
+      [
+        'title' => 'Okinawa Convention & Visitors Bureau, Japan',
+        'nid' => '907',
+        'stand_number' => 'AP13',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1515 =>
+      [
+        'title' => 'Oman Ministry of Tourism',
+        'nid' => '1515',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6466 =>
+      [
+        'title' => 'On Foot Holidays',
+        'nid' => '6466',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    908 =>
+      [
+        'title' => 'On The Go Tours',
+        'nid' => '908',
+        'stand_number' => 'AA12',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    909 =>
+      [
+        'title' => 'On Track Safaris',
+        'nid' => '909',
+        'stand_number' => 'AF85',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4336 =>
+      [
+        'title' => 'Ontario Tourism',
+        'nid' => '4336',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5451 =>
+      [
+        'title' => 'Overland Expeditions India',
+        'nid' => '5451',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3226 =>
+      [
+        'title' => 'P20 Sun Protection',
+        'nid' => '3226',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6121 =>
+      [
+        'title' => 'Palm Springs Bureau of Tourism',
+        'nid' => '6121',
+        'stand_number' => 'AP24',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5121 =>
+      [
+        'title' => 'Pangolin Photo Safaris',
+        'nid' => '5121',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    910 =>
+      [
+        'title' => 'Panoramic Journeys',
+        'nid' => '910',
+        'stand_number' => 'AP110',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    911 =>
+      [
+        'title' => 'Papua New Guinea Tourism',
+        'nid' => '911',
+        'stand_number' => 'AP63',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    912 =>
+      [
+        'title' => 'Paradise Vacations',
+        'nid' => '912',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6406 =>
+      [
+        'title' => 'Paul Goldstein',
+        'nid' => '6406',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5021 =>
+      [
+        'title' => 'Pennsylvania / Atlantic City ',
+        'nid' => '5021',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    913 =>
+      [
+        'title' => 'Persian Voyages',
+        'nid' => '913',
+        'stand_number' => 'E36',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4356 =>
+      [
+        'title' => 'Pettitts',
+        'nid' => '4356',
+        'stand_number' => 'AP69',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    995 =>
+      [
+        'title' => 'Philadelphia',
+        'nid' => '995',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    914 =>
+      [
+        'title' => 'Philippine Department Of Tourism',
+        'nid' => '914',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    858 =>
+      [
+        'title' => 'Philippines Department of Tourism',
+        'nid' => '858',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2706 =>
+      [
+        'title' => 'Pieroth Ltd',
+        'nid' => '2706',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1490 =>
+      [
+        'title' => 'Pilsen region',
+        'nid' => '1490',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1212 =>
+      [
+        'title' => 'Pioneer Expeditions',
+        'nid' => '1212',
+        'stand_number' => 'AP91',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    915 =>
+      [
+        'title' => 'Planet Cruise',
+        'nid' => '915',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5876 =>
+      [
+        'title' => 'Polar Routes',
+        'nid' => '5876',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5126 =>
+      [
+        'title' => 'Ponders',
+        'nid' => '5126',
+        'stand_number' => 'CR1',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2081 =>
+      [
+        'title' => 'Portsonachan Hotel',
+        'nid' => '2081',
+        'stand_number' => 'UK4',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2031 =>
+      [
+        'title' => 'Premier Estates Wine',
+        'nid' => '2031',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1512 =>
+      [
+        'title' => 'Prestige Holidays',
+        'nid' => '1512',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2901 =>
+      [
+        'title' => 'PROMPERÚ',
+        'nid' => '2901',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    723 =>
+      [
+        'title' => 'Provo Golf and Country Club, Turks and Caicos',
+        'nid' => '723',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    916 =>
+      [
+        'title' => 'Quebec Tourism',
+        'nid' => '916',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4901 =>
+      [
+        'title' => 'Queen\'s Bay Hotel, Cyprus',
+        'nid' => '4901',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1047 =>
+      [
+        'title' => 'Rail Discoveries',
+        'nid' => '1047',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4031 =>
+      [
+        'title' => 'Railtrail Tours Ltd',
+        'nid' => '4031',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    917 =>
+      [
+        'title' => 'Rainbow Tours - Africa, Madagascar and Latin America',
+        'nid' => '917',
+        'stand_number' => 'AF48',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1070 =>
+      [
+        'title' => 'Real Africa',
+        'nid' => '1070',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    919 =>
+      [
+        'title' => 'Reef & Rainforest Tours',
+        'nid' => '919',
+        'stand_number' => 'LATA Pavilion',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    722 =>
+      [
+        'title' => 'Regent Grand on Grace Bay, Turks and Caicos',
+        'nid' => '722',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    920 =>
+      [
+        'title' => 'Regent Holidays',
+        'nid' => '920',
+        'stand_number' => 'E134',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2601 =>
+      [
+        'title' => 'Regent Seven Seas Cruises',
+        'nid' => '2601',
+        'stand_number' => 'E83',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3906 =>
+      [
+        'title' => 'Remote Medical Support',
+        'nid' => '3906',
+        'stand_number' => 'TA81',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5056 =>
+      [
+        'title' => 'Revealed Travel',
+        'nid' => '5056',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2991 =>
+      [
+        'title' => 'Revolut',
+        'nid' => '2991',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1891 =>
+      [
+        'title' => 'Rickshaw Travel',
+        'nid' => '1891',
+        'stand_number' => 'AP68',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4326 =>
+      [
+        'title' => 'River Cruise Holiday',
+        'nid' => '4326',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2536 =>
+      [
+        'title' => 'RNIB',
+        'nid' => '2536',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5026 =>
+      [
+        'title' => 'Rocky Mountain International',
+        'nid' => '5026',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    984 =>
+      [
+        'title' => 'Rocky Mountain States',
+        'nid' => '984',
+        'stand_number' => 'VUSA8',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5881 =>
+      [
+        'title' => 'Rocky Mountaineer and Canadian Affair',
+        'nid' => '5881',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2921 =>
+      [
+        'title' => 'Rohan',
+        'nid' => '2921',
+        'stand_number' => 'AA101',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4311 =>
+      [
+        'title' => 'Romanian Convention and Visitors Bureau',
+        'nid' => '4311',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1588 =>
+      [
+        'title' => 'Romanian National Authority for Tourism',
+        'nid' => '1588',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    921 =>
+      [
+        'title' => 'Round The World Experts',
+        'nid' => '921',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    922 =>
+      [
+        'title' => 'Rovos Rail',
+        'nid' => '922',
+        'stand_number' => 'AF45',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    923 =>
+      [
+        'title' => 'RSPB',
+        'nid' => '923',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    924 =>
+      [
+        'title' => 'RT Holidays',
+        'nid' => '924',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1234 =>
+      [
+        'title' => 'Rubicon 3',
+        'nid' => '1234',
+        'stand_number' => 'AA84',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1456 =>
+      [
+        'title' => 'Rwanda Tourism',
+        'nid' => '1456',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    918 =>
+      [
+        'title' => 'RWH Travel Limited',
+        'nid' => '918',
+        'stand_number' => 'AA111',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    925 =>
+      [
+        'title' => 'Safari Consultants',
+        'nid' => '925',
+        'stand_number' => 'AF40',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    926 =>
+      [
+        'title' => 'SafariHub',
+        'nid' => '926',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    927 =>
+      [
+        'title' => 'Saga Holidays',
+        'nid' => '927',
+        'stand_number' => 'AC58',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6826 =>
+      [
+        'title' => 'SAGA Personal Finance',
+        'nid' => '6826',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    936 =>
+      [
+        'title' => 'Saint Lucia Tourist Board',
+        'nid' => '936',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    966 =>
+      [
+        'title' => 'Sandals & Beaches Resorts',
+        'nid' => '966',
+        'stand_number' => 'AC31',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5031 =>
+      [
+        'title' => 'Sandals Beaches & Resorts',
+        'nid' => '5031',
+        'stand_number' => 'AC31',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    928 =>
+      [
+        'title' => 'SB Promotions.',
+        'nid' => '928',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1209 =>
+      [
+        'title' => 'Scenic Tours',
+        'nid' => '1209',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4811 =>
+      [
+        'title' => 'Schilthorn Piz Gloria',
+        'nid' => '4811',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1569 =>
+      [
+        'title' => 'Seafarer Cruising & Sailing Holidays',
+        'nid' => '1569',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6141 =>
+      [
+        'title' => 'Sealand Villas',
+        'nid' => '6141',
+        'stand_number' => 'E150',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    929 =>
+      [
+        'title' => 'Secret Paradise PVT Ltd',
+        'nid' => '929',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2041 =>
+      [
+        'title' => 'Secret Vineyards Travel',
+        'nid' => '2041',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2906 =>
+      [
+        'title' => 'Select Latin America',
+        'nid' => '2906',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    930 =>
+      [
+        'title' => 'Shawbury Vintners',
+        'nid' => '930',
+        'stand_number' => 'TA19',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5951 =>
+      [
+        'title' => 'Shearings Holidays',
+        'nid' => '5951',
+        'stand_number' => 'E30',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4861 =>
+      [
+        'title' => 'Show Promotions',
+        'nid' => '4861',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    931 =>
+      [
+        'title' => 'Silver Fern Holidays',
+        'nid' => '931',
+        'stand_number' => 'AP99',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1522 =>
+      [
+        'title' => 'Silverpoint Vacations SL',
+        'nid' => '1522',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2911 =>
+      [
+        'title' => 'Silversea Cruises',
+        'nid' => '2911',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3911 =>
+      [
+        'title' => 'Simon Shopping Destinations',
+        'nid' => '3911',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    932 =>
+      [
+        'title' => 'Simply Bhutan',
+        'nid' => '932',
+        'stand_number' => 'AA66',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6076 =>
+      [
+        'title' => 'Simply Sweden',
+        'nid' => '6076',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1536 =>
+      [
+        'title' => 'Sof Sof Ltd',
+        'nid' => '1536',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1274 =>
+      [
+        'title' => 'Soft Tub UK',
+        'nid' => '1274',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    933 =>
+      [
+        'title' => 'Sol Villas Javea',
+        'nid' => '933',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    934 =>
+      [
+        'title' => 'Sole Mates',
+        'nid' => '934',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    935 =>
+      [
+        'title' => 'Songlines Magazine & Music Travel',
+        'nid' => '935',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1489 =>
+      [
+        'title' => 'South Moravian Region',
+        'nid' => '1489',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2271 =>
+      [
+        'title' => 'Special Group Tours',
+        'nid' => '2271',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    983 =>
+      [
+        'title' => 'Spice London',
+        'nid' => '983',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1451 =>
+      [
+        'title' => 'Sri Lanka Tourism Promotion Bureau',
+        'nid' => '1451',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5621 =>
+      [
+        'title' => 'St Helena Tourism',
+        'nid' => '5621',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1901 =>
+      [
+        'title' => 'St Vincent & The Grenadines',
+        'nid' => '1901',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6931 =>
+      [
+        'title' => 'St. James\'s Place Wealth Management',
+        'nid' => '6931',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    937 =>
+      [
+        'title' => 'Stanfords',
+        'nid' => '937',
+        'stand_number' => '',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    938 =>
+      [
+        'title' => 'Star Clippers',
+        'nid' => '938',
+        'stand_number' => 'AP164',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7161 =>
+      [
+        'title' => 'STB',
+        'nid' => '7161',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6491 =>
+      [
+        'title' => 'Step Right',
+        'nid' => '6491',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    939 =>
+      [
+        'title' => 'Stubborn Mule Travel',
+        'nid' => '939',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1477 =>
+      [
+        'title' => 'Sunspot Tours',
+        'nid' => '1477',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1497 =>
+      [
+        'title' => 'Sunspot Tours',
+        'nid' => '1497',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    940 =>
+      [
+        'title' => 'Sunvil',
+        'nid' => '940',
+        'stand_number' => 'E50',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2711 =>
+      [
+        'title' => 'Supreme Sausages',
+        'nid' => '2711',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1534 =>
+      [
+        'title' => 'Supreme Sausages',
+        'nid' => '1534',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5131 =>
+      [
+        'title' => 'Suricate Safaris Namibia & Botswana',
+        'nid' => '5131',
+        'stand_number' => 'AF65',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    941 =>
+      [
+        'title' => 'Surreal Holidays',
+        'nid' => '941',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1996 =>
+      [
+        'title' => 'Swan Hellenic',
+        'nid' => '1996',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    942 =>
+      [
+        'title' => 'Swaziland Tourism',
+        'nid' => '942',
+        'stand_number' => 'AF81',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    943 =>
+      [
+        'title' => 'Switzerland Travel Centre Ltd',
+        'nid' => '943',
+        'stand_number' => 'E40',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    944 =>
+      [
+        'title' => 'Taiwan Tourism Bureau',
+        'nid' => '944',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5136 =>
+      [
+        'title' => 'Tauck',
+        'nid' => '5136',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7216 =>
+      [
+        'title' => 'Teme Valley Beds',
+        'nid' => '7216',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    987 =>
+      [
+        'title' => 'Tennessee Tourism',
+        'nid' => '987',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3916 =>
+      [
+        'title' => 'Tep Wireless',
+        'nid' => '3916',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5276 =>
+      [
+        'title' => 'Test Profile',
+        'nid' => '5276',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2226 =>
+      [
+        'title' => 'Texas',
+        'nid' => '2226',
+        'stand_number' => 'VUSA2',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    945 =>
+      [
+        'title' => 'Thai Airways International',
+        'nid' => '945',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3461 =>
+      [
+        'title' => 'The AfriCat Foundation',
+        'nid' => '3461',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1068 =>
+      [
+        'title' => 'The Azores',
+        'nid' => '1068',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6126 =>
+      [
+        'title' => 'The Cruise Line Ltd',
+        'nid' => '6126',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4121 =>
+      [
+        'title' => 'The Discovery Collection',
+        'nid' => '4121',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1521 =>
+      [
+        'title' => 'The Earth Trip',
+        'nid' => '1521',
+        'stand_number' => 'AP94',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    947 =>
+      [
+        'title' => 'The Independent Traveller',
+        'nid' => '947',
+        'stand_number' => 'AC80',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5036 =>
+      [
+        'title' => 'The India Travel Company',
+        'nid' => '5036',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6436 =>
+      [
+        'title' => 'The Island of Tobago',
+        'nid' => '6436',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    696 =>
+      [
+        'title' => 'The Map\'s Edge Ltd',
+        'nid' => '696',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1430 =>
+      [
+        'title' => 'The Mediterranean Delicatessen Company',
+        'nid' => '1430',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1886 =>
+      [
+        'title' => 'The Personal Travel Agents at Co-op Travel',
+        'nid' => '1886',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1488 =>
+      [
+        'title' => 'The Region of Olomouc',
+        'nid' => '1488',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5456 =>
+      [
+        'title' => 'The Safari Specialists',
+        'nid' => '5456',
+        'stand_number' => 'AF45',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1312 =>
+      [
+        'title' => 'The Small Cruise Ship Collection',
+        'nid' => '1312',
+        'stand_number' => 'RT2',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3481 =>
+      [
+        'title' => 'The Sunday Times',
+        'nid' => '3481',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3491 =>
+      [
+        'title' => 'The Sunday Times Travel Magazine ',
+        'nid' => '3491',
+        'stand_number' => 'AP10',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3471 =>
+      [
+        'title' => 'The Times & The Sunday Times',
+        'nid' => '3471',
+        'stand_number' => 'AP10',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2636 =>
+      [
+        'title' => 'The Travelling Naturalist',
+        'nid' => '2636',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3256 =>
+      [
+        'title' => 'The Visit USA Association (UK) Ltd',
+        'nid' => '3256',
+        'stand_number' => 'VUSA',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4061 =>
+      [
+        'title' => 'Thornton & Baines',
+        'nid' => '4061',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1281 =>
+      [
+        'title' => 'Thracian Cliffs Golf & Beach Resort',
+        'nid' => '1281',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5041 =>
+      [
+        'title' => 'Tikalanka Tours',
+        'nid' => '5041',
+        'stand_number' => 'AP38',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    950 =>
+      [
+        'title' => 'Titan Travel',
+        'nid' => '950',
+        'stand_number' => 'AP82',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4201 =>
+      [
+        'title' => 'Tour operator Consultour',
+        'nid' => '4201',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1911 =>
+      [
+        'title' => 'Tourism Authority Of Thailand, Thailand',
+        'nid' => '1911',
+        'stand_number' => 'AP84',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    952 =>
+      [
+        'title' => 'Tourism Malaysia',
+        'nid' => '952',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2591 =>
+      [
+        'title' => 'Tourist Board of The Vukovar-Srijem County',
+        'nid' => '2591',
+        'stand_number' => 'E44',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1916 =>
+      [
+        'title' => 'Tours By Locals',
+        'nid' => '1916',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    954 =>
+      [
+        'title' => 'Tracks Safaris',
+        'nid' => '954',
+        'stand_number' => 'AF61',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2741 =>
+      [
+        'title' => 'Trafalgar',
+        'nid' => '2741',
+        'stand_number' => 'AP140',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    955 =>
+      [
+        'title' => 'Trailfinders',
+        'nid' => '955',
+        'stand_number' => 'E60',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1921 =>
+      [
+        'title' => 'Transindus',
+        'nid' => '1921',
+        'stand_number' => 'AP132',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    957 =>
+      [
+        'title' => 'Travel & Leisure Group',
+        'nid' => '957',
+        'stand_number' => 'E144',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4126 =>
+      [
+        'title' => 'Travel Gallery',
+        'nid' => '4126',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    959 =>
+      [
+        'title' => 'Travel The Unknown',
+        'nid' => '959',
+        'stand_number' => 'AP36',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1553 =>
+      [
+        'title' => 'Traveleyes Ltd',
+        'nid' => '1553',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6501 =>
+      [
+        'title' => 'TravelLocal',
+        'nid' => '6501',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4346 =>
+      [
+        'title' => 'Travelpack',
+        'nid' => '4346',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    960 =>
+      [
+        'title' => 'TravelPak',
+        'nid' => '960',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1726 =>
+      [
+        'title' => 'Travelsphere',
+        'nid' => '1726',
+        'stand_number' => 'AP136',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    962 =>
+      [
+        'title' => 'Tribes Travel',
+        'nid' => '962',
+        'stand_number' => 'AF47',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    963 =>
+      [
+        'title' => 'Tucan Travel',
+        'nid' => '963',
+        'stand_number' => 'AA42',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1150 =>
+      [
+        'title' => 'Tunisian National Tourist Office',
+        'nid' => '1150',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5461 =>
+      [
+        'title' => 'Turismo Chile',
+        'nid' => '5461',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5141 =>
+      [
+        'title' => 'Turkey Ministry of Culture and Tourism',
+        'nid' => '5141',
+        'stand_number' => 'E12 and E10',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    946 =>
+      [
+        'title' => 'Turkish Culture & Information',
+        'nid' => '946',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    964 =>
+      [
+        'title' => 'Turks and Caicos Islands Tourist Board (UK/Europe)',
+        'nid' => '964',
+        'stand_number' => 'AC37',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1841 =>
+      [
+        'title' => 'Uganda Tourism Board',
+        'nid' => '1841',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1371 =>
+      [
+        'title' => 'Undiscovered Destinations Ltd',
+        'nid' => '1371',
+        'stand_number' => 'AA50',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3031 =>
+      [
+        'title' => 'United Airlines',
+        'nid' => '3031',
+        'stand_number' => 'VUSA4',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6516 =>
+      [
+        'title' => 'Uniworld Boutique River Cruise Collection',
+        'nid' => '6516',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    967 =>
+      [
+        'title' => 'Untravelled Paths',
+        'nid' => '967',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2036 =>
+      [
+        'title' => 'Utah',
+        'nid' => '2036',
+        'stand_number' => 'VUSA6',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5046 =>
+      [
+        'title' => 'Utah Office of Tourism',
+        'nid' => '5046',
+        'stand_number' => 'VUSA6',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1151 =>
+      [
+        'title' => 'Uzbekistan Airways',
+        'nid' => '1151',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1420 =>
+      [
+        'title' => 'Vacation Tours',
+        'nid' => '1420',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5676 =>
+      [
+        'title' => 'Valentte London',
+        'nid' => '5676',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1395 =>
+      [
+        'title' => 'Veloso Tours',
+        'nid' => '1395',
+        'stand_number' => 'AC81',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1394 =>
+      [
+        'title' => 'Vermont',
+        'nid' => '1394',
+        'stand_number' => 'VUSA15',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    968 =>
+      [
+        'title' => 'Viking Cruises',
+        'nid' => '968',
+        'stand_number' => 'E20 and E14',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2936 =>
+      [
+        'title' => 'VIP Global Service Ltd',
+        'nid' => '2936',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1160 =>
+      [
+        'title' => 'Virginia',
+        'nid' => '1160',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4131 =>
+      [
+        'title' => 'Visions Holiday Group',
+        'nid' => '4131',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6066 =>
+      [
+        'title' => 'Visions Holiday Group',
+        'nid' => '6066',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    969 =>
+      [
+        'title' => 'Visit Asia Ltd',
+        'nid' => '969',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1573 =>
+      [
+        'title' => 'Visit Faroe Islands',
+        'nid' => '1573',
+        'stand_number' => 'E90',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4226 =>
+      [
+        'title' => 'Visit Faroe Islands',
+        'nid' => '4226',
+        'stand_number' => 'E90',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1931 =>
+      [
+        'title' => 'Visit Guernsey',
+        'nid' => '1931',
+        'stand_number' => 'UK8',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    971 =>
+      [
+        'title' => 'Visit Hull & East Yorkshire',
+        'nid' => '971',
+        'stand_number' => 'UK6',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2596 =>
+      [
+        'title' => 'Vitalsox Travelsox',
+        'nid' => '2596',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6831 =>
+      [
+        'title' => 'Vivid Optics',
+        'nid' => '6831',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5146 =>
+      [
+        'title' => 'Vortex@Newpro UK Limited',
+        'nid' => '5146',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    972 =>
+      [
+        'title' => 'Voyages Jules Verne',
+        'nid' => '972',
+        'stand_number' => 'E132',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2001 =>
+      [
+        'title' => 'Voyages of Discovery',
+        'nid' => '2001',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1224 =>
+      [
+        'title' => 'Voyages of Discovery & Swan Hellenic',
+        'nid' => '1224',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1072 =>
+      [
+        'title' => 'Walk the Walk',
+        'nid' => '1072',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1152 =>
+      [
+        'title' => 'Wanderlust',
+        'nid' => '1152',
+        'stand_number' => 'AC2',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2701 =>
+      [
+        'title' => 'Warwickshire Clothing',
+        'nid' => '2701',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1161 =>
+      [
+        'title' => 'Washington DC',
+        'nid' => '1161',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1936 =>
+      [
+        'title' => 'Water-to-Go Ltd',
+        'nid' => '1936',
+        'stand_number' => 'TA7',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    973 =>
+      [
+        'title' => 'Water-to-Go Ltd',
+        'nid' => '973',
+        'stand_number' => 'TA7',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2266 =>
+      [
+        'title' => 'Weekend a la Carte',
+        'nid' => '2266',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    974 =>
+      [
+        'title' => 'Wendy Wu Tours',
+        'nid' => '974',
+        'stand_number' => 'AP26',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    975 =>
+      [
+        'title' => 'Western & Oriental',
+        'nid' => '975',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4341 =>
+      [
+        'title' => 'Westjet ',
+        'nid' => '4341',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    4136 =>
+      [
+        'title' => 'Westminster Classic Tours',
+        'nid' => '4136',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1311 =>
+      [
+        'title' => 'Westminster Classic Tours (1999) LTD',
+        'nid' => '1311',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1552 =>
+      [
+        'title' => 'WeSwap.com',
+        'nid' => '1552',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    977 =>
+      [
+        'title' => 'Wild Frontiers',
+        'nid' => '977',
+        'stand_number' => 'AP141',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1946 =>
+      [
+        'title' => 'Wildfoot Travel',
+        'nid' => '1946',
+        'stand_number' => 'AA5',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    978 =>
+      [
+        'title' => 'Wildlife Worldwide',
+        'nid' => '978',
+        'stand_number' => 'AF35',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1491 =>
+      [
+        'title' => 'Wine4Life',
+        'nid' => '1491',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1213 =>
+      [
+        'title' => 'Woodland Trust',
+        'nid' => '1213',
+        'stand_number' => 'AP34',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2716 =>
+      [
+        'title' => 'Woodlands Trust',
+        'nid' => '2716',
+        'stand_number' => 'AP34',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    979 =>
+      [
+        'title' => 'World Expeditions',
+        'nid' => '979',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5861 =>
+      [
+        'title' => 'World Of Cruising Magazine',
+        'nid' => '5861',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5866 =>
+      [
+        'title' => 'WWF',
+        'nid' => '5866',
+        'stand_number' => 'TA27',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    980 =>
+      [
+        'title' => 'Yampu Tours ',
+        'nid' => '980',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    6146 =>
+      [
+        'title' => 'Your Safari',
+        'nid' => '6146',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    3456 =>
+      [
+        'title' => 'Your Safari',
+        'nid' => '3456',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1951 =>
+      [
+        'title' => 'Yum Yum Tree Fudge',
+        'nid' => '1951',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    1073 =>
+      [
+        'title' => 'Yum Yum Tree Fudge Ltd',
+        'nid' => '1073',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    981 =>
+      [
+        'title' => 'Zambezi Safari & Travel Company',
+        'nid' => '981',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    5151 =>
+      [
+        'title' => 'Zambia',
+        'nid' => '5151',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7271 =>
+      [
+        'title' => 'Zan Los Amigos Tours & Travel ',
+        'nid' => '7271',
+        'stand_number' => '~',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7286 =>
+      [
+        'title' => 'Austravel',
+        'nid' => '~',
+        'stand_number' => 'AP152',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7291 =>
+      [
+        'title' => 'Bostwana Specialists',
+        'nid' => '~',
+        'stand_number' => 'AF49',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7296 =>
+      [
+        'title' => 'City guru',
+        'nid' => '~',
+        'stand_number' => 'E100',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7301 =>
+      [
+        'title' => 'flight centre',
+        'nid' => '~',
+        'stand_number' => 'AP72',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7306 =>
+      [
+        'title' => 'gesser images',
+        'nid' => '~',
+        'stand_number' => 'AF55',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7316 =>
+      [
+        'title' => 'greenpeace',
+        'nid' => '~',
+        'stand_number' => 'AP111',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7321 =>
+      [
+        'title' => 'leakey safaris',
+        'nid' => '~',
+        'stand_number' => 'AF90',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7326 =>
+      [
+        'title' => 'london school of hygiene and tropical medicine',
+        'nid' => '~',
+        'stand_number' => 'TA30',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7331 =>
+      [
+        'title' => 'millennium therapy ltd',
+        'nid' => '~',
+        'stand_number' => 'TA18',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7336 =>
+      [
+        'title' => 'one world discoveries',
+        'nid' => '~',
+        'stand_number' => 'AP113',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7341 =>
+      [
+        'title' => 'ozen by atmosphere',
+        'nid' => '~',
+        'stand_number' => 'AP24',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7346 =>
+      [
+        'title' => 'purely pyrenees',
+        'nid' => '~',
+        'stand_number' => 'AA102',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    2551 =>
+      [
+        'title' => 'radisson blu',
+        'nid' => '~',
+        'stand_number' => 'E108',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7351 =>
+      [
+        'title' => 'rcl cruises',
+        'nid' => '~',
+        'stand_number' => 'E51',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7356 =>
+      [
+        'title' => 'royal caribbean',
+        'nid' => '~',
+        'stand_number' => 'AP70',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7361 =>
+      [
+        'title' => 'sbp events',
+        'nid' => '~',
+        'stand_number' => 'TA26',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7366 =>
+      [
+        'title' => 'simpson travel',
+        'nid' => '~',
+        'stand_number' => 'E104',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7371 =>
+      [
+        'title' => 'southwest germany tourist board',
+        'nid' => '~',
+        'stand_number' => 'E106',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7386 =>
+      [
+        'title' => 'steppes travel',
+        'nid' => '~',
+        'stand_number' => 'AC72',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7376 =>
+      [
+        'title' => 'swift group ltd',
+        'nid' => '~',
+        'stand_number' => 'AA110',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7381 =>
+      [
+        'title' => 'the greg evans consultancy',
+        'nid' => '~',
+        'stand_number' => 'VUSA5',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7391 =>
+      [
+        'title' => 'travel editions group',
+        'nid' => '~',
+        'stand_number' => 'E109',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7396 =>
+      [
+        'title' => 'trek america',
+        'nid' => '~',
+        'stand_number' => 'VUSA10',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+    7401 =>
+      [
+        'title' => 'tsiky tour madagascar',
+        'nid' => '~',
+        'stand_number' => 'AA113',
+        'new' => '~',
+        'enhanced' => '~',
+      ],
+  ];
+
+  foreach ($stand_numbers_mapped_to_exhibitor_nodes as $nid => $exhibitor_nonsense) {
+    // Get the node revision ID.
+    $revision_id = db_select('node')
+      ->fields('node', ['vid'])
+      ->condition('nid', $nid)
+      ->range(0, 1)
+      ->execute()
+      ->fetchField();
+
+    if (!empty($revision_id)) {
+      if ($exhibitor_nonsense['stand_number'] !== '~') {
+        db_merge('field_data_field_stand')
+          ->key(['revision_id' => $revision_id])
+          ->fields([
+            'entity_type' => 'node',
+            'bundle' => 'exhibitor',
+            'deleted' => 0,
+            'entity_id' => $nid,
+            'language' => LANGUAGE_NONE,
+            'delta' => 0,
+            'field_stand_value' => $exhibitor_nonsense['stand_number'],
+            'field_stand_format' => NULL,
+          ])
+          ->execute();
+
+        db_merge('field_revision_field_stand')
+          ->key(['revision_id' => $revision_id])
+          ->fields([
+            'entity_type' => 'node',
+            'bundle' => 'exhibitor',
+            'deleted' => 0,
+            'entity_id' => $nid,
+            'language' => LANGUAGE_NONE,
+            'delta' => 0,
+            'field_stand_value' => $exhibitor_nonsense['stand_number'],
+            'field_stand_format' => NULL,
+          ])
+          ->execute();
+      }
+
+      if ($exhibitor_nonsense['new'] !== '~') {
+        db_merge('field_revision_field_new')
+          ->key(['revision_id' => $revision_id])
+          ->fields([
+            'entity_type' => 'node',
+            'bundle' => 'exhibitor',
+            'deleted' => 0,
+            'entity_id' => $nid,
+            'language' => LANGUAGE_NONE,
+            'delta' => 0,
+            'field_new_value' => $exhibitor_nonsense['new'],
+            'field_new_format' => NULL,
+          ])
+          ->execute();
+
+        db_merge('field_revision_field_new')
+          ->key(['revision_id' => $revision_id])
+          ->fields([
+            'entity_type' => 'node',
+            'bundle' => 'exhibitor',
+            'deleted' => 0,
+            'entity_id' => $nid,
+            'language' => LANGUAGE_NONE,
+            'delta' => 0,
+            'field_new_value' => $exhibitor_nonsense['new'],
+            'field_new_format' => NULL,
+          ])
+          ->execute();
+      }
+
+      if ($exhibitor_nonsense['enhanced'] !== '~') {
+        db_merge('field_revision_field_enhanced')
+          ->key(['revision_id' => $revision_id])
+          ->fields([
+            'entity_type' => 'node',
+            'bundle' => 'exhibitor',
+            'deleted' => 0,
+            'entity_id' => $nid,
+            'language' => LANGUAGE_NONE,
+            'delta' => 0,
+            'field_enhanced_value' => $exhibitor_nonsense['enhanced'],
+            'field_enhanced_format' => NULL,
+          ])
+          ->execute();
+
+        db_merge('field_revision_field_enhanced')
+          ->key(['revision_id' => $revision_id])
+          ->fields([
+            'entity_type' => 'node',
+            'bundle' => 'exhibitor',
+            'deleted' => 0,
+            'entity_id' => $nid,
+            'language' => LANGUAGE_NONE,
+            'delta' => 0,
+            'field_enhanced_value' => $exhibitor_nonsense['enhanced'],
+            'field_new_format' => NULL,
+          ])
+          ->execute();
+      }
+    }
+    else {
+      watchdog('exhibitor_profiles', "exhibitor_profiles_update_7102: couldn't find the revision ID for node @node, stand @stand.", [
+        '@node' => $nid,
+        '@stand' => $exhibitor_nonsense['stand_number'],
+      ], WATCHDOG_ERROR);
+    }
+  }
+}

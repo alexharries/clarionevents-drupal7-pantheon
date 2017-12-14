@@ -1,0 +1,208 @@
+/**
+ * @file
+ * overrides-artantiquesinteriorsfair-com.less
+ *
+ * Specific customisations for the LAAIF site.
+ */
+
+body.conf-path-antiquesforeveryone_london {
+  &, h1, h2, h3, h4, h5, h6, h1, h2, h3, p, div,
+  .highlighted .container .sign-up-container .large-caption {
+    font-family: 'Montserrat';
+    //font-style: normal;
+    //font-weight: normal;
+  }
+
+  .thumbnail {
+    .caption {
+      background: rgba(0, 142, 183, 0.84);
+    }
+  }
+
+  .front {
+    h1, h2 {
+      color: @brand-black;
+    }
+  }
+
+  .highlighted {
+    border-bottom: 1px solid @gray-lighter;
+    .container {
+      position: relative;
+
+      .sign-up-container {
+        border: 1px solid #000;
+        color: inherit;
+        background-color: transparent;
+      }
+
+      input {
+        &::-webkit-input-placeholder {
+          color: #000 !important;
+        }
+      }
+
+      .btn {
+        background: transparent !important;
+      }
+
+      .flexslider {
+        .slides {
+          .container {
+            margin-bottom: 0 !important;
+
+            img {
+              // Why?! :)
+              //display: none;
+
+              @media @tablet {
+                //display: block;
+              }
+            }
+          }
+        }
+
+        .slider {
+          @media @tablet {
+            //top: 109px;
+            //position: absolute;
+            //width: 640px;
+            //margin-left: 40px;
+          }
+
+          @media @normal {
+            //margin-left: 0px;
+            //top: 59px;
+          }
+
+          @media @wide {
+            //top: -167px;
+          }
+
+          .wrapper {
+            @media @tablet {
+              //width: 640px;
+            }
+
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+
+            .heading {
+              margin-bottom: 5px;
+              color: @brand-primary;
+              font-size: 18px;
+              text-transform: uppercase;
+
+              @media @normal {
+                font-size: 22px;
+              }
+
+            }
+
+            .body {
+              color: @brand-grey;
+              font-size: 18px;
+              font-style: italic;
+
+              @media @normal {
+                font-size: 22px;
+              }
+            }
+          }
+
+          .btn {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .view-exhibitor-list {
+    .view-content {
+      #views-bootstrap-grid-1 {
+        .row {
+          .exhibitor-block {
+            .description {
+              font-style: italic;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .node-type-event {
+    .event-speakers,
+    .views-field-field_speaker {
+      color: @brand-black;
+      text-transform: uppercase;
+    }
+  }
+
+  .view-partners {
+    .row {
+      .col-sm-6 {
+        & > div {
+          min-height: 290px;
+        }
+      }
+    }
+  }
+
+  footer {
+    .panel-footer-logo {
+      a {
+        text-indent: -10000em;
+        display: block;
+        max-width: 263px;
+        width: 100%;
+        height: 103px;
+        background: transparent url(../images/antiquesforeveryone-footer-logo-white.png) no-repeat center center;
+        background-size: contain;
+        background-position: center center;
+
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #header h1.home-link-no-logo a {
+    max-width: 263px;
+    height: 92px;
+    background-image: url('../images/artantiquesinteriorsfair.png');
+  }
+
+
+  #header {
+    .event-date {
+      font-size: 14px;
+
+      @media @tablet {
+        font-size: 18px;
+      }
+      @media @normal {
+        font-size: 13px;
+      }
+    }
+
+    .container {
+      > .row {
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+    }
+
+    nav.navbar {
+      margin-bottom: 0;
+      min-height: 0;
+    }
+  }
+
+  // Center paragraph titles.
+  .paragraphs-title {
+    text-align: center;
+  }
+}

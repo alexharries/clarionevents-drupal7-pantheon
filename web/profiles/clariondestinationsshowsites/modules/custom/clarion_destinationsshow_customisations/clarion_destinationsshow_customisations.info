@@ -1,0 +1,7 @@
+name = Clarion Destinations Shows Event Customisations
+description = Little tweaks and adjustments for Clarion Destinations Shows Event websites.
+core = 7.x
+version = "7.x-1.0-20170810"
+
+project = "clariondestinationsshowsites"
+scripts[] = js/clarion-destinationsshow-customisations.js

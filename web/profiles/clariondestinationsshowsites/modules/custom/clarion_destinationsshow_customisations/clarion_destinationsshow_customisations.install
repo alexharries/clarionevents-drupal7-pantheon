@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ *   Clarion Destinations Shows Event customisations module install/schema hooks.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function clarion_destinationsshow_customisations_install() {
+//  // On antiquesforeveryone and antiquesforeveryone_london, show the stand
+//  // numbers.
+//  $sites_which_are_showing_stand_numbers = [
+//    'sites/antiquesforeveryone',
+//    'sites/antiquesforeveryone_london',
+//  ];
+//
+//  if (in_array(conf_path(), $sites_which_are_showing_stand_numbers)) {
+//    variable_set('clarion_antiques_customisations_show_stand_numbers', TRUE);
+//  }
+//  else {
+//    variable_set('clarion_antiques_customisations_show_stand_numbers', FALSE);
+//  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function clarion_destinationsshow_customisations_uninstall() {
+//  variable_del('clarion_destinationsshow_customisations_show_stand_numbers');
+}
+
+/**
+ * Assign all nodes to Alexandra Neill.
+ */
+function clarion_destinationsshow_customisations_update_7101() {
+  // Get Alexandra's user UID.
+  $alexandra_neill_email = 'alexandra.neill@clarionevents.com';
+
+  if ($alexandra_neill = user_load_by_mail($alexandra_neill_email)) {
+    $num_affected = db_update('node')
+      ->fields([
+        'uid' => $alexandra_neill->uid,
+      ])
+      ->condition('uid', $alexandra_neill->uid, '!=')
+      ->execute();
+
+    return t('Updated @num_updated nodes to be owned by Alexandra Neill (UID: @uid).', [
+      '@num_updated' => $num_affected,
+      '@uid' => $alexandra_neill->uid,
+    ]);
+  }
+  else {
+    return t("Couldn't load Alexandra Neill's user account with the email address @email.", [
+      '@email' => $alexandra_neill_email,
+    ]);
+  }
+}

@@ -1,0 +1,17 @@
+// Set the base colour here.
+@brand-primary-spring:   #4ca950;
+@brand-primary-summer:   #e72d3e;
+@brand-primary-winter:   #008eb7;
+@brand-primary-override: @brand-primary-summer;
+
+// Set the name of the variable overrides file to load for this stylesheet.
+// We do this so we can re-use the majority of the Bootstrap styles without
+// having to create multiple copies of the same theme, just so we can have
+// different colours per Antiques site.
+@variable-overrides-file-name-suffix: 'antiquesforeveryone-co-uk';
+
+// Now load in our basic styles file.
+@import 'style-common';
+
+// Load in our overrides.
+@import 'overrides-@{variable-overrides-file-name-suffix}';

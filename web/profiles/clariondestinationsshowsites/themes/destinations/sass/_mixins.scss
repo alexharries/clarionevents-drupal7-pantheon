@@ -1,0 +1,74 @@
+// Mixins.
+
+// Drop shadows.
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+// Calc.
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+// Common defs for the arrow-[somewhere]-edge mixins.
+@mixin _arrow-any-edge() {
+  position: relative;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 10;
+  }
+}
+
+// These mixins add an arrow overlay over an image.
+@mixin arrow-top-edge($border-color: #eff6fc) {
+  @include _arrow-any-edge();
+
+  &:before {
+    top: 0;
+    left: 10%;
+    border-width: 10px 10px 0 10px;
+    border-color: $border-color transparent transparent transparent;
+  }
+}
+
+@mixin arrow-bottom-edge($border-color: #eff6fc) {
+  @include _arrow-any-edge();
+
+  &:before {
+    bottom: 0;
+    left: 10%;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent $border-color transparent;
+  }
+}
+
+@mixin arrow-left-edge($border-color: #eff6fc) {
+  @include _arrow-any-edge();
+
+  &:before {
+    top: 10%;
+    left: 0;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent $border-color;
+  }
+}
+
+@mixin arrow-right-edge($border-color: #eff6fc) {
+  @include _arrow-any-edge();
+
+  &:before {
+    top: 10%;
+    right: 0;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent $border-color transparent transparent;
+  }
+}

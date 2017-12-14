@@ -1,0 +1,82 @@
+/**
+ * @file
+ * Styles for the Clarion babytotoddlerevent Customisations module.
+ */
+
+/*
+ * Styles for the switcher bar.
+ */
+body.babytotoddlerevent-switcher-active {
+  position: relative;
+  padding-top: 33px;
+}
+
+body.babytotoddlerevent-switcher-active,
+body.babytotoddlerevent-switcher-active * {
+  box-sizing: border-box;
+}
+
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #888;
+  min-height: 30px;
+  font-size: 18px;
+}
+
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher,
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher * {
+  vertical-align: top;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'Beaulieu W01 SemiBold', Serif;
+}
+
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher h3 {
+  display: inline-block;
+  margin: 0;
+  padding: 7px 1em 5px 5px;
+  font-weight: normal;
+  width: 33%;
+  text-align: right;
+  color: inherit;
+  font-size: 0.9em;
+}
+
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  list-style: none;
+  width: 66%;
+}
+
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 49.5%;
+}
+
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher ul li a.venue-switcher-link {
+  display: block;
+  margin: 0;
+  padding: 0.25em;
+  color: #888;
+  text-decoration: none;
+  text-align: center;
+}
+
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher ul li a:hover {
+  background-color: #ec6d79;
+  color: #fff;
+}
+
+body.babytotoddlerevent-switcher-active > #babytotoddlerevent-switcher ul li a.venue-switcher-link.current-site {
+  background-color: #f2f2f2;
+  color: #dc5d69;
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Top Ten Reasons feature.
+ */
+
+include_once 'destinationsshow_top_ten_reasons.features.inc';

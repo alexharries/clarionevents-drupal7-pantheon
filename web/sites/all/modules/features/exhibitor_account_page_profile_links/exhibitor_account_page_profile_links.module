@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Exhibitor Account Page Profile Links feature.
+ */
+
+include_once 'exhibitor_account_page_profile_links.features.inc';

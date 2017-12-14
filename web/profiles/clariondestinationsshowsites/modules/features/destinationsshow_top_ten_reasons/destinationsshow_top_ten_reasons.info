@@ -1,0 +1,13 @@
+name = Top Ten Reasons
+description = Provides the Top Ten Reasons view listing content flagged with "top 10 reasons"
+core = 7.x
+package = Destinations Show
+version = 7.x-1.0-20170906
+dependencies[] = flag
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[flag][] = flag_as_10_top_reason_to_visit
+features[views_view][] = top_10_reason_to_visit
+features_exclude[dependencies][ctools] = ctools
+project path = profiles/clariondestinationsshowsites/modules/features

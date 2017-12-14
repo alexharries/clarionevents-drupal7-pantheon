@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Package Offers feature.
+ */
+
+include_once 'package_offers.features.inc';

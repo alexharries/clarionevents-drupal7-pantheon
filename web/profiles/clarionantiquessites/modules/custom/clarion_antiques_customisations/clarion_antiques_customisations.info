@@ -1,0 +1,7 @@
+name = Clarion Antiques Customisations
+description = Little tweaks and adjustments for Clarion Antiques websites.
+core = 7.x
+version = "7.x-1.0-20170818"
+
+project = Clarion Antiques Websites
+scripts[] = js/clarion-antiques-customisations.js

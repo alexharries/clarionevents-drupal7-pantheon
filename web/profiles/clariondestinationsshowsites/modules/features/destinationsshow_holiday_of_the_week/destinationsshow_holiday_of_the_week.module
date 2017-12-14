@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Holiday Of The Week feature.
+ */
+
+include_once 'destinationsshow_holiday_of_the_week.features.inc';

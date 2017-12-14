@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ *   Clarion Antiques customisations module install/schema hooks.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function clarion_antiques_customisations_install() {
+  // Explicitly run updates 7101 and 7102 on install; otherwise, it won't ever be run.
+  clarion_antiques_customisations_update_7101();
+  clarion_antiques_customisations_update_7102();
+}
+
+/**
+ * On antiquesforeveryone and antiquesforeveryone_london, show the stand
+ * numbers.
+ */
+function clarion_antiques_customisations_update_7101() {
+  $sites_which_are_showing_stand_numbers = [
+    'sites/antiquesforeveryone',
+    'sites/antiquesforeveryone_london',
+  ];
+
+  if (in_array(conf_path(), $sites_which_are_showing_stand_numbers)) {
+    variable_set('clarion_antiques_customisations_show_stand_numbers', TRUE);
+  }
+  else {
+    variable_set('clarion_antiques_customisations_show_stand_numbers', FALSE);
+  }
+}
+
+/**
+ * Set the site theme to clarionantiquessites_less.
+ */
+function clarion_antiques_customisations_update_7102() {
+  theme_enable(['clarionantiquessites_less']);
+  variable_set('theme_default', 'clarionantiquessites_less');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function clarion_antiques_customisations_uninstall() {
+  variable_del('clarion_antiques_customisations_show_stand_numbers');
+}

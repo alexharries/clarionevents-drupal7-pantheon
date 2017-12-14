@@ -1,0 +1,105 @@
+
+#menu {
+  outline: 2px solid #F7F7F7;
+}
+
+#main_content {
+  outline: 2px solid #F7F7F7;
+}
+
+#content_bottom_left {
+  outline: 2px solid #F7F7F7;
+}
+
+#content_bottom_right {
+  outline: 2px solid #F7F7F7;
+}
+
+#footer {
+  outline: 2px solid #F7F7F7;
+}
+
+/*homepage*/
+/*holiday of the week*/
+#block-views-holidayof-the-week-block {
+  outline: 2px solid #F7F7F7;
+}
+
+/*switcher temp*/
+#block-block-1 {
+  outline: 2px solid #F7F7F7;
+}
+
+/*attractions*/
+#block-views-attractions-inspiration-block .views-row {
+  outline: 2px solid #F7F7F7;
+}
+
+/*OTHER PAGES*/
+
+#content_top_buttons {
+  border: 2px solid #F7F7F7;
+  border-top: 0;
+  border-left: 0;
+}
+
+/*exhibitor list*/
+.page-exhibitor-list #main_content {
+  outline: none;
+}
+
+.page-exhibitor-list #block-block-6 {
+  outline: 2px solid #F7F7F7;
+}
+
+.view-exhibitor-list .view-content {
+  outline: 2px solid #F7F7F7;
+}
+
+/*exhibitor profile*/
+.node-type-exhibitor #main_content {
+  outline: none;
+}
+
+.node-type-exhibitor .node {
+  outline: 2px solid #F7F7F7;
+}
+
+/*latest news*/
+.page-latest-news #main_content {
+  outline: none;
+}
+
+#block-block-8 {
+  outline: 2px solid #F7F7F7;
+}
+
+#block-system-main .view-latest- .views-row {
+  outline: 2px solid #F7F7F7;
+}
+
+/*attractions*/
+.page-node-20 #main_content {
+  outline: none;
+}
+
+.page-node-20 .node {
+  outline: 2px solid #F7F7F7;
+}
+
+#main_content .view-attractions-inspiration .views-row {
+  outline: 2px solid #F7F7F7;
+}
+
+/*gallery*/
+.page-node-23 #main_content {
+  outline: none;
+}
+
+.page-node-23 .node {
+  outline: 2px solid #F7F7F7;
+}
+
+#main_content .view-gallery-landing-page .views-row {
+  outline: 2px solid #F7F7F7;
+}

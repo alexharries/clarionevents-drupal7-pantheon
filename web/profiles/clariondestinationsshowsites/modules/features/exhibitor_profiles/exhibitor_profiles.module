@@ -1,0 +1,81 @@
+<?php
+/**
+ * @file
+ * Code for the Exhibitor Profiles feature.
+ */
+
+include_once 'exhibitor_profiles.features.inc';
+
+/**
+ * Implements hook_init().
+ */
+function exhibitor_profiles_init() {
+//  $result = db_select('node')
+//    ->fields('node', ['title', 'nid'])
+//    ->condition('type', 'exhibitor')
+//    ->orderBy('title')
+//    ->execute();
+//
+//  $results = [];
+//
+//  foreach ($result as $row) {
+//    $results[$row->nid] = [
+//      'title' => $row->title,
+//      'nid' => $row->nid,
+//      'stand_number' => '~',
+//      'new' => '~',
+//      'enhanced' => '~',
+//    ];
+//  }
+
+  return;
+
+  // Get the node revision ID.
+  $stand_number = 'monkey';
+  $nid = 804;
+//
+//  $revision_id = db_select('node')
+//    ->fields('node', ['vid'])
+//    ->condition('nid', $nid)
+//    ->range(0, 1)
+//    ->execute()
+//    ->fetchField();
+//
+//  if (!empty($revision_id)) {
+//    db_merge('field_data_field_stand')
+//      ->key(['revision_id' => $revision_id])
+//      ->fields([
+//        'entity_type' => 'node',
+//        'bundle' => 'exhibitor',
+//        'deleted' => 0,
+//        'entity_id' => $nid,
+//        'language' => LANGUAGE_NONE,
+//        'delta' => 0,
+//        'field_stand_value' => $stand_number,
+//        'field_stand_format' => NULL,
+//      ])
+//      ->execute();
+//
+//    db_merge('field_revision_field_stand')
+//      ->key(['revision_id' => $revision_id])
+//      ->fields([
+//        'entity_type' => 'node',
+//        'bundle' => 'exhibitor',
+//        'deleted' => 0,
+//        'entity_id' => $nid,
+//        'language' => LANGUAGE_NONE,
+//        'delta' => 0,
+//        'field_stand_value' => $stand_number,
+//        'field_stand_format' => NULL,
+//      ])
+//      ->execute();
+//  }
+//  else {
+//    watchdog('exhibitor_profiles', "exhibitor_profiles_update_7102: couldn't find the revision ID for node @node, stand @stand.", [
+//      '@node' => $nid,
+//      '@stand' => $stand_number,
+//    ], WATCHDOG_ERROR);
+//  }
+
+  $monkey = TRUE;
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Special Offers feature.
+ */
+
+include_once 'destinationsshow_special_offers.features.inc';
