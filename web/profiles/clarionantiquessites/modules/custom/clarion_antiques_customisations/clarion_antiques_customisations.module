@@ -1,0 +1,134 @@
+<?php
+
+/**
+ * Clarion Antiques customisations and testing module.
+ *
+ * Author: Alex Harries - alex@greyhead.co.uk if you want to complain about my
+ * code :)
+ */
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * @param $variables
+ */
+function clarion_antiques_customisations_preprocess_html(&$variables) {
+  // Set a class to indicate whether we should show or hide stand numbers.
+  // N.b. Showing/hiding of stand numbers depends on the View showing
+  // exhibitors
+  if (variable_get('clarion_antiques_customisations_show_stand_numbers')) {
+    $variables['classes_array'][] = 'stand-numbers-visible';
+  }
+  else {
+    $variables['classes_array'][] = 'stand-numbers-hidden';
+  }
+
+  // Using drupal_add_css/js instead of #attached to quickly side-step issues
+  // from panels' page overrides.
+  drupal_add_css(drupal_get_path('module', 'clarion_antiques_customisations') . '/css/clarion-antiques-customisations.css');
+  drupal_add_js(drupal_get_path('module', 'clarion_antiques_customisations') . '/js/clarion-antiques-customisations.js');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function clarion_antiques_customisations_menu() {
+  return [
+    // Admin page to allow administrators to show/hide stand numbers.
+    'admin/config/antiques-sites-customisations' => [
+      'title' => 'Antiques Sites Customisations',
+      'type' => MENU_NORMAL_ITEM,
+      'page callback' => 'drupal_get_form',
+      'page arguments' => ['clarion_antiques_customisations_admin_form'],
+      'access callback' => 'clarion_antiques_customisations_admin_page_access_callback',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_permission().
+ */
+//function clarion_antiques_customisations_permission() {
+//  return [
+//  ];
+//}
+
+/**
+ * Determines if the current user can configure this module.
+ *
+ * @return bool TRUE if the current user can configure this module.
+ */
+function clarion_antiques_customisations_admin_page_access_callback() {
+  return user_access('edit any exhibitor_profile_page content') || user_access('administer site configuration');
+}
+
+/**
+ * Configuration form for this module.
+ *
+ * @return array A Drupal FAPI form.
+ */
+function clarion_antiques_customisations_admin_form() {
+  $form = [];
+
+  $form['clarion_antiques_customisations_show_stand_numbers'] = [
+    '#type' => 'select',
+    '#title' => t('Show stand numbers in exhibitor listing pages?'),
+    '#default_value' => variable_get('clarion_antiques_customisations_show_stand_numbers'),
+    '#options' => [
+      FALSE => t('No'),
+      TRUE => t('Yes'),
+    ],
+  ];
+
+  // On the AFE website, allow selection of spring, summer or winter colours.
+  if (greyhead_customisations_site_directory() == 'antiquesforeveryone') {
+    $form['clarion_antiques_customisations_antiquesforeveryone_colour_scheme'] = [
+      '#type' => 'select',
+      '#title' => t('Select the site colour scheme'),
+      '#description' => t('Choose from spring, summer or winter colours. The colours are: spring: #4ca950/R76,G169,B80 - summer: #e72d3e / R231,G45,B62 - winter: #008eb7 / R0,G142,B183'),
+      '#default_value' => variable_get('clarion_antiques_customisations_antiquesforeveryone_colour_scheme', 'spring'),
+      '#options' => [
+        // Developer note: to add another colour scheme, you need to copy the
+        // style-antiquesforeveryone-co-uk-spring.less file, change its name
+        // and the value of the @brand-primary variable, then recompile using
+        // your favourite LESS transpiler thingbob. Have fun! =o)
+        'spring' => t('Spring (green)'),
+        'summer' => t('Summer (red)'),
+        'winter' => t('Winter (blue)'),
+      ]
+    ];
+  }
+
+  return system_settings_form($form);
+}
+
+/**
+ * Change the CSS filename for AFE
+ *
+ * @param string $replacement_css_file_path
+ *   The concatenated CSS file path, e.g.:
+ *   "profiles/clarionantiquessites/themes/clarionantiquessites_less/css/style-antiquesforeveryone-co-uk.css"
+ *
+ * @param string $replacement_css_file_stub
+ *   The part of the CSS file path which is different for this site, e.g.:
+ *   "antiquesforeveryone-co-uk"
+ *
+ * @param string $path_to_theme_styles
+ *   The path to the theme's stylesheets, e.g.:
+ *   "profiles/clarionantiquessites/themes/clarionantiquessites_less/css/"
+ *
+ *   Generated from drupal_get_path('theme', 'clarionantiquessites_less') . '/css/'
+ */
+function clarion_antiques_customisations_clarionantiquessites_less_css_file_override_alter(&$replacement_css_file_path, $replacement_css_file_stub, $path_to_theme_styles) {
+  // Only change the AFE website's styles.
+  if (greyhead_customisations_site_directory() == 'antiquesforeveryone') {
+    // Change the CSS file path to point to spring, summer or winter colours.
+    $new_css_file_stub = $replacement_css_file_stub . '-' . variable_get('clarion_antiques_customisations_antiquesforeveryone_colour_scheme', 'winter');
+  }
+
+  // Have we overridden the CSS file stub?
+  if (!empty($new_css_file_stub)) {
+    // Re-assemble the CSS file path.
+    $replacement_css_file_path = $path_to_theme_styles . 'style-' . $new_css_file_stub . '.css';
+  }
+}

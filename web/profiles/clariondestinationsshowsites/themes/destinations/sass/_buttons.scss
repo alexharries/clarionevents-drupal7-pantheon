@@ -1,0 +1,11 @@
+//
+// @file
+// Buttons.
+//
+
+a.book-tickets-button {
+  @extend .btn;
+  @extend .btn-primary;
+
+  @include button-variant($btn-primary-color, #94378a, #94378a);
+}

@@ -1,0 +1,7 @@
+name = Clarion Baby to Toddler Event Customisations
+description = Little tweaks and adjustments for Clarion Baby to Toddler Event websites.
+core = 7.x
+version = "7.x-1.0-20170809"
+
+project = "clarionbabytotoddlereventsites"
+scripts[] = js/clarion-babytotoddlerevent-customisations.js

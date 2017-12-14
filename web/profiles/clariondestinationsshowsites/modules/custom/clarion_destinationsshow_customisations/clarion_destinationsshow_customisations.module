@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * Clarion destinationsshow customisations and testing module.
+ *
+ * Author: Alex Harries - alex@greyhead.co.uk if you want to complain about my
+ * code :)
+ */
+
+/**
+ * Implements hook_init().
+ */
+function clarion_destinationsshow_customisations_init() {
+}
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * @param $variables
+ */
+function clarion_destinationsshow_customisations_preprocess_html(&$variables) {
+  // Set a class to indicate the current site.
+  $site_mappings = [
+    'sites/destinationsshow.com.london' => 'london',
+    'sites/destinationsshow.com.manchester' => 'manchester',
+    'sites/destinationsshow' => 'splash-page',
+  ];
+
+  $body_class = 'destinations-show-event-';
+
+  if (array_key_exists(conf_path(), $site_mappings)) {
+    $body_class .= $site_mappings[conf_path()];
+  }
+
+  $variables['classes_array'][] = $body_class;
+
+  // Add a drupal JS setting which we can use to send people back to the
+  // homepage.
+  $homepage_url_mappings = [
+    'sites/destinationsshow.com.london' => '/london',
+    'sites/destinationsshow.com.manchester' => '/manchester',
+    //    'sites/destinationsshow' => '/',
+  ];
+
+  $homepage_url = '/';
+
+  // Only redirect to /london or /manchester, etc, when we aren't running on
+  // local URLs which don't use subdirectory redirection magic.
+  $domain_names_to_ignore = [
+    'london.destinationsshow.d7.clarion.local',
+    'manchester.destinationsshow.d7.clarion.local',
+  ];
+
+  if (!in_array($_SERVER['HTTP_HOST'], $domain_names_to_ignore)
+    && array_key_exists(conf_path(), $homepage_url_mappings)) {
+    $homepage_url = $homepage_url_mappings[conf_path()];
+  }
+
+  drupal_add_js([
+    'clarionDestinationsShowCustomisations' => ['homepageUrl' => $homepage_url],
+  ], 'setting');
+
+  // Using drupal_add_css/js instead of #attached to quickly side-step issues
+  // from panels' page overrides.
+  drupal_add_css(drupal_get_path('module', 'clarion_destinationsshow_customisations') . '/css/clarion-destinationsshow-customisations.css');
+  drupal_add_js(drupal_get_path('module', 'clarion_destinationsshow_customisations') . '/js/clarion-destinationsshow-customisations.js');
+}
+
+/**
+ * Implements hook_menu().
+ */
+//function clarion_destinationsshow_customisations_menu() {
+//  return [
+//    // Admin page to allow administrators to show/hide stand numbers.
+//    // @todo.
+//    'admin/config/antiques-sites-customisations' => [
+//      'title' => 'Antiques Sites Customisations',
+//      'type' => MENU_NORMAL_ITEM,
+//      'page callback' => 'drupal_get_form',
+//      'page arguments' => ['clarion_antiques_customisations_admin_form'],
+//      'access callback' => 'clarion_antiques_customisations_admin_page_access_callback',
+//    ],
+//  ];
+//}
+
+/**
+ * Implements hook_permission().
+ */
+//function clarion_destinationsshow_customisations_permission() {
+//  return [
+//  ];
+//}
+
+/**
+ * Determines if the current user can configure this module.
+ *
+ * @return bool TRUE if the current user can configure this module.
+ */
+//function clarion_destinationsshow_customisations_admin_page_access_callback() {
+//  return user_access('edit any exhibitor_profile_page content') || user_access('administer site configuration');
+//}
+
+/**
+ * Configuration form for this module.
+ *
+ * @return array A Drupal FAPI form.
+ */
+//function clarion_destinationsshow_customisations_admin_form() {
+//  $form = [];
+//
+//  $form['clarion_destinationsshow_customisations_show_stand_numbers'] = [
+//    '#type' => 'select',
+//    '#title' => t('Show stand numbers in exhibitor listing pages?'),
+//    '#default_value' => variable_get('clarion_destinationsshow_customisations_show_stand_numbers'),
+//    '#options' => [
+//      FALSE => t('No'),
+//      TRUE => t('Yes'),
+//    ],
+//  ];
+//
+//  return system_settings_form($form);
+//}
+
+/**
+ * Implements hook_form_alter().
+ */
+function clarion_destinationsshow_customisations_form_alter(&$form, $form_state, $form_id) {
+  // Oh god I hate myself for doing this, but because the London and not-London
+  // sites have different field names for exhibitors, we have a problem of
+  // duplicated fields on the Manc site. So, to kludge our way around this
+  // awfulness, we are going to hide the London fields on the Manc site
+  // when editing an exhibitor node and vice-versa. Please don't hate me -
+  // I'm only doing this so they'll stop the beatings and let me out of my
+  // cage once in a while...
+//  if ($form_id == 'exhibitor_node_form') {
+//    // On London? Hide the non-London fields.
+//    if (conf_path() == 'sites/destinationsshow.com.london') {
+//      $fields_to_hide = [
+//        'field_stand',
+//        'field_enhanced',
+//        'field_new',
+//        'field_region',
+//      ];
+//    }
+//    else {
+//      // Not London. Hide London fields.
+//      $fields_to_hide = [
+//        'field_london_stand',
+//        'field_london_enhanced',
+//        'field_london_new',
+//        'field_london_region',
+//      ];
+//    }
+//
+//    foreach ($fields_to_hide as $field_to_hide) {
+//      if (!empty($form[$field_to_hide])) {
+//        $form[$field_to_hide]['#access'] = FALSE;
+//      }
+//    }
+//  }
+}

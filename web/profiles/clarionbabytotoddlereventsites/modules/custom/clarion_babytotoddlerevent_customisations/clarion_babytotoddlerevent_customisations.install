@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ *   Clarion Baby to Toddler Event customisations module install/schema hooks.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function clarion_babytotoddlerevent_customisations_install() {
+//  // On antiquesforeveryone and antiquesforeveryone_london, show the stand
+//  // numbers.
+//  $sites_which_are_showing_stand_numbers = [
+//    'sites/antiquesforeveryone',
+//    'sites/antiquesforeveryone_london',
+//  ];
+//
+//  if (in_array(conf_path(), $sites_which_are_showing_stand_numbers)) {
+//    variable_set('clarion_antiques_customisations_show_stand_numbers', TRUE);
+//  }
+//  else {
+//    variable_set('clarion_antiques_customisations_show_stand_numbers', FALSE);
+//  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function clarion_babytotoddlerevent_customisations_uninstall() {
+//  variable_del('clarion_babytotoddlerevent_customisations_show_stand_numbers');
+}

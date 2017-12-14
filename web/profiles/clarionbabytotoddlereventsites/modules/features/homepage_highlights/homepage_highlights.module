@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Homepage Highlights feature.
+ */
+
+include_once 'homepage_highlights.features.inc';

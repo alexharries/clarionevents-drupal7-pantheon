@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Antiques Sites Events feature.
+ */
+
+include_once 'antiquessites_events.features.inc';

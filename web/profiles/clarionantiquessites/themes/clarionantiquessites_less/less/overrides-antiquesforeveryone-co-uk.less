@@ -1,0 +1,51 @@
+/**
+ * @file
+ * overrides-antiquesforeveryone-co-uk.less
+ *
+ * Specific customisations for the AFE site.
+ */
+
+body.conf-path-antiquesforeveryone {
+  &, h1, h2, h3, h4, h5, h6, h1, h2, h3, p, div,
+  .highlighted .container .sign-up-container .large-caption {
+    font-family: 'Montserrat';
+    //font-style: normal;
+    //font-weight: normal;
+  }
+
+  #header h1.home-link-no-logo a {
+    max-width: 263px;
+    height: 111px;
+    background-image: url('../images/antiquesforeveryone.png');
+  }
+
+  #header {
+    .event-date {
+      font-size: 14px;
+
+      @media @tablet {
+        font-size: 18px;
+      }
+      @media @normal {
+        font-size: 13px;
+      }
+    }
+
+    .container {
+      > .row {
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+    }
+
+    nav.navbar {
+      margin-bottom: 0;
+      min-height: 0;
+    }
+  }
+
+  // Center paragraph titles.
+  .paragraphs-title {
+    text-align: center;
+  }
+}

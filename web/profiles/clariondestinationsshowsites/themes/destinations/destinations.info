@@ -1,0 +1,25 @@
+; $Id$
+name = Destinations Theme
+core = 7.x
+version = 7.x-1.0-20170829
+
+stylesheets[all][] = css/styles.css
+scripts[] = js/behaviour.js
+
+regions[account] = Account
+regions[slideshow] = Slideshow
+regions[header] = Header
+regions[menu] = Menu
+regions[book] = Homepage Book Button
+regions[right] = Right
+regions[content_header] = Content Header
+regions[content_top_buttons] = Content Top Buttons
+regions[content] = Main Content
+regions[mobile_buttons] = Mobile Buttons
+regions[content_bottom_left] = Content Bottom Left Column
+regions[content_bottom_right] = Content Bottom Right Column
+regions[content_bottom_fullwidth] = Content Bottom Full Width
+regions[footer_left] = Footer Left
+regions[mobile_social] = Mobile Social Icons
+regions[footer_right] = Footer Right
+

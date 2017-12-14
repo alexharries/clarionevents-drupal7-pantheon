@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Styles for the Clarion Antiques Customisations module.
+ */
+
+/* Hide stand numbers by default. */
+.view-exhibitor-list .stand,
+.node-exhibitor-profile-page .stand-number {
+  display: none;
+}
+
+/* Show stand numbers. */
+body.stand-numbers-visible .view-exhibitor-list .stand,
+body.stand-numbers-visible .node-exhibitor-profile-page .stand-number {
+  display: block;
+}
+
+/* Set 2em vertical margin between grid tiles on exhibitor and gallery pages. */
+.views-bootstrap-grid-plugin-style .row > div {
+  margin-bottom: 1.5em;
+}

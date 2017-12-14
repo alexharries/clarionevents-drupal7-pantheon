@@ -1,0 +1,8 @@
+; $Id$
+name = Destinations Splash Page Theme
+core = 7.x
+
+stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/bootstrap-grid12.css
+regions[content] = Content
+regions[copyright] = Copyright

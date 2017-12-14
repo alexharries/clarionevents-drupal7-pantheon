@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * Clarion babytotoddlerevent customisations and testing module.
+ *
+ * Author: Alex Harries - alex@greyhead.co.uk if you want to complain about my
+ * code :)
+ */
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * @param $variables
+ */
+function clarion_babytotoddlerevent_customisations_preprocess_html(&$variables) {
+//  // Set a class to indicate whether we should show or hide stand numbers.
+//  // N.b. Showing/hiding of stand numbers depends on the View showing
+//  // exhibitors
+//  if (variable_get('clarion_antiques_customisations_show_stand_numbers')) {
+//    $variables['classes_array'][] = 'stand-numbers-visible';
+//  }
+//  else {
+//    $variables['classes_array'][] = 'stand-numbers-hidden';
+//  }
+
+  // Using drupal_add_css/js instead of #attached to quickly side-step issues
+  // from panels' page overrides.
+  drupal_add_css(drupal_get_path('module', 'clarion_babytotoddlerevent_customisations') . '/css/clarion-babytotoddlerevent-customisations.css');
+//  drupal_add_js(drupal_get_path('module', 'clarion_babytotoddlerevent_customisations') . '/js/clarion-babytotoddlerevent-customisations.js');
+}
+
+/**
+ * Implements hook_menu().
+ */
+//function clarion_babytotoddlerevent_customisations_menu() {
+//  return [
+//    // Admin page to allow administrators to show/hide stand numbers.
+//    // @todo.
+//    'admin/config/antiques-sites-customisations' => [
+//      'title' => 'Antiques Sites Customisations',
+//      'type' => MENU_NORMAL_ITEM,
+//      'page callback' => 'drupal_get_form',
+//      'page arguments' => ['clarion_antiques_customisations_admin_form'],
+//      'access callback' => 'clarion_antiques_customisations_admin_page_access_callback',
+//    ],
+//  ];
+//}
+
+/**
+ * Implements hook_permission().
+ */
+//function clarion_babytotoddlerevent_customisations_permission() {
+//  return [
+//  ];
+//}
+
+/**
+ * Determines if the current user can configure this module.
+ *
+ * @return bool TRUE if the current user can configure this module.
+ */
+//function clarion_babytotoddlerevent_customisations_admin_page_access_callback() {
+//  return user_access('edit any exhibitor_profile_page content') || user_access('administer site configuration');
+//}
+
+/**
+ * Configuration form for this module.
+ *
+ * @return array A Drupal FAPI form.
+ */
+//function clarion_babytotoddlerevent_customisations_admin_form() {
+//  $form = [];
+//
+//  $form['clarion_babytotoddlerevent_customisations_show_stand_numbers'] = [
+//    '#type' => 'select',
+//    '#title' => t('Show stand numbers in exhibitor listing pages?'),
+//    '#default_value' => variable_get('clarion_babytotoddlerevent_customisations_show_stand_numbers'),
+//    '#options' => [
+//      FALSE => t('No'),
+//      TRUE => t('Yes'),
+//    ],
+//  ];
+//
+//  return system_settings_form($form);
+//}

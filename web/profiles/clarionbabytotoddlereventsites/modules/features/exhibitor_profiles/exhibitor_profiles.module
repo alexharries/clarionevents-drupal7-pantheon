@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Exhibitor Profiles feature.
+ */
+
+include_once 'exhibitor_profiles.features.inc';

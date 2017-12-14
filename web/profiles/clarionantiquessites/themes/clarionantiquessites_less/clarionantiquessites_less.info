@@ -1,0 +1,67 @@
+name = Bootstrap Antiques Websites Theme for Clarion Events
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[account]              = 'Account'
+regions[navigation]           = 'Navigation'
+regions[event_date]           = 'Event Date'
+regions[newsletter]           = 'Newsletter'
+regions[social_media]         = 'Social Media'
+regions[header]               = 'Top Bar'
+regions[help]                 = 'Help'
+regions[highlighted]          = 'Highlighted'
+regions[content]              = 'Content'
+
+regions[content_below_top]    = 'Content Below Top'
+regions[content_below_middle] = 'Content Below Middle'
+regions[content_below_bottom] = 'Content Below Bottom'
+
+
+regions[footer_column_one]    = 'Footer Column One'
+regions[footer_column_two]    = 'Footer Column Two'
+regions[footer_column_three]  = 'Footer Column Three'
+regions[footer_column_four]   = 'Footer Column Four'
+
+regions[footer_extra_column_one]    = 'Footer Extra Column One'
+regions[footer_extra_column_two]    = 'Footer Extra Column Two'
+regions[footer_extra_column_three]  = 'Footer Extra Column Three'
+
+regions[footer_copyright]   = 'Footer Copyright'
+
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/font-awesome.min.css
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = 'bootstrap/js/affix.js'
+scripts[] = 'bootstrap/js/alert.js'
+scripts[] = 'bootstrap/js/button.js'
+scripts[] = 'bootstrap/js/carousel.js'
+scripts[] = 'bootstrap/js/collapse.js'
+scripts[] = 'bootstrap/js/dropdown.js'
+scripts[] = 'bootstrap/js/modal.js'
+scripts[] = 'bootstrap/js/tooltip.js'
+scripts[] = 'bootstrap/js/popover.js'
+scripts[] = 'bootstrap/js/scrollspy.js'
+scripts[] = 'bootstrap/js/tab.js'
+scripts[] = 'bootstrap/js/transition.js'
+scripts[] = 'js/custom.js'
+
+; Disable BootstrapCDN so the compiled LESS source files can be used.
+settings[bootstrap_cdn] = ''

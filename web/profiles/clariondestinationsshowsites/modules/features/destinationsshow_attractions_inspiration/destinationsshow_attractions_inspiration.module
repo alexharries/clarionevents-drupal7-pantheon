@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Attractions and Inspiration feature.
+ */
+
+include_once 'destinationsshow_attractions_inspiration.features.inc';
