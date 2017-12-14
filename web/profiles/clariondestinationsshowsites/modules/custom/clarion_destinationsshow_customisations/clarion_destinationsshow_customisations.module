@@ -47,8 +47,8 @@ function clarion_destinationsshow_customisations_preprocess_html(&$variables) {
   // Only redirect to /london or /manchester, etc, when we aren't running on
   // local URLs which don't use subdirectory redirection magic.
   $domain_names_to_ignore = [
-    'london.destinationsshow.d7.clarion.local',
-    'manchester.destinationsshow.d7.clarion.local',
+    'london.destinationsshow.pantheon.d7.clarion.local',
+    'manchester.destinationsshow.pantheon.d7.clarion.local',
   ];
 
   if (!in_array($_SERVER['HTTP_HOST'], $domain_names_to_ignore)
