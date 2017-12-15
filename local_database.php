@@ -9,7 +9,7 @@
  *
  * E.g.:
 
- * $databases = array (
+$databases = array (
   'default' =>
   array (
     'default' =>

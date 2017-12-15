@@ -13,7 +13,7 @@
 pantheon.upstream.yml
 
 # Ignore changes to local_database.php
-local_database.php
+/local_database.php
 
 # Packages #
 ############
