@@ -29,3 +29,15 @@ if (defined('CURRENT_ENVIRONMENT') && defined('ENVIRONMENT_TYPE_LIVE') && (CURRE
  *
  * @see /configuration/includes/redirects.php for examples.
  */
+
+/**
+ * Drupal will automagically add database connection details and the Drupal
+ * hash salt below during install.php.
+ *
+ * You will need to move the connection array into /local_databases.php.
+ *
+ * You can delete the Drupal hash salt as it will be provided in the local
+ * configuration system.
+ *
+ * @todo: can automate this process so we don't have this manual step.
+ */
