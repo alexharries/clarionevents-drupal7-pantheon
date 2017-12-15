@@ -16,10 +16,10 @@ defined('DEFAULT_DOMAIN') || define('DEFAULT_DOMAIN', 'clarionevents.com');
  * askew.
  */
 if (function_exists('drush_get_context')) {
-  define('GREYHEAD_DRUPAL_ROOT', drush_get_context('DRUSH_SELECTED_DRUPAL_ROOT'));
+  defined('GREYHEAD_DRUPAL_ROOT') || define('GREYHEAD_DRUPAL_ROOT', drush_get_context('DRUSH_SELECTED_DRUPAL_ROOT'));
 }
 else {
-  define('GREYHEAD_DRUPAL_ROOT', DRUPAL_ROOT);
+  defined('GREYHEAD_DRUPAL_ROOT') || define('GREYHEAD_DRUPAL_ROOT', DRUPAL_ROOT);
 }
 
 /**

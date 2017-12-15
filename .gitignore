@@ -47,3 +47,4 @@ Thumbs.db
 ##########
 .sass-cache
 /.idea
+web/sites/*/files

@@ -16,7 +16,7 @@ require_once '../configuration/common.settings.php';
  */
 
 // Set the bucket name.
-$conf['s3fs_bucket'] = 'clarion';
+$conf['s3fs_bucket'] = 'clarion-default';
 
 // If we know the env and aren't in production or drush use the test bucket.
 // @todo: How can we tell if we're in Drush on live?
