@@ -39,5 +39,5 @@ if (defined('CURRENT_ENVIRONMENT') && defined('ENVIRONMENT_TYPE_LIVE') && (CURRE
  * You can delete the Drupal hash salt as it will be provided in the local
  * configuration system.
  *
- * @todo: can automate this process so we don't have this manual step.
+ * @todo: can we automate this process so we don't have this manual step.
  */
