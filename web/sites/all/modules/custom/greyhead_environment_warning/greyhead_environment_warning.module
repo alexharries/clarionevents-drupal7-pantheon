@@ -11,15 +11,13 @@
  * Checks if CURRENT_ENVIRONMENT is defined. If it is, and it isn't "LIVE", and
  * a user is logged in, set a Drupal message to alert the user that they are
  * working on a site which isn't the live site.
- *
- * @TODO: implement a config page so that we can say which environment is "live".
  */
 function greyhead_environment_warning_init() {
   greyhead_environment_warning_define_constants();
 
-  // If we're not on a path with "ajax" in the URL and we're in the wrong
+  // Are we on a path without "ajax" in the URL and we're in the wrong
   // environment, Grommit...
-  if (!greyhead_environment_warning_is_production()) {
+  if (user_is_logged_in() && !greyhead_environment_warning_is_production()) {
     if (strpos($_GET['q'], 'ajax') === FALSE) {
       if (!defined('CURRENT_ENVIRONMENT') || (defined('CURRENT_ENVIRONMENT') && (CURRENT_ENVIRONMENT !== ENVIRONMENT_TYPE_DRUSH))) {
         // Variable replacements.
