@@ -21,15 +21,15 @@ function clarion_destinationsshow_customisations_init() {
 function clarion_destinationsshow_customisations_preprocess_html(&$variables) {
   // Set a class to indicate the current site.
   $site_mappings = [
-    'sites/destinationsshow.com.london' => 'london',
-    'sites/destinationsshow.com.manchester' => 'manchester',
-    'sites/destinationsshow' => 'splash-page',
+    'clarion-destinations-show-london' => 'london',
+    'clarion-destinations-show-manchester' => 'manchester',
+    'clarion-destinations-show-splash' => 'splash-page',
   ];
 
   $body_class = 'destinations-show-event-';
 
-  if (array_key_exists(conf_path(), $site_mappings)) {
-    $body_class .= $site_mappings[conf_path()];
+  if (array_key_exists(SITE_MACHINE_NAME, $site_mappings)) {
+    $body_class .= $site_mappings[SITE_MACHINE_NAME];
   }
 
   $variables['classes_array'][] = $body_class;
@@ -37,8 +37,8 @@ function clarion_destinationsshow_customisations_preprocess_html(&$variables) {
   // Add a drupal JS setting which we can use to send people back to the
   // homepage.
   $homepage_url_mappings = [
-    'sites/destinationsshow.com.london' => '/london',
-    'sites/destinationsshow.com.manchester' => '/manchester',
+    'clarion-destinations-show-london' => '/london',
+    'clarion-destinations-show-manchester' => '/manchester',
     //    'sites/destinationsshow' => '/',
   ];
 
@@ -52,8 +52,8 @@ function clarion_destinationsshow_customisations_preprocess_html(&$variables) {
   ];
 
   if (!in_array($_SERVER['HTTP_HOST'], $domain_names_to_ignore)
-    && array_key_exists(conf_path(), $homepage_url_mappings)) {
-    $homepage_url = $homepage_url_mappings[conf_path()];
+    && array_key_exists(SITE_MACHINE_NAME, $homepage_url_mappings)) {
+    $homepage_url = $homepage_url_mappings[SITE_MACHINE_NAME];
   }
 
   drupal_add_js([
