@@ -47,7 +47,7 @@ function exhibitor_profiles_update_7102() {
  * data without migrating it across. Ack...
  */
 function _exhibitor_profiles_update_london_deets() {
-  if (conf_path() != 'sites/destinationsshow.com.london') {
+  if (SITE_MACHINE_NAME != 'clarion-destinations-show-london') {
     return;
   }
 

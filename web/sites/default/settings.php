@@ -5,6 +5,10 @@
  * Drupal site-specific configuration file.
  */
 
+// Explicitly state the site's identifier. This is also used as the name of the
+// S3 bucket.
+define('SITE_MACHINE_NAME', 'clarion-default');
+
 // Work out the directory name of this multisite:
 define('MULTISITE_IDENTIFIER', substr(dirname(__FILE__), strrpos(dirname(__FILE__), '/') + 1));
 
@@ -16,7 +20,7 @@ require_once '../configuration/common.settings.php';
  */
 
 // Set the bucket name.
-$conf['s3fs_bucket'] = 'clarion-default';
+$conf['s3fs_bucket'] = SITE_MACHINE_NAME; //'clarion-default';
 
 // If we know the env and aren't in production or drush use the test bucket.
 // @todo: How can we tell if we're in Drush on live?
@@ -39,5 +43,5 @@ if (defined('CURRENT_ENVIRONMENT') && defined('ENVIRONMENT_TYPE_LIVE') && (CURRE
  * You can delete the Drupal hash salt as it will be provided in the local
  * configuration system.
  *
- * @todo: can we automate this process so we don't have this manual step.
+ * @todo: can automate this process so we don't have this manual step.
  */

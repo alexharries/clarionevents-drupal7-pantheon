@@ -20,11 +20,11 @@ function clarion_antiques_customisations_install() {
  */
 function clarion_antiques_customisations_update_7101() {
   $sites_which_are_showing_stand_numbers = [
-    'sites/antiquesforeveryone',
-    'sites/antiquesforeveryone_london',
+    'clarion-antiques-for-everyone',
+    'clarion-art-antiques-interiors-fair',
   ];
 
-  if (in_array(conf_path(), $sites_which_are_showing_stand_numbers)) {
+  if (in_array(SITE_MACHINE_NAME, $sites_which_are_showing_stand_numbers)) {
     variable_set('clarion_antiques_customisations_show_stand_numbers', TRUE);
   }
   else {
