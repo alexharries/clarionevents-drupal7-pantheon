@@ -220,7 +220,7 @@ function greyhead_customisations_form_alter(&$form, $form_state, $form_id) {
 
   if (!in_array($form_id, $forms_excluded_from_overridden_variable_warnings, TRUE)) {
     // Disable form fields which have been overridden in /configuration.
-    $greyhead_configuration = variable_get('greyhead_configuration', []);
+    $greyhead_configuration = variable_get('greyhead_configuration', ['overridden_variables' => []]);
     $overridden_variables = (array) array_flip($greyhead_configuration['overridden_variables']);
     greyhead_customisations_highlight_overridden_form_fields($form, $overridden_variables);
 
