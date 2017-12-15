@@ -686,7 +686,7 @@ function greyhead_customisations_highlight_overridden_form_fields(&$form_array, 
       default:
       case 'greyhead_configuration':
         // If context is greyhead config, get the config array.
-        $greyhead_configuration = variable_get('greyhead_configuration', []);
+        $greyhead_configuration = variable_get('greyhead_configuration', ['overridden_variables' => []]);
         if (!(array_key_exists('overridden_variables', $greyhead_configuration))) {
           $greyhead_configuration['overridden_variables'] = [];
         }
