@@ -125,3 +125,7 @@ if (!function_exists('greyhead_configuration_redirect_domain')) {
     }
   }
 }
+
+// Include the redirector which catches hard-coded links to multisite
+// directories.
+require __DIR__ . '/redirects-all-multisite-file-requests-to-default.php';

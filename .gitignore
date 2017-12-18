@@ -1,6 +1,6 @@
 # Ignore paths that contain user-generated content.
-/web/sites/*/files
-/web/sites/*/private
+/web/sites/default/files
+/web/sites/default/private
 /files/*
 /cache
 
@@ -50,4 +50,4 @@ Thumbs.db
 ##########
 .sass-cache
 /.idea
-/web/sites/*/files
+
