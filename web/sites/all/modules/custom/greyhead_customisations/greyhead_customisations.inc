@@ -922,11 +922,12 @@ function greyhead_customisations_user_edit_form_redirect_to_user_view() {
 }
 
 /**
- * Get the multisite directory in /sites/ for this site.
+ * Get the site machine name (formerly the sites directory name).
  *
- * For example, if this site's settings.php is at /sites/monkeys/settings.php,
- * this function returns "monkeys".
+ * This should be defined in the site's settings.php, e.g.:
+ *
+ * defined('SITE_MACHINE_NAME') || define('SITE_MACHINE_NAME', 'my-website-of-awfulness');
  */
 function greyhead_customisations_site_directory() {
-  return substr(conf_path(), strlen('sites/'));
+  return defined('SITE_MACHINE_NAME') ? SITE_MACHINE_NAME : NULL;
 }

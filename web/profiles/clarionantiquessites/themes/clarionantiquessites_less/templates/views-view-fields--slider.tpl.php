@@ -29,15 +29,15 @@
 
 // Set the list of sites which should use the overridden template.
 $overridden_template_sites = [
-//  'sites/antiques_summer',
-//  'sites/antiques_winter',
-  'sites/antiquesforeveryone',
-  'sites/antiquesforeveryone_london',
+//  'clarion-olympia-art-antiques-summer',
+//  'clarion-olympia-antiques-winter',
+  'clarion-antiques-for-everyone',
+  'clarion-art-antiques-interiors-fair',
 ];
 
 ?>
 <!-- <?php print __FILE__; ?> -->
-<?php if (!in_array(conf_path(), $overridden_template_sites)): ?>
+<?php if (!in_array(SITE_MACHINE_NAME, $overridden_template_sites)): ?>
   <!-- overridden_template_site -->
 
   <?php foreach ($fields as $id => $field): ?>

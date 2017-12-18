@@ -55,20 +55,20 @@ function clarionantiquessites_less_page_alter(&$pages) {
   //  // Override favicons depending on the site.
   //  $favicon_overrides = [
   //    // olympia-art-antiques.com
-  //    'sites/antiques_summer' => 'olympia-art-antiques-favicon.ico',
+  //    olympia-art-antiques => 'olympia-art-antiques-favicon.ico',
   //
   //    // olympia-antiques.com
-  //    'sites/antiques_winter' => 'olympia-antiques-favicon.ico',
+  //    olympia-antiques => 'olympia-antiques-favicon.ico',
   //
   //    // antiquesforeveryone.co.uk
-  //    'sites/antiquesforeveryone' => 'antiquesforeveryone-favicon.jpg',
+  //    antiques-for-everyone => 'antiquesforeveryone-favicon.jpg',
   //
   //    // artantiquesinteriorsfair.com
-  //    'sites/antiquesforeveryone_london' => 'antiquesforeveryone-london-favicon.png',
+  //    art-antiques-interiors-fair => 'antiquesforeveryone-london-favicon.png',
   //  ];
   //
-  //  if (array_key_exists(conf_path(), $favicon_overrides)) {
-  //    $favicon_url = url(drupal_get_path('theme', 'clarionantiquessites_less') . '/images/' . $favicon_overrides[conf_path()]);
+  //  if (array_key_exists(SITE_MACHINE_NAME, $favicon_overrides)) {
+  //    $favicon_url = url(drupal_get_path('theme', 'clarionantiquessites_less') . '/images/' . $favicon_overrides[SITE_MACHINE_NAME]);
   //    $type = theme_get_setting('favicon_mimetype');
   //    drupal_add_html_head_link(array('rel' => 'shortcut icon', 'href' => $favicon_url, 'type' => $type));
   //  }
@@ -82,7 +82,7 @@ function clarionantiquessites_less_page_alter(&$pages) {
 function clarionantiquessites_less_preprocess_html(&$variables) {
   // Set a class to indicate the conf path in use.
   $variables['classes_array'] = empty($variables['classes_array']) ? [] : $variables['classes_array'];
-  $variables['classes_array'][] = 'conf-path-' . substr(conf_path(), strlen('sites/'));
+  $variables['classes_array'][] = 'conf-path-' . SITE_MACHINE_NAME;
 
   // Override the page title with the Metatags module-set title, if available.
   $metatags = metatag_page_get_metatags();
@@ -126,7 +126,7 @@ function clarionantiquessites_less_preprocess_page(&$variables) {
   drupal_add_js($jquery_migrate, 'external');
 
   // Set the site directory as a variable available in the page template.
-  $variables['sites_directory'] = substr(conf_path(), strlen('sites/'));
+  $variables['sites_directory'] = SITE_MACHINE_NAME;
 }
 
 /**
@@ -137,16 +137,22 @@ function clarionantiquessites_less_preprocess_page(&$variables) {
  * @param $css
  */
 function clarionantiquessites_less_css_alter(&$css) {
-  // Switch out style.css with the style-[conf_path()].css file.
+  // Switch out style.css with the style-[SITE_MACHINE_NAME].css file.
 
   // Until I have the cojones to rename the antiques sites' site directories,
   // we're going to map the old site directory names to the new CSS file
   // names.
+  $full_width_header_sites = [
+    'clarion-olympia-art-antiques-summer',
+    'clarion-olympia-antiques-winter',
+    'clarion-antiques-for-everyone',
+    'clarion-art-antiques-interiors-fair',
+  ];
   $sites_directories_to_css_files_mappings = [
-    'antiquesforeveryone' => 'antiquesforeveryone-co-uk',
-    'antiquesforeveryone_london' => 'artantiquesinteriorsfair-com',
-    'antiques_summer' => 'olympia-art-antiques-com',
-    'antiques_winter' => 'olympia-antiques-com',
+    'clarion-antiques-for-everyone' => 'antiquesforeveryone-co-uk',
+    'clarion-art-antiques-interiors-fair' => 'artantiquesinteriorsfair-com',
+    'clarion-olympia-art-antiques-summer' => 'olympia-art-antiques-com',
+    'clarion-olympia-antiques-winter' => 'olympia-antiques-com',
   ];
 
   // Is there a CSS file like
@@ -154,13 +160,13 @@ function clarionantiquessites_less_css_alter(&$css) {
   $path_to_theme_styles = drupal_get_path('theme', 'clarionantiquessites_less') . '/css/';
 
   if (array_key_exists($path_to_theme_styles . 'style.css', $css)
-    && array_key_exists(greyhead_customisations_site_directory(), $sites_directories_to_css_files_mappings)) {
+    && array_key_exists(SITE_MACHINE_NAME, $sites_directories_to_css_files_mappings)) {
     // Yes. Replace it with a file like "style-antiquesforeveryone.css".
-    $replacement_css_file_path = $path_to_theme_styles . 'style-' . $sites_directories_to_css_files_mappings[greyhead_customisations_site_directory()] . '.css';
+    $replacement_css_file_path = $path_to_theme_styles . 'style-' . $sites_directories_to_css_files_mappings[SITE_MACHINE_NAME] . '.css';
 
     // Implement a hook_clarionantiquessites_less_css_file_override_alter.
     // We use this on AFE to switch to spring, summer or winter colours.
-    drupal_alter('clarionantiquessites_less_css_file_override', $replacement_css_file_path, $sites_directories_to_css_files_mappings[greyhead_customisations_site_directory()], $path_to_theme_styles);
+    drupal_alter('clarionantiquessites_less_css_file_override', $replacement_css_file_path, $sites_directories_to_css_files_mappings[SITE_MACHINE_NAME], $path_to_theme_styles);
 
     // Copy the default style.css file data from the CSS array, and then change
     // the file path to point to the overridden CSS file.

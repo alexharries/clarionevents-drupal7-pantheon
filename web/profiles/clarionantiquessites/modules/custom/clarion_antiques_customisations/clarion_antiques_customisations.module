@@ -81,7 +81,7 @@ function clarion_antiques_customisations_admin_form() {
   ];
 
   // On the AFE website, allow selection of spring, summer or winter colours.
-  if (greyhead_customisations_site_directory() == 'antiquesforeveryone') {
+  if (greyhead_customisations_site_directory() == 'clarion-antiques-for-everyone') {
     $form['clarion_antiques_customisations_antiquesforeveryone_colour_scheme'] = [
       '#type' => 'select',
       '#title' => t('Select the site colour scheme'),
@@ -121,7 +121,7 @@ function clarion_antiques_customisations_admin_form() {
  */
 function clarion_antiques_customisations_clarionantiquessites_less_css_file_override_alter(&$replacement_css_file_path, $replacement_css_file_stub, $path_to_theme_styles) {
   // Only change the AFE website's styles.
-  if (greyhead_customisations_site_directory() == 'antiquesforeveryone') {
+  if (greyhead_customisations_site_directory() == 'clarion-antiques-for-everyone') {
     // Change the CSS file path to point to spring, summer or winter colours.
     $new_css_file_stub = $replacement_css_file_stub . '-' . variable_get('clarion_antiques_customisations_antiquesforeveryone_colour_scheme', 'winter');
   }
