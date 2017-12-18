@@ -7,7 +7,7 @@
 
 // Explicitly state the site's identifier. This is also used as the name of the
 // S3 bucket.
-define('SITE_MACHINE_NAME', 'clarion-default');
+define('SITE_MACHINE_NAME', 'clarion-olympia-art-antiques-summer');
 
 // Work out the directory name of this multisite:
 define('MULTISITE_IDENTIFIER', substr(dirname(__FILE__), strrpos(dirname(__FILE__), '/') + 1));
@@ -20,7 +20,7 @@ require_once '../configuration/common.settings.php';
  */
 
 // Set the bucket name.
-$conf['s3fs_bucket'] = SITE_MACHINE_NAME; //'clarion-default';
+$conf['s3fs_bucket'] = SITE_MACHINE_NAME; // 'clarion-olympia-art-antiques-summer';
 
 // If we know the env and aren't in production or drush use the test bucket.
 // @todo: How can we tell if we're in Drush on live?
@@ -34,6 +34,13 @@ if (defined('CURRENT_ENVIRONMENT') && defined('ENVIRONMENT_TYPE_LIVE') && (CURRE
  * @see /configuration/includes/redirects.php for examples.
  */
 
+// Redirect olympia-art-antiques.com to www.olympia-art-antiques.com
+greyhead_configuration_redirect_domain('olympia-art-antiques.com', 'www.olympia-art-antiques.com');
+
+// Redirect to fix broken links in olympia art antiques websites.
+// /sites/antiques_winter/files/files to  /sites/antiques_winter/files.
+greyhead_configuration_redirect_subdirectory_same_domain('/sites/antiques_summer/files/files/', '/sites/antiques_summer/files/');
+
 /**
  * Drupal will automagically add database connection details and the Drupal
  * hash salt below during install.php.
@@ -43,5 +50,5 @@ if (defined('CURRENT_ENVIRONMENT') && defined('ENVIRONMENT_TYPE_LIVE') && (CURRE
  * You can delete the Drupal hash salt as it will be provided in the local
  * configuration system.
  *
- * @todo: can automate this process so we don't have this manual step.
+ * @todo: can we automate this process so we don't have this manual step.
  */
