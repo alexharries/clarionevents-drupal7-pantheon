@@ -5,3 +5,10 @@
  *   Greyhead customisations module install/schema hooks.
  */
 
+/**
+ * Update the file path of all system files from sites/<something>/files to
+ * sites/default/files.
+ */
+function greyhead_customisations_update_7101() {
+
+}

@@ -75,10 +75,10 @@
 
 // Set the list of sites which should have a full-width header.
 $full_width_header_sites = [
-  'sites/antiques_summer',
-  'sites/antiques_winter',
-  //  'sites/antiquesforeveryone',
-  //  'sites/antiquesforeveryone_london',
+  'clarion-olympia-art-antiques-summer',
+  'clarion-olympia-antiques-winter',
+  //  'clarion-antiques-for-everyone',
+  //  'clarion-art-antiques-interiors-fair',
 ];
 ?>
 
@@ -119,8 +119,8 @@ $full_width_header_sites = [
             <div class="row">
               <?php
               // On AFE, only show one full-width dates block in the header.
-              // They like their wide dates.
-              if (conf_path() == 'sites/antiquesforeveryone'): ?>
+              // Wide dates for the win!
+              if (SITE_MACHINE_NAME == 'clarion-antiques-for-everyone'): ?>
                 <div class="col-xs-12 col-sm-9">
                   <div class="event-date"><?php print render($page['event_date']); ?></div>
                 </div>
@@ -188,7 +188,7 @@ $full_width_header_sites = [
 
   <?php if (!empty($page['highlighted'])): ?>
     <div class="highlighted">
-      <div class="container<?php if (in_array(conf_path(), $full_width_header_sites)): ?>-fluid<?php endif; ?>">
+      <div class="container<?php if (in_array(SITE_MACHINE_NAME, $full_width_header_sites)): ?>-fluid<?php endif; ?>">
         <?php print render($page['highlighted']); ?>
       </div>
     </div>
