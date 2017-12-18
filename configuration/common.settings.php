@@ -60,6 +60,19 @@ if (empty($conf) || !is_array($conf)) {
 }
 
 /**
+ * If we're in Pantheon, extract the Pressflow Settings into $conf early so
+ * we can override them later.
+ *
+ * Also @see https://pantheon.io/docs/read-environment-config/
+ */
+if (defined('PANTHEON_ENVIRONMENT')) {
+  // Extract Pantheon environmental configuration for Domain Access.
+  if (!empty($_SERVER['PRESSFLOW_SETTINGS'])) {
+    extract(json_decode($_SERVER['PRESSFLOW_SETTINGS'], TRUE));
+  }
+}
+
+/**
  * Initialise the $conf['greyhead_configuration'] array.
  */
 $conf['greyhead_configuration'] = [];
