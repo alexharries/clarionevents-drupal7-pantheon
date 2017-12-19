@@ -103,6 +103,12 @@ include SETTINGS_FILE_PATH . 'includes/constants.php';
 include SETTINGS_FILE_PATH . 'includes/conf-drupal-settings-php-settings.php';
 
 /**
+ * Load the configuration which is normally found in the vanilla Drupal
+ * settings.php file.
+ */
+include SETTINGS_FILE_PATH . 'includes/conf-s3fs.php';
+
+/**
  * Fast 404 - set $conf['greyhead_drupal_fast_404_enabled'] to TRUE to enable.
  */
 $conf['greyhead_drupal_fast_404_enabled'] = FALSE;
