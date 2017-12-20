@@ -288,6 +288,11 @@ $cookie_domain = '.' . $_SERVER['HTTP_HOST'];
  */
 $conf['allow_authorize_operations'] = FALSE;
 
+# Allow anonymous users to generate image styles.
+# @see https://www.drupal.org/node/2378075
+# @see http://drupal.stackexchange.com/questions/63226/drupal-7-20-image-styles-return-a-url-with-access-denied
+$conf['image_allow_insecure_derivatives'] = TRUE;
+
 /**
  * Salt for one-time login links and cancel links, form tokens, etc.
  *

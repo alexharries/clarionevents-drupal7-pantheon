@@ -96,11 +96,6 @@ $conf['fast_404_exts'] = '/(?<!robots)\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|cg
 # variations are already made set this to FALSE.
 $conf['fast_404_allow_anon_imagecache'] = TRUE;
 
-# Allow anonymous users to generate image styles.
-# @see https://www.drupal.org/node/2378075
-# @see http://drupal.stackexchange.com/questions/63226/drupal-7-20-image-styles-return-a-url-with-access-denied
-$conf['image_allow_insecure_derivatives'] = TRUE;
-
 # If you use FastCGI, uncomment this line to send the type of header it needs.
 # Reference: http://php.net/manual/en/function.header.php
 # $conf['fast_404_HTTP_status_method'] = 'FastCGI';
