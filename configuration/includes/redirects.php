@@ -25,6 +25,14 @@
  *   FALSE, '/', '/manchester');
  */
 
+// Are we on an HTTPS request?
+if (!empty($_SERVER['protossl']) && ($_SERVER['protossl'] == 's')) {
+  defined('GREYHEAD_IS_HTTPS') || define('GREYHEAD_IS_HTTPS', TRUE);
+}
+else {
+  defined('GREYHEAD_IS_HTTPS') || define('GREYHEAD_IS_HTTPS', FALSE);
+}
+
 if (!function_exists('greyhead_configuration_redirect_subdirectory_same_domain')) {
   /**
    * Redirect a subdirectory to another directory on the same domain.
@@ -39,12 +47,14 @@ if (!function_exists('greyhead_configuration_redirect_subdirectory_same_domain')
    *
    * @param bool $https
    *   Set to TRUE to redirect to an HTTPS site - e.g. https://www.newsite.com
+   *   Set to FALSE to redirect to HTTP.
+   *   Set to NULL to auto-detect.
    *
    * @param string|null $redirect_code_string
    *   If you want to override the redirect code (which is "HTTP/1.0 301 Moved
    *   Permanently") by default, provide it here.
    */
-  function greyhead_configuration_redirect_subdirectory_same_domain($old_subdirectory, $new_subdirectory, $https = FALSE, $redirect_code_string = NULL, $exact_path = FALSE) {
+  function greyhead_configuration_redirect_subdirectory_same_domain($old_subdirectory, $new_subdirectory, $https = NULL, $redirect_code_string = NULL, $exact_path = FALSE) {
     greyhead_configuration_redirect_domain($_SERVER['HTTP_HOST'], $_SERVER['HTTP_HOST'], $https, $old_subdirectory, $new_subdirectory, $redirect_code_string, $exact_path);
   }
 }
@@ -63,6 +73,8 @@ if (!function_exists('greyhead_configuration_redirect_domain')) {
    *
    * @param bool $https
    *   Set to TRUE to redirect to an HTTPS site - e.g. https://www.newsite.com
+   *   Set to FALSE to redirect to HTTP.
+   *   Set to NULL to auto-detect.
    *
    * @param string $old_subdirectory
    *   If you want to only redirect from a subdirectory on the old
@@ -88,7 +100,7 @@ if (!function_exists('greyhead_configuration_redirect_domain')) {
    *   greyhead_configuration_redirect_domain('www.example.com', 'www.example.com', FALSE, '/monkeys', '/new-subdirectory', NULL, TRUE);
    *   greyhead_configuration_redirect_domain('www.example.com', 'www.example.com', FALSE, '/monkeys/', '/new-subdirectory', NULL, FALSE);
    */
-  function greyhead_configuration_redirect_domain($old_domain, $new_domain, $https = FALSE, $old_subdirectory = '/', $new_subdirectory = '/', $redirect_code_string = NULL, $exact_path = FALSE) {
+  function greyhead_configuration_redirect_domain($old_domain, $new_domain, $https = NULL, $old_subdirectory = '/', $new_subdirectory = '/', $redirect_code_string = NULL, $exact_path = FALSE) {
     // Check if we're running via command line and exit if we are.
     if (php_sapi_name() == "cli") {
       return;
@@ -117,6 +129,11 @@ if (!function_exists('greyhead_configuration_redirect_domain')) {
         // Create the new request URI by stripping the old directory and
         // adding any new directory.
         $request_uri = $new_subdirectory . substr($_SERVER['REQUEST_URI'], strlen($old_subdirectory));
+
+        // Do we have an explicit HTTPS?
+        if (is_null($https)) {
+          $https = GREYHEAD_IS_HTTPS;
+        }
 
         header($redirect_code_string);
         header('Location: http' . ($https ? 's' : '') . '://' . $new_domain . $request_uri);
