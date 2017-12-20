@@ -26,12 +26,10 @@
  */
 
 // Are we on an HTTPS request?
-if (!empty($_SERVER['protossl']) && ($_SERVER['protossl'] == 's')) {
-  defined('GREYHEAD_IS_HTTPS') || define('GREYHEAD_IS_HTTPS', TRUE);
-}
-else {
-  defined('GREYHEAD_IS_HTTPS') || define('GREYHEAD_IS_HTTPS', FALSE);
-}
+$greyhead_is_https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+  || ($_SERVER['SERVER_PORT'] == 443);
+
+defined('GREYHEAD_IS_HTTPS') || define('GREYHEAD_IS_HTTPS', $greyhead_is_https);
 
 if (!function_exists('greyhead_configuration_redirect_subdirectory_same_domain')) {
   /**
