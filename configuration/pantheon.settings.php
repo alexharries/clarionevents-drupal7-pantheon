@@ -13,8 +13,9 @@
  */
 
 // Don't attempt to redirect Drush.
-if (!defined('GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS') || !GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS) {
-  if (php_sapi_name() != 'cli') {
+if (php_sapi_name() != 'cli') {
+  // Don't redirect _to_ HTTPS if the site explicitly doesn't support it.
+  if (!defined('GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS') || !GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS) {
     // Upgrade HTTP requests to secure HTTPS
     header("Content-Security-Policy: upgrade-insecure-requests;");
 
@@ -29,6 +30,20 @@ if (!defined('GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS') || !GREYHEAD_SITE_DOES_NOT_
 
       header('HTTP/1.0 301 Moved Permanently');
       header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+      exit();
+    }
+  }
+
+  // Redirect _from_ HTTPS if the site explicitly doesn't support it.
+  if (defined('GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS') && GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS) {
+    if (isset($_SERVER['HTTP_X_SSL']) || ($_SERVER['HTTP_X_SSL'] == 'ON')) {
+      // Name transaction "redirect" in New Relic for improved reporting (optional)
+      if (extension_loaded('newrelic')) {
+        newrelic_name_transaction("redirect");
+      }
+
+      header('HTTP/1.0 301 Moved Permanently');
+      header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
       exit();
     }
   }
