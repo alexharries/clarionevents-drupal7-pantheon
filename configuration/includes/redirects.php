@@ -25,11 +25,13 @@
  *   FALSE, '/', '/manchester');
  */
 
-// Are we on an HTTPS request?
-$greyhead_is_https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-  || ($_SERVER['SERVER_PORT'] == 443);
-
-defined('GREYHEAD_IS_HTTPS') || define('GREYHEAD_IS_HTTPS', $greyhead_is_https);
+// Load HTTPS detection if not already loaded.
+if (!defined('GREYHEAD_HTTPS_INCLUDED')) {
+  $file_path = __DIR__ . '/https.php';
+  if (file_exists($file_path) && is_readable($file_path)) {
+    require $file_path;
+  }
+}
 
 if (!function_exists('greyhead_configuration_redirect_subdirectory_same_domain')) {
   /**

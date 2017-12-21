@@ -92,6 +92,11 @@ $conf['greyhead_configuration']['overridden_variables'] = [];
 define('SETTINGS_FILE_PATH', GREYHEAD_DRUPAL_ROOT . '/../configuration/');
 
 /**
+ * Include the HTTPS detection bits and bobs.
+ */
+include SETTINGS_FILE_PATH . 'includes/https.php';
+
+/**
  * Include the constants file to set all the other constants.
  */
 include SETTINGS_FILE_PATH . 'includes/constants.php';
