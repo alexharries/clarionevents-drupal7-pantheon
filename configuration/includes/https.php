@@ -18,6 +18,6 @@ defined('GREYHEAD_HTTPS_INCLUDED') || define('GREYHEAD_HTTPS_INCLUDED', TRUE);
 
 // If $_SERVER['HTTPS'] is TRUE but we explicitly don't want to run HTTPS,
 // reset this value.
-if (GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS) {
+if (defined('GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS') && GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS) {
   $_SERVER['HTTPS'] = FALSE;
 }
