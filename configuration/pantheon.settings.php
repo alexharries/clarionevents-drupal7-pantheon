@@ -36,7 +36,7 @@ if (php_sapi_name() != 'cli') {
 
   // Redirect _from_ HTTPS if the site explicitly doesn't support it.
   if (defined('GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS') && GREYHEAD_SITE_DOES_NOT_SUPPORT_HTTPS) {
-    if (isset($_SERVER['HTTP_X_SSL']) || ($_SERVER['HTTP_X_SSL'] == 'ON')) {
+    if (!empty($_SERVER['HTTP_X_SSL']) && (isset($_SERVER['HTTP_X_SSL']) || ($_SERVER['HTTP_X_SSL'] == 'ON'))) {
       // Name transaction "redirect" in New Relic for improved reporting (optional)
       if (extension_loaded('newrelic')) {
         newrelic_name_transaction("redirect");
