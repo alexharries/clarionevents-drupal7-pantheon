@@ -42,7 +42,7 @@ if (php_sapi_name() != 'cli') {
         newrelic_name_transaction("redirect");
       }
 
-      header('HTTP/1.0 301 Moved Permanently');
+      header('HTTP/1.0 307 Temporary Redirect');
       header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
       exit();
     }
