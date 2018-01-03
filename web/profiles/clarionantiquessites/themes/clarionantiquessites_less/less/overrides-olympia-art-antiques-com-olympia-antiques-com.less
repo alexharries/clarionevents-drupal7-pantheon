@@ -410,12 +410,13 @@ body.conf-path-clarion-olympia-antiques-winter {
 body.conf-path-clarion-olympia-art-antiques-summer {
   #header {
     .hgf-logo-container {
-      color: @brand-black;
-      font-size: 13px;
-      text-transform: uppercase;
-      text-align: center;
+      display: none;
 
       @media @tablet {
+        display: block;
+        color: @brand-black;
+        text-transform: uppercase;
+
         font-size: 18px;
         text-align: left;
         white-space: nowrap;
