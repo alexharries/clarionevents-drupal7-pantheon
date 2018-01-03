@@ -48,14 +48,14 @@ body.front {
     position: static;
 
     .sign-up-container {
-      border: 1px solid #000;
+      border: 1px solid @brand-black;
       color: inherit;
       background-color: transparent;
     }
 
     input {
       &::-webkit-input-placeholder {
-        color: #000 !important;
+        color: @brand-black !important;
       }
     }
 
@@ -250,7 +250,7 @@ body.front {
 footer {
   font-size: 14px;
   margin-top: 50px;
-  background-color: #000;
+  background-color: @brand-black;
 
   .panel-footer-logo {
     a {
@@ -325,7 +325,6 @@ body.conf-path-clarion-olympia-art-antiques-summer {
 
   .event-date {
     display: inline-block;
-
     font-size: 14px;
 
     @media @tablet {
@@ -398,6 +397,80 @@ body.conf-path-clarion-olympia-antiques-winter {
       .event-container {
         width: 50%;
         margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Shoe-horning the H&GF logo into the OAA header :)
+body.conf-path-clarion-olympia-art-antiques-summer {
+  .hgf-logo-container {
+    color: @brand-black;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media @tablet {
+      font-size: 18px;
+      text-align: left;
+      white-space: nowrap;
+
+      // Only replace the H&GF link text with an image above -sm ().
+      a.hgf-logo-link {
+        background: transparent url('../images/20180102-hgf-logo-black-on-transparent.png') no-repeat;
+        width: 200px;
+        height: 117px;
+        background-size: 200px 117px;
+        text-indent: -10000em;
+        display: inline-block;
+      }
+    }
+  }
+
+  #header {
+    .event-date {
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 0.25em;
+      display: block;
+
+      @media @normal {
+        font-size: 25px;
+      }
+    }
+
+    a {
+      &.book-tickets-menu {
+        min-width: 100px;
+        margin-top: 0.75em;
+      }
+    }
+
+    .navbar-default {
+      .container-fluid {
+        .navbar-collapse {
+          .navbar-nav {
+            > li > a {
+              font-size: 16px;
+            }
+
+            a {
+              &.book-tickets-menu {
+                right: 0;
+
+                @media @normal {
+                  right: 15px;
+                  top: 0;
+                }
+
+                @media @wide {
+                  top: 0;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
