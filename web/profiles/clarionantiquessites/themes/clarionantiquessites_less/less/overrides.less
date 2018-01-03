@@ -1282,6 +1282,11 @@ h2, .h2 {
 
           li {
             position: static;
+
+            // Set position relative for <li>s with a dropdown.
+            &.dropdown {
+              position: relative;
+            }
           }
 
           a {
@@ -2399,7 +2404,7 @@ h1.block-title {
 // TALKS PROGRAMME
 .view-talks-programme,
 .view-event-programme {
-//.view-talks-programme {
+  //.view-talks-programme {
   margin-top: 30px;
 
   .view-header {
