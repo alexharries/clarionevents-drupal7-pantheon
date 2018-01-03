@@ -101,13 +101,9 @@ $full_width_header_sites = [
   // @todo: is it now time to start thinking about splitting this theme back
   // into one theme per site? At least for the Olympia show sites...?
   if (SITE_MACHINE_NAME == 'clarion-olympia-art-antiques-summer'): ?>
-
     <?php include 'partials/_header--clarion-olympia-art-antiques-summer.tpl.php'; ?>
-
   <?php else: ?>
-
     <?php include 'partials/_header.tpl.php'; ?>
-
   <?php endif; ?>
 
   <?php if (!empty($page['highlighted'])): ?>
@@ -163,41 +159,13 @@ $full_width_header_sites = [
   <?php endif; ?>
   <!-- //.container -->
 
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div id="quick-links" class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3">
-          <?php print render($page['footer_column_one']); ?>
-        </div>
-
-        <div class="col-xs-6 col-sm-4 col-md-3">
-          <?php print render($page['footer_column_two']); ?>
-        </div>
-
-        <div class="col-xs-6 col-sm-4 col-md-3">
-          <?php print render($page['footer_column_three']); ?>
-        </div>
-
-        <div class="hidden-xs col-sm-4 col-md-3">
-          <?php print render($page['footer_column_four']); ?>
-        </div>
-      </div>
-
-      <div id="copyright">
-        <div class="row">
-          <div class="col-xs-12 col-md-10">
-            <?php print render($page['footer_copyright']); ?>
-          </div>
-          <div class="col-xs-12 col-md-2">
-            <p class="text-right"><a href="#">Back to top</a></p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
+  <?php
+  // We show a different footer for the OAA site.
+  if (SITE_MACHINE_NAME == 'clarion-olympia-art-antiques-summer'): ?>
+    <?php include 'partials/_footer--clarion-olympia-art-antiques-summer.tpl.php'; ?>
+  <?php else: ?>
+    <?php include 'partials/_footer.tpl.php'; ?>
+  <?php endif; ?>
 
   <?php if (!empty($page['footer_extra_column_one'])): ?>
     <div class="footer-extra">
