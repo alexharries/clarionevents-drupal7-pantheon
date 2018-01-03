@@ -351,8 +351,12 @@ body.conf-path-clarion-olympia-antiques-winter #header h1.home-link-no-logo a {
 
 body.conf-path-clarion-olympia-art-antiques-summer #header h1.home-link-no-logo a {
   max-width: 263px;
-  height: 138px;
+  height: 100px;
   background-image: url('../images/olympia-art-antiques.png');
+
+  @media @normal {
+    height: 138px;
+  }
 }
 
 .paragraphs-item-block-highlights .body {
@@ -404,35 +408,45 @@ body.conf-path-clarion-olympia-antiques-winter {
 
 // Shoe-horning the H&GF logo into the OAA header :)
 body.conf-path-clarion-olympia-art-antiques-summer {
-  .hgf-logo-container {
-    color: @brand-black;
-    font-size: 13px;
-    text-transform: uppercase;
-    text-align: center;
+  #header {
+    .hgf-logo-container {
+      color: @brand-black;
+      font-size: 13px;
+      text-transform: uppercase;
+      text-align: center;
 
-    @media @tablet {
-      font-size: 18px;
-      text-align: left;
-      white-space: nowrap;
+      @media @tablet {
+        font-size: 18px;
+        text-align: left;
+        white-space: nowrap;
+        margin-top: 0.5em;
 
-      // Only replace the H&GF link text with an image above -sm ().
-      a.hgf-logo-link {
-        background: transparent url('../images/20180102-hgf-logo-black-on-transparent.png') no-repeat;
-        width: 200px;
-        height: 117px;
-        background-size: 200px 117px;
-        text-indent: -10000em;
-        display: inline-block;
+        // Only replace the H&GF link text with an image above -sm ().
+        a.hgf-logo-link {
+          background: transparent url('../images/20180102-hgf-logo-black-on-transparent.png') no-repeat;
+          width: 150px;
+          height: 88px;
+          background-size: 150px 88px;
+          text-indent: -10000em;
+          display: inline-block;
+        }
+      }
+
+      @media @normal {
+        a.hgf-logo-link {
+          width: 200px;
+          height: 117px;
+          background-size: 200px 117px;
+        }
       }
     }
-  }
 
-  #header {
     .event-date {
       text-transform: uppercase;
       text-align: center;
       margin-top: 0.25em;
       display: block;
+      font-size: 15px;
 
       @media @normal {
         font-size: 25px;
@@ -459,7 +473,6 @@ body.conf-path-clarion-olympia-art-antiques-summer {
                 right: 0;
 
                 @media @normal {
-                  right: 15px;
                   top: 0;
                 }
 
@@ -473,5 +486,71 @@ body.conf-path-clarion-olympia-art-antiques-summer {
         }
       }
     }
+
+    .buy-tickets-mobile {
+      position: fixed;
+      top: 75px;
+      right: 0;
+      z-index: 100;
+
+      a.btn {
+        border: #fff 12px solid;
+      }
+
+      @media @tablet {
+        top: 200px;
+      }
+
+      @media @normal {
+        display: none;
+      }
+    }
+  }
+
+  footer {
+    .hgf-logo-container {
+      color: @white;
+      font-size: 13px;
+      text-transform: uppercase;
+      text-align: center;
+
+      font-size: 15px;
+      text-align: left;
+      white-space: nowrap;
+
+      a.hgf-logo-link {
+        background: transparent url('../images/20180102-hgf-logo-white-on-transparent.png') no-repeat;
+        width: 150px;
+        height: 88px;
+        background-size: 150px 88px;
+        text-indent: -10000em;
+        display: inline-block;
+        margin-left: 0.25em;
+
+        @media @normal {
+          width: 125px;
+          height: 73px;
+          background-size: 125px 73px;
+        }
+      }
+    }
+
+    // Clear the links below the logos in the footer at < tablet viewports.
+    .footer-column-two {
+      clear: both;
+
+      @media @normal {
+        clear: none;
+      }
+    }
+
+    // Undo the apocryphal override for .region-footer-column-four.
+    #quick-links .region-footer-column-four {
+      margin-top: 0;
+    }
+  }
+
+  #copyright {
+    margin-top: 2em;
   }
 }

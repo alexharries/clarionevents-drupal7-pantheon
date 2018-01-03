@@ -30,41 +30,42 @@
           <div class="event-date"><?php print render($page['event_date']); ?></div>
         </div>
 
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-sm-5 col-md-6">
           <!--// MENU //-->
           <div class="row">
-            <nav class="navbar navbar-default">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                </div>
-
-                <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-                  <div id="navbar" class="navbar-collapse collapse">
-
-                    <?php if (!empty($primary_nav)): ?>
-                      <?php print render($primary_nav); ?>
-                    <?php endif; ?>
-                    <?php if (!empty($secondary_nav)): ?>
-                      <?php print render($secondary_nav); ?>
-                    <?php endif; ?>
-                    <?php if (!empty($page['navigation'])): ?>
-                      <?php print render($page['navigation']); ?>
-                    <?php endif; ?>
-
+            <div class="col-xs-12">
+              <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
                   </div>
-                <?php endif; ?>
-              </div>
-            </nav>
-          </div>
-          <!--// END: MENU //-->
 
-          <div class="row">
+                  <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+                    <div id="navbar" class="navbar-collapse collapse">
+
+                      <?php if (!empty($primary_nav)): ?>
+                        <?php print render($primary_nav); ?>
+                      <?php endif; ?>
+                      <?php if (!empty($secondary_nav)): ?>
+                        <?php print render($secondary_nav); ?>
+                      <?php endif; ?>
+                      <?php if (!empty($page['navigation'])): ?>
+                        <?php print render($page['navigation']); ?>
+                      <?php endif; ?>
+
+                    </div>
+                  <?php endif; ?>
+                </div>
+              </nav>
+            </div>
+            <!--// END: MENU //-->
+
+            <!--          <div class="row">-->
             <div class="col-xs-12 col-sm-6">
               <?php print render($page['social_media']); ?>
             </div>
