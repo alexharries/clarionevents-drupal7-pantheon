@@ -22,23 +22,32 @@ function _openx_javascript() {
     return;
   }
 
+  // This module has been patched to always use a protocol-agnostic call;
+  // i.e. the script tag will be something like:
+  // <script src="//www.monkey.com/foo/bar/jaybaz" />
+  // You can still specify different HTTP and HTTPS URLs, although this
+  // module seems to be having trouble detecting when the site is running on
+  // HTTPS on Pantheon; I suspect this might be becasue of the way HTTPS is
+  // configured - perhaps because SSL isn't terminated at the webserver level,
+  // or because of the way Nginx is setup. I dunno... &shrug;
   if (!empty($_SERVER['HTTPS'])) {
-    $protocol = 'https';
+    //    $protocol = 'https';
     $server = variable_get('openx_delivery_url_https', 'd.openx.org');
   }
   else {
-    $protocol = 'http';
+    //    $protocol = 'http';
     $server = variable_get('openx_delivery_url', 'd.openx.org');
   }
-  $url = $protocol . '://' . trim($server, '/') . '/spcjs.php';
-  
+
+  $url = '//' . trim($server, '/') . '/spcjs.php';
+
   if ($site_vars = variable_get('openx_site_vars', FALSE)) {
     $vars = array();
     if (module_exists('token')) {
       $data = array('global' => NULL, 'user' => $user);
-      
+
       $node = menu_get_object('node');
-      
+
       if (isset($node)) {
         $data['node'] = $node;
       }
@@ -53,7 +62,7 @@ function _openx_javascript() {
         }
       }
     }
-    
+
     if (!empty($vars)) {
       $url .= '?' . drupal_http_build_query($vars);
     }
