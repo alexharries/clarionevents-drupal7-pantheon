@@ -509,17 +509,28 @@ body.conf-path-clarion-olympia-art-antiques-summer {
   }
 
   footer {
-    .hgf-logo-container {
-      color: @white;
-      font-size: 13px;
-      text-transform: uppercase;
-      text-align: center;
+    a.olympia-art-antiques-footer-logo {
+      background: transparent url('../images/olympia-art-antiques-footer-logo-white.png') no-repeat;
+      width: 174px;
+      height: 92px;
+      background-size: 174px 92px;
+      text-indent: -10000em;
+      display: inline-block;
+    }
 
+    a.hgf-logo-container {
+      color: @white;
+      text-transform: uppercase;
+      text-decoration: none;
       font-size: 15px;
       text-align: left;
       white-space: nowrap;
 
-      a.hgf-logo-link {
+      display: inline-block;
+      vertical-align: top;
+      padding-left:  2em;
+
+      span.hgf-logo-link {
         background: transparent url('../images/20180102-hgf-logo-white-on-transparent.png') no-repeat;
         width: 150px;
         height: 88px;
@@ -534,6 +545,11 @@ body.conf-path-clarion-olympia-art-antiques-summer {
           background-size: 125px 73px;
         }
       }
+    }
+
+    // Hide the logo block.
+    #block-block-11 {
+      display: none;
     }
 
     // Clear the links below the logos in the footer at < tablet viewports.
