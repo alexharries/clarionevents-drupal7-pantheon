@@ -410,27 +410,30 @@ body.conf-path-clarion-olympia-antiques-winter {
 body.conf-path-clarion-olympia-art-antiques-summer {
   #header {
     .hgf-logo-container {
-      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: @brand-black;
+      text-transform: uppercase;
+
+      font-size: 18px;
+      text-align: left;
+      white-space: nowrap;
+      margin-top: 0.5em;
+      margin-left: -5em;
+
+      // Only replace the H&GF link text with an image above -sm ().
+      a.hgf-logo-link {
+        background: transparent url('../images/20180102-hgf-logo-black-on-transparent.png') no-repeat;
+        width: 150px;
+        height: 88px;
+        background-size: 150px 88px;
+        text-indent: -10000em;
+        display: inline-block;
+      }
 
       @media @tablet {
-        display: block;
-        color: @brand-black;
-        text-transform: uppercase;
-
-        font-size: 18px;
-        text-align: left;
-        white-space: nowrap;
-        margin-top: 0.5em;
-
-        // Only replace the H&GF link text with an image above -sm ().
-        a.hgf-logo-link {
-          background: transparent url('../images/20180102-hgf-logo-black-on-transparent.png') no-repeat;
-          width: 150px;
-          height: 88px;
-          background-size: 150px 88px;
-          text-indent: -10000em;
-          display: inline-block;
-        }
+        position: relative;
       }
 
       @media @normal {
@@ -449,6 +452,12 @@ body.conf-path-clarion-olympia-art-antiques-summer {
       display: block;
       font-size: 15px;
 
+      @media @tablet {
+        text-align: left;
+        padding-left: 0.5em;
+        font-size: 18px;
+      }
+
       @media @normal {
         font-size: 25px;
       }
@@ -463,10 +472,26 @@ body.conf-path-clarion-olympia-art-antiques-summer {
 
     .navbar-default {
       .container-fluid {
+        .navbar-header {
+          margin-top: 0;
+        }
+
+        .navbar-toggle {
+          float: left;
+        }
+
         .navbar-collapse {
           .navbar-nav {
             > li > a {
               font-size: 16px;
+              padding-left: 0.5em;
+              padding-right: 0.5em;
+
+              &.btn {
+                font-size: 0.9em;
+                padding: 0.6em;
+                margin: 0.5em 0 0 0.5em;
+              }
             }
 
             a {
@@ -474,12 +499,9 @@ body.conf-path-clarion-olympia-art-antiques-summer {
                 right: 0;
 
                 @media @normal {
-                  top: 0;
-                }
-
-                @media @wide {
-                  top: 0;
-                  font-size: 14px;
+                  position: relative;
+                  top: auto;
+                  right: auto;
                 }
               }
             }
@@ -490,7 +512,7 @@ body.conf-path-clarion-olympia-art-antiques-summer {
 
     .buy-tickets-mobile {
       position: fixed;
-      top: 75px;
+      top: 200px;
       right: 0;
       z-index: 100;
 
@@ -504,6 +526,15 @@ body.conf-path-clarion-olympia-art-antiques-summer {
 
       @media @normal {
         display: none;
+      }
+    }
+
+    .region-social-media {
+      margin: 0.5em 0 0 0;
+
+      .social-media > div {
+        padding-right: 0;
+        text-align: center;
       }
     }
   }
