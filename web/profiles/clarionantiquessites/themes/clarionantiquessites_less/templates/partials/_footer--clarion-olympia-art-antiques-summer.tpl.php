@@ -11,12 +11,15 @@
 <footer>
   <div class="container">
     <div id="quick-links" class="row">
-      <div class="col-xs-6 col-md-3 footer-column-one">
-        <?php print render($page['footer_column_one']); ?>
-      </div>
+      <div class="col-xs-6 col-md-6 footer-column-one">
+        <p>
+          <a href="<?php print url('<front>'); ?>" class="olympia-art-antiques-footer-logo"><?php print t('Olympia Art Antiques'); ?></a>
 
-      <div class="col-xs-6 col-md-3 hgf-logo-container">
-        <?php print t('Part of <a class="hgf-logo-link" href="http://www.houseandgardenfestival.com" target="_blank">House And Garden Festival</a>'); ?>
+          <a href="http://www.houseandgardenfestival.com" target="_blank" class="hgf-logo-container"><?php print t('Part of <span class="hgf-logo-link">House And Garden Festival</span>'); ?></a>
+        </p>
+
+
+        <?php print render($page['footer_column_one']); ?>
       </div>
 
       <div class="col-xs-6 col-sm-4 col-md-2 footer-column-two">

@@ -27,12 +27,16 @@
             <?php endif; ?>
           </div>
 
-          <div class="event-date"><?php print render($page['event_date']); ?></div>
+          <?php print render($page['social_media']); ?>
         </div>
 
-        <div class="col-xs-12 col-sm-5 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-7">
           <!--// MENU //-->
           <div class="row">
+            <div class="event-date col-xs-5 col-sm-12">
+              <?php print render($page['event_date']); ?>
+            </div>
+
             <div class="col-xs-12">
               <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -66,9 +70,6 @@
             <!--// END: MENU //-->
 
             <!--          <div class="row">-->
-            <div class="col-xs-12 col-sm-6">
-              <?php print render($page['social_media']); ?>
-            </div>
 
             <div class="hidden-xs col-sm-6">
               <?php print render($page['newsletter']); ?>
@@ -77,7 +78,7 @@
         </div>
 
         <!-- H&GF logo. -->
-        <div class="col-xs-12 col-sm-2 hgf-logo-container">
+        <div class="col-sm-2 hgf-logo-container">
           <?php print t('Part of <a class="hgf-logo-link" href="http://www.houseandgardenfestival.com" target="_blank">House And Garden Festival</a>'); ?>
         </div>
         <!-- /H&GF logo. -->
