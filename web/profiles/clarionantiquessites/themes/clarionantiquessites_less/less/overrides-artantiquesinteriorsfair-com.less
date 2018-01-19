@@ -205,4 +205,18 @@ body.conf-path-clarion-art-antiques-interiors-fair {
   .paragraphs-title {
     text-align: center;
   }
+
+  // Add grey line to separate rows of homepage highlights, except the first
+  // two highlights.
+  &.node-type-basic-page .paragraphs-items-full .paragraphs-item-block-highlights:before {
+    content: "";
+    display: block;
+    border-top: #aaa 1px solid;
+    margin: 1em -2em 2em -2em;
+  }
+
+  &.node-type-basic-page .paragraphs-items-full .paragraphs-item-block-highlights:nth-child(1):before,
+  &.node-type-basic-page .paragraphs-items-full .paragraphs-item-block-highlights:nth-child(2):before {
+    display: none;
+  }
 }
