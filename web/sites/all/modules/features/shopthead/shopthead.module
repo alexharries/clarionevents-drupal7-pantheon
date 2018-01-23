@@ -1,0 +1,124 @@
+<?php
+/**
+ * @file
+ * Code for the Image with clickable labels (Shop The Ad) feature.
+ */
+
+include_once 'shopthead.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function shopthead_theme() {
+  $theme = [];
+
+  $theme['paragraphs_item__shopthead'] = [
+    'render element' => 'elements',
+    'template' => 'paragraphs-item--shopthead',
+    'path' => drupal_get_path('module', 'shopthead') . '/templates',
+  ];
+
+  return $theme;
+}
+
+/**
+ * Preprocess the Shop The Ad paragraph.
+ *
+ * Generate the custom CSS styles and attach the CSS and JS.
+ *
+ * @param $variables
+ */
+function shopthead_preprocess_entity(&$variables) {
+  if ($variables['entity_type'] == 'paragraphs_item') {
+    if (!empty($variables['paragraphs_item']->bundle) && ($variables['paragraphs_item']->bundle == 'shopthead')) {
+      // It's a Shop The Ad bundle.
+
+      // Add common CSS and JS.
+      drupal_add_js(drupal_get_path('module', 'shopthead') . '/js/shopthead.js');
+      drupal_add_css(drupal_get_path('module', 'shopthead') . '/css/shopthead.css');
+
+      // Generate a CSS ID.
+      $variables['shop_the_ad_container_id'] = drupal_html_id('shop-the-ad-container-id');
+      $variables['shop_the_ad_image_id'] = drupal_html_id('shop-the-ad-image-id');
+
+      // Work out the specific CSS for this paragraph, and create an array of
+      // data which we will use when creating the HTML for the markers in
+      // the template file.
+      $paragraph_css = '/* Shop The Ad paragraph CSS: */';
+
+      // If we have a custom marker image or hover image, set the width, height
+      // and image URL(s).
+
+      if (!empty($variables['field_shopthead_marker']) || !empty($variables['field_shopthead_marker_hover'])) {
+        $paragraph_css .= '
+          #' . $variables['shop_the_ad_container_id'] . ' .marker {
+            width: ' . $variables['field_shopthead_marker_width'][0]['value'] . 'px;
+            height: ' . $variables['field_shopthead_marker_height'][0]['value'] . 'px;
+            background-size: ' . $variables['field_shopthead_marker_width'][0]['value'] . 'px ' . $variables['field_shopthead_marker_height'][0]['value'] . 'px;
+          }
+          
+          @media screen and (min-width: 768px) {
+            #' . $variables['shop_the_ad_container_id'] . ' .marker {
+              width: ' . $variables['field_shopthead_marker_width_lg'][0]['value'] . 'px;
+              height: ' . $variables['field_shopthead_marker_height_lg'][0]['value'] . 'px;
+              background-size: ' . $variables['field_shopthead_marker_width_lg'][0]['value'] . 'px ' . $variables['field_shopthead_marker_height_lg'][0]['value'] . 'px;
+            }
+          }
+        ';
+
+        if (!empty($variables['field_shopthead_marker'])) {
+          $paragraph_css .= '
+            #' . $variables['shop_the_ad_container_id'] . ' .marker {
+              background: transparent url("' . file_create_url($variables['field_shopthead_marker'][0]['uri']) . '") no-repeat center;
+            }
+          ';
+        }
+
+        if (!empty($variables['field_shopthead_marker_hover'])) {
+          $paragraph_css .= '
+            #' . $variables['shop_the_ad_container_id'] . ' .marker.active,
+            #' . $variables['shop_the_ad_container_id'] . ' .marker:hover {
+              background-image: url("' . file_create_url($variables['field_shopthead_marker_hover'][0]['uri']) . '");
+            }
+          ';
+        }
+      }
+
+      $variables['markers_data'] = [];
+
+      foreach (element_children($variables['elements']['field_shopthead_markers']) as $marker_delta) {
+        $marker = $variables['elements']['field_shopthead_markers'][$marker_delta];
+
+        // We have to use reset() to get the first and only element from the
+        // field collection item array.
+        $marker = reset($marker['entity']['field_collection_item']);
+
+        $variables['markers_data'][$marker_delta] = [
+          'delta' => $marker_delta,
+          'html_id' => 'shop-the-ad-product-' . $marker_delta,
+          'labelpos' => $marker['field_shopthead_marker_labelpos']['#items'][0]['value'],
+
+          // Replace the <p></p> tags in the title with <h3></h3>.
+          'title' => str_replace(['<p>', '</p>'], [
+            '<h3>',
+            '</h3>',
+          ], $marker['field_shopthead_label_title'][0]['#markup']),
+          'subtitle' => $marker['field_shopthead_label_subtitle'][0]['#markup'],
+        ];
+
+        $paragraph_css .= '
+          /* ' . check_plain($variables['markers_data'][$marker_delta]['title']) . ': */
+          #' . $variables['shop_the_ad_container_id'] . ' .shop-the-ad-product#' . $variables['markers_data'][$marker_delta]['html_id'] . ' {
+            left: ' . $marker['field_shopthead_marker_x']['#items'][0]['value'] . 'px;
+            top: ' . $marker['field_shopthead_marker_y']['#items'][0]['value'] . 'px;
+          }
+          /* /' . check_plain($variables['markers_data'][$marker_delta]['title']) . '. */
+        ';
+      }
+
+      $paragraph_css .= '/* End Shop The Ad paragraph CSS. */';
+
+      drupal_add_css($paragraph_css, ['type' => 'inline']);
+    }
+  }
+}
