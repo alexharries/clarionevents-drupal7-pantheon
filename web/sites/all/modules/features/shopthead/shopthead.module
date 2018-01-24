@@ -95,7 +95,7 @@ function shopthead_preprocess_entity(&$variables) {
 
         $variables['markers_data'][$marker_delta] = [
           'delta' => $marker_delta,
-          'html_id' => 'shop-the-ad-product-' . $marker_delta,
+          'html_id' => drupal_html_id($variables['shop_the_ad_container_id'] . '--product-' . $marker_delta),
           'labelpos' => $marker['field_shopthead_marker_labelpos']['#items'][0]['value'],
 
           // Replace the <p></p> tags in the title with <h3></h3>.
