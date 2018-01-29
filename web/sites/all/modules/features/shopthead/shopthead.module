@@ -69,7 +69,7 @@ function shopthead_preprocess_entity(&$variables) {
         if (!empty($variables['field_shopthead_marker'])) {
           $paragraph_css .= '
             #' . $variables['shop_the_ad_container_id'] . ' .marker {
-              background: transparent url("' . file_create_url($variables['field_shopthead_marker'][0]['uri']) . '") no-repeat center;
+              background-image: url("' . file_create_url($variables['field_shopthead_marker'][0]['uri']) . '");
             }
           ';
         }
