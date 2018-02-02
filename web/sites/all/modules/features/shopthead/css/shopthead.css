@@ -1,0 +1,190 @@
+/**
+ * Styles for the Shop The Ad module.
+ */
+
+.paragraphs-item--shopthead .container {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.shop-the-ad-container {
+  position: relative;
+}
+
+.shop-the-ad-image {
+  width: 100%;
+  height: auto;
+}
+
+.shop-the-ad-product {
+  position: absolute;
+}
+
+.shop-the-ad-product.label-right {
+
+}
+
+.shop-the-ad-product.label-below {
+
+}
+
+.shop-the-ad-product .marker,
+.shop-the-ad-product .label {
+  position: absolute;
+}
+
+.shop-the-ad-product .marker {
+  width: 50px;
+  height: 50px;
+  background: transparent url('../images/thingy-normo.png') no-repeat center;
+  background-size: 70px 70px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .shop-the-ad-product .marker {
+    width: 100px;
+    height: 100px;
+    background-size: 140px 140px;
+  }
+}
+
+.shop-the-ad-product .label {
+  /*display: none;*/
+  font-size: 0.75em;
+  text-align: center;
+  min-width: 15em;
+  border-radius: 0.5em;
+  position: absolute;
+  background: #ffffff;
+  border: 10px solid #eeeeee;
+  padding: 0.25em 0.5em;
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .shop-the-ad-product .label {
+    font-size: 0.95em;
+  }
+}
+
+/* Boxes with arrows from http://www.cssarrowplease.com/ :o) */
+.shop-the-ad-product.label-below .label:after,
+.shop-the-ad-product.label-below .label:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.shop-the-ad-product.label-below .label:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #ffffff;
+  border-width: 20px;
+  margin-left: -20px;
+}
+
+.shop-the-ad-product.label-below .label:before {
+  border-color: rgba(238, 238, 238, 0);
+  border-bottom-color: #eeeeee;
+  border-width: 34px;
+  margin-left: -34px;
+}
+
+.shop-the-ad-product.label-right .label:after,
+.shop-the-ad-product.label-right .label:before {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.shop-the-ad-product.label-right .label:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-right-color: #ffffff;
+  border-width: 20px;
+  margin-top: -20px;
+}
+
+.shop-the-ad-product.label-right .label:before {
+  border-color: rgba(238, 238, 238, 0);
+  border-right-color: #eeeeee;
+  border-width: 34px;
+  margin-top: -34px;
+}
+
+.shop-the-ad-product .label h3 {
+  font-size: 1.1em;
+  margin: 0.25em 0;
+  padding: 0;
+  font-weight: bold;
+  color: #444;
+}
+
+.shop-the-ad-product .label p {
+  font-size: 1em;
+  margin: 0.25em 0;
+  padding: 0;
+  font-weight: normal;
+  color: #666;
+}
+
+.shop-the-ad-product.label-right .marker {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.shop-the-ad-product.label-below .marker {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shop-the-ad-product.label-right .label {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 80px;
+}
+
+.shop-the-ad-product.label-below .label {
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 768px) {
+  .shop-the-ad-product.label-right .label {
+    left: 120px;
+  }
+
+  .shop-the-ad-product.label-below .label {
+    top: 120px;
+  }
+}
+
+.shop-the-ad-product .marker.active,
+.shop-the-ad-product .marker:hover {
+  background-image: url('../images/thingy-hover-state.png');
+}
+
+.shop-the-ad-product .label img {
+  width: 100%;
+  height: auto;
+}
+
+/*
+.shop-the-ad-overlay#~ {
+  left: ~px;
+  top: ~px;
+}
+*/
