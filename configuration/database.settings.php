@@ -40,7 +40,8 @@ if (!defined('PANTHEON_ENVIRONMENT')
 
   // If local_databases.php exists, include it; otherwise, carry on (making the
   // assumption that the default databases setup is fine.
-  if (file_exists(GREYHEAD_DRUPAL_ROOT . '/../local_databases.php') && is_readable(GREYHEAD_DRUPAL_ROOT . '/../local_databases.php')) {
+  if (file_exists(GREYHEAD_DRUPAL_ROOT . '/../local_databases.php')
+    && is_readable(GREYHEAD_DRUPAL_ROOT . '/../local_databases.php')) {
     include_once(GREYHEAD_DRUPAL_ROOT . '/../local_databases.php');
 
     // Do we have a databases array?
