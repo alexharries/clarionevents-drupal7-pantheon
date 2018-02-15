@@ -140,6 +140,11 @@ include SETTINGS_FILE_PATH . 'includes/conf-maillog-defaults.php';
 include SETTINGS_FILE_PATH . 'includes/conf-default-file-locations.php';
 
 /**
+ * Include CAPTCHA overrides if configured.
+ */
+include SETTINGS_FILE_PATH . 'includes/conf-default-file-locations.php';
+
+/**
  * Detect the current environment.
  */
 include SETTINGS_FILE_PATH . 'includes/environment-type-detection.php';
