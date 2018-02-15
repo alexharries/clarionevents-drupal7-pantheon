@@ -48,14 +48,14 @@ body.front {
     position: static;
 
     .sign-up-container {
-      border: 1px solid #000;
+      border: 1px solid @brand-black;
       color: inherit;
       background-color: transparent;
     }
 
     input {
       &::-webkit-input-placeholder {
-        color: #000 !important;
+        color: @brand-black !important;
       }
     }
 
@@ -250,7 +250,7 @@ body.front {
 footer {
   font-size: 14px;
   margin-top: 50px;
-  background-color: #000;
+  background-color: @brand-black;
 
   .panel-footer-logo {
     a {
@@ -325,7 +325,6 @@ body.conf-path-clarion-olympia-art-antiques-summer {
 
   .event-date {
     display: inline-block;
-
     font-size: 14px;
 
     @media @tablet {
@@ -352,8 +351,12 @@ body.conf-path-clarion-olympia-antiques-winter #header h1.home-link-no-logo a {
 
 body.conf-path-clarion-olympia-art-antiques-summer #header h1.home-link-no-logo a {
   max-width: 263px;
-  height: 138px;
+  height: 100px;
   background-image: url('../images/olympia-art-antiques.png');
+
+  @media @normal {
+    height: 138px;
+  }
 }
 
 .paragraphs-item-block-highlights .body {
@@ -400,5 +403,202 @@ body.conf-path-clarion-olympia-antiques-winter {
         margin: 0 auto;
       }
     }
+  }
+}
+
+// Shoe-horning the H&GF logo into the OAA header :)
+body.conf-path-clarion-olympia-art-antiques-summer {
+  #header {
+    .hgf-logo-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: @brand-black;
+      text-transform: uppercase;
+
+      font-size: 16px;
+      text-align: left;
+      white-space: nowrap;
+      margin-top: 0.5em;
+      margin-left: -5em;
+
+      // Only replace the H&GF link text with an image above -sm ().
+      a.hgf-logo-link {
+        background: transparent url('../images/20180102-hgf-logo-black-on-transparent.png') no-repeat;
+        width: 150px;
+        height: 88px;
+        background-size: 150px 88px;
+        text-indent: -10000em;
+        display: inline-block;
+      }
+
+      @media @tablet {
+        position: relative;
+      }
+
+      @media @normal {
+        a.hgf-logo-link {
+          width: 200px;
+          height: 117px;
+          background-size: 200px 117px;
+        }
+      }
+    }
+
+    .event-date {
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 0.25em;
+      display: block;
+      font-size: 15px;
+
+      @media @tablet {
+        text-align: left;
+        padding-left: 0.5em;
+        font-size: 18px;
+      }
+
+      @media @normal {
+        font-size: 25px;
+      }
+    }
+
+    a {
+      &.book-tickets-menu {
+        min-width: 100px;
+        margin-top: 0.75em;
+      }
+    }
+
+    .navbar-default {
+      .container-fluid {
+        .navbar-header {
+          margin-top: 0;
+        }
+
+        .navbar-toggle {
+          float: left;
+        }
+
+        .navbar-collapse {
+          .navbar-nav {
+            > li > a {
+              font-size: 16px;
+              padding-left: 0.5em;
+              padding-right: 0.5em;
+
+              &.btn {
+                font-size: 0.9em;
+                padding: 0.6em;
+                margin: 0.5em 0 0 0.5em;
+              }
+            }
+
+            a {
+              &.book-tickets-menu {
+                right: 0;
+
+                @media @normal {
+                  position: relative;
+                  top: auto;
+                  right: auto;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .buy-tickets-mobile {
+      position: fixed;
+      top: 200px;
+      right: 0;
+      z-index: 100;
+
+      a.btn {
+        border: #fff 1px solid;
+      }
+
+      @media @tablet {
+        top: 200px;
+      }
+
+      @media @normal {
+        display: none;
+      }
+    }
+
+    .region-social-media {
+      margin: 0.5em 0 0 0;
+
+      .social-media > div {
+        padding-right: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  footer {
+    a.olympia-art-antiques-footer-logo {
+      background: transparent url('../images/olympia-art-antiques-footer-logo-white.png') no-repeat;
+      width: 174px;
+      height: 92px;
+      background-size: 174px 92px;
+      text-indent: -10000em;
+      display: inline-block;
+    }
+
+    a.hgf-logo-container {
+      color: @white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 15px;
+      text-align: left;
+      white-space: nowrap;
+
+      display: inline-block;
+      vertical-align: top;
+      padding-left:  2em;
+
+      span.hgf-logo-link {
+        background: transparent url('../images/20180102-hgf-logo-white-on-transparent.png') no-repeat;
+        width: 150px;
+        height: 88px;
+        background-size: 150px 88px;
+        text-indent: -10000em;
+        display: inline-block;
+        margin-left: 0.25em;
+
+        @media @normal {
+          width: 125px;
+          height: 73px;
+          background-size: 125px 73px;
+        }
+      }
+    }
+
+    // Hide the logo block.
+    #block-block-11 {
+      display: none;
+    }
+
+    // Clear the links below the logos in the footer at < tablet viewports.
+    .footer-column-two {
+      clear: both;
+
+      @media @normal {
+        clear: none;
+      }
+    }
+
+    // Undo the apocryphal override for .region-footer-column-four.
+    #quick-links .region-footer-column-four {
+      margin-top: 0;
+    }
+  }
+
+  #copyright {
+    margin-top: 2em;
   }
 }

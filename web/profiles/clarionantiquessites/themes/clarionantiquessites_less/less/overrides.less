@@ -1227,6 +1227,9 @@ h2, .h2 {
     }
 
     &.book-tickets-menu {
+      // Fix for Book Tickets link being only partially-clickable.
+      z-index: 10000;
+
       &:hover,
       &:focus {
         background-color: @brand-primary;
@@ -1282,6 +1285,11 @@ h2, .h2 {
 
           li {
             position: static;
+
+            // Set position relative for <li>s with a dropdown.
+            &.dropdown {
+              position: relative;
+            }
           }
 
           a {
@@ -2399,7 +2407,7 @@ h1.block-title {
 // TALKS PROGRAMME
 .view-talks-programme,
 .view-event-programme {
-//.view-talks-programme {
+  //.view-talks-programme {
   margin-top: 30px;
 
   .view-header {
@@ -3020,16 +3028,22 @@ footer {
 
     border-top: 2px solid #eeeeee;
     border-bottom: 2px solid #eeeeee;
-    margin-top: 20px;
+    padding-top: 20px;
     .paragraphs-items-field-question-list ol {
       padding-left: 20px;
+
       li {
+        margin-top: 1em;
+        margin-bottom: 1em;
+
         font-family: 'la_gioconda_ttregular', serif;
         font-size: 20px;
         font-weight: bold;
         color: @brand-primary;
+
         .paragraphs-item-question-answer-bundle {
-          margin-top: -22px;
+          // Don't do stuff like this, please...
+          //margin-top: -22px;
         }
         h4 {
           margin-top: 0px;
@@ -3075,7 +3089,8 @@ footer {
   }
 
   .paragraphs-item-question-answer-bundle {
-    margin-top: -22px;
+    // Don't do stuff like this, please...
+    //margin-top: -22px;
   }
 }
 
