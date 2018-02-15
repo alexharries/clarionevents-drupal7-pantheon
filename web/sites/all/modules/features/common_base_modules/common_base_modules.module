@@ -73,7 +73,7 @@ function _common_base_modules_unset_captcha(&$form) {
     if (!empty($form[$child_element]['#type']) && ($form[$child_element]['#type'] == 'captcha')) {
       // It's a CAPTCHA. Replace it with some help text.
       $form[$child_element] = [
-        '#markup' => '<strong>' . t('The CAPTCHA challenge has been disabled because this is a local development environment.') . '</strong>',
+        '#markup' => '<strong>' . t('The CAPTCHA challenge has been disabled by the Common Base Modules Feature.') . '</strong>',
       ];
     }
     else {
