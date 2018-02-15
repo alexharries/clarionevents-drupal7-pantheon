@@ -142,7 +142,7 @@ include SETTINGS_FILE_PATH . 'includes/conf-default-file-locations.php';
 /**
  * Include CAPTCHA overrides if configured.
  */
-include SETTINGS_FILE_PATH . 'includes/conf-default-file-locations.php';
+include SETTINGS_FILE_PATH . 'includes/conf-captcha-disable.php';
 
 /**
  * Detect the current environment.
