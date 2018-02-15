@@ -11,7 +11,10 @@
 
 // Attempt to load the local_databases.php file to set the database connection
 // information.
-include GREYHEAD_DRUPAL_ROOT . '/../local_database.php';
+if (file_exists(GREYHEAD_DRUPAL_ROOT . '/../local_database.php')
+  && is_readable(GREYHEAD_DRUPAL_ROOT . '/../local_database.php')) {
+  include GREYHEAD_DRUPAL_ROOT . '/../local_database.php';
+}
 
 // This file will be skipped if the $databases array has already been defined
 // or if we're in a Pantheon site.
