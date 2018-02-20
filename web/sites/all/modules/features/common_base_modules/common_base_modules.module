@@ -43,7 +43,7 @@ function common_base_modules_form_alter(&$form, &$form_state, $form_id) {
   }
 
   // Do we need to disable CAPTCHA?
-  _common_base_modules_unset_captcha($form);
+  common_base_modules_unset_captcha($form);
 }
 
 /**
