@@ -13,7 +13,7 @@ define('SITE_MACHINE_NAME', 'clarion-default');
 define('MULTISITE_IDENTIFIER', substr(dirname(__FILE__), strrpos(dirname(__FILE__), '/') + 1));
 
 // Include the common settings.php file. Paths relative to index.php!
-require_once '../configuration/common.settings.php';
+require_once GREYHEAD_CONFIGURATION_DIRECTORY_LOCATION . 'common.settings.php';
 
 /**
  * S3FS module config.
