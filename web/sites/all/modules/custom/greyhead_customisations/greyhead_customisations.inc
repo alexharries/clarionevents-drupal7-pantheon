@@ -1194,7 +1194,7 @@ function _greyhead_customisations_menu_tree_check_access(&$tree) {
   foreach ($tree as $key => $v) {
     $item = &$tree[$key]['link'];
     $was_inaccessible = FALSE;
-    if (!$item['access']) {
+    if (empty($item['access']) || !$item['access']) {
       $was_inaccessible = $item['access'] = TRUE;
     }
     _menu_link_translate($item);
