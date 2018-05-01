@@ -78,7 +78,7 @@ function antiquessites_events_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -167,7 +167,7 @@ function antiquessites_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -246,7 +246,7 @@ function antiquessites_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -335,7 +335,7 @@ function antiquessites_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -392,7 +392,7 @@ function antiquessites_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -463,7 +463,7 @@ function antiquessites_events_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -624,6 +624,59 @@ function antiquessites_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_talk_image_hide_on_page'.
+  $field_instances['node-event-field_talk_image_hide_on_page'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'If you do not wish to show the talk\'s image on the talk detail page (the page with all the details about this particular talk), tick this box.',
+    'display' => array(
+      'cck_blocks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 48,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_talk_image_hide_on_page',
+    'label' => 'Don\'t show talk image on talk detail page?',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_type_of_event'.
   $field_instances['node-event-field_type_of_event'] = array(
     'bundle' => 'event',
@@ -671,7 +724,9 @@ function antiquessites_events_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Don\'t show talk image in listings?');
+  t('Don\'t show talk image on talk detail page?');
   t('Event Paragraphs');
+  t('If you do not wish to show the talk\'s image on the talk detail page (the page with all the details about this particular talk), tick this box.');
   t('If you don\'t wish to show this talk\'s image on the talks programme listing pages, tick this box.');
   t('Location');
   t('Speaker');

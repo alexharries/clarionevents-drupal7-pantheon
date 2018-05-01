@@ -121,19 +121,19 @@ function antiquessites_events_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
-        ),
-        'xmlsitemap' => array(
           'weight' => '12',
         ),
-        'redirect' => array(
+        'xmlsitemap' => array(
           'weight' => '13',
+        ),
+        'redirect' => array(
+          'weight' => '14',
         ),
       ),
       'display' => array(
