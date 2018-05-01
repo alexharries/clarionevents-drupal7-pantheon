@@ -237,32 +237,48 @@ function clarionantiquessites_less_preprocess_field(&$variables) {
     }
   }
 
-  // On event node teasers, if field_talk_image_hide_in_teaser is checked,
-  // remove the preview image.
+  // Adjustments for talk images.
   if ($variables['element']['#field_name'] == 'field_talk_image') {
     if ($node = &$variables['element']['#object']) {
-      if (!empty($node->field_talk_image_hide_in_teaser[LANGUAGE_NONE][0]['value']) && $node->field_talk_image_hide_in_teaser[LANGUAGE_NONE][0]['value']) {
-        // I'm just going to register my abject hate for Display Suite here.
-        // For some stupid reason, it's not possible to use a preprocess
-        // field hook in DS to simply remove the content of the field,
-        // because if you output an empty string from this theme call,
-        // common.inc will then render this element instead of rendering
-        // its children. See line 6075 of common.inc which begins with
-        // "If #theme was not set and the element has children, render them now."
-        // The exact issue is that $elements['#children'] is '' - this is
-        // checked at "if ($elements['#children'] == '') {", currently line
-        // 6078 in common.inc - and it doesn't seem to be possible to change
-        // any values in $elements from this preprocess function because
-        // $elements is kept outside of this function, despite a copy of
-        // $elements existing in the $variables array. But it's a copy, so
-        // you can't change its values from here. As a result, you need to
-        // output _something_ here. Argh...
-        $variables['items'] = [
-          [
-            '#type' => 'markup',
-            '#markup' => '<!-- This content hidden in ' . __FUNCTION__ . ' -->',
-          ],
-        ];
+      if ($variables['element']['#view_mode'] == 'teaser') {
+        // On event node teasers, if field_talk_image_hide_in_teaser is checked,
+        // remove the talk image.
+        if (!empty($node->field_talk_image_hide_in_teaser[LANGUAGE_NONE][0]['value']) && $node->field_talk_image_hide_in_teaser[LANGUAGE_NONE][0]['value']) {
+          // I'm just going to register my abject hate for Display Suite here.
+          // For some stupid reason, it's not possible to use a preprocess
+          // field hook in DS to simply remove the content of the field,
+          // because if you output an empty string from this theme call,
+          // common.inc will then render this element instead of rendering
+          // its children. See line 6075 of common.inc which begins with
+          // "If #theme was not set and the element has children, render them now."
+          // The exact issue is that $elements['#children'] is '' - this is
+          // checked at "if ($elements['#children'] == '') {", currently line
+          // 6078 in common.inc - and it doesn't seem to be possible to change
+          // any values in $elements from this preprocess function because
+          // $elements is kept outside of this function, despite a copy of
+          // $elements existing in the $variables array. But it's a copy, so
+          // you can't change its values from here. As a result, you need to
+          // output _something_ here. Argh...
+          $variables['items'] = [
+            [
+              '#type' => 'markup',
+              '#markup' => '<!-- This content hidden in ' . __FUNCTION__ . ':' . __LINE__ . ' -->',
+            ],
+          ];
+        }
+      }
+
+      // On event node full pages, if field_talk_image_hide_on_page is checked,
+      // remove the talk image.
+      if ($variables['element']['#view_mode'] == 'full') {
+        if (!empty($node->field_talk_image_hide_on_page[LANGUAGE_NONE][0]['value']) && $node->field_talk_image_hide_on_page[LANGUAGE_NONE][0]['value']) {
+          $variables['items'] = [
+            [
+              '#type' => 'markup',
+              '#markup' => '<!-- This content hidden in ' . __FUNCTION__ . ':' . __LINE__ . ' -->',
+            ],
+          ];
+        }
       }
     }
   }
