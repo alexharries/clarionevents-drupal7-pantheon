@@ -44,16 +44,6 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'create field_stand'.
-  $permissions['create field_stand'] = array(
-    'name' => 'create field_stand',
-    'roles' => array(
-      'Senior Marketing exec' => 'Senior Marketing exec',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_title_for_ordering_'.
   $permissions['create field_title_for_ordering_'] = array(
     'name' => 'create field_title_for_ordering_',
@@ -91,16 +81,6 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
   // Exported permission: 'edit field_press_area'.
   $permissions['edit field_press_area'] = array(
     'name' => 'edit field_press_area',
-    'roles' => array(
-      'Senior Marketing exec' => 'Senior Marketing exec',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit field_stand'.
-  $permissions['edit field_stand'] = array(
-    'name' => 'edit field_stand',
     'roles' => array(
       'Senior Marketing exec' => 'Senior Marketing exec',
       'administrator' => 'administrator',
@@ -153,16 +133,6 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit own field_stand'.
-  $permissions['edit own field_stand'] = array(
-    'name' => 'edit own field_stand',
-    'roles' => array(
-      'Senior Marketing exec' => 'Senior Marketing exec',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit own field_title_for_ordering_'.
   $permissions['edit own field_title_for_ordering_'] = array(
     'name' => 'edit own field_title_for_ordering_',
@@ -203,18 +173,6 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
     'roles' => array(
       'Senior Marketing exec' => 'Senior Marketing exec',
       'administrator' => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view field_stand'.
-  $permissions['view field_stand'] = array(
-    'name' => 'view field_stand',
-    'roles' => array(
-      'Senior Marketing exec' => 'Senior Marketing exec',
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -260,17 +218,6 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
   $permissions['view own field_press_area'] = array(
     'name' => 'view own field_press_area',
     'roles' => array(
-      'Senior Marketing exec' => 'Senior Marketing exec',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_stand'.
-  $permissions['view own field_stand'] = array(
-    'name' => 'view own field_stand',
-    'roles' => array(
-      'Exhibitor' => 'Exhibitor',
       'Senior Marketing exec' => 'Senior Marketing exec',
       'administrator' => 'administrator',
     ),

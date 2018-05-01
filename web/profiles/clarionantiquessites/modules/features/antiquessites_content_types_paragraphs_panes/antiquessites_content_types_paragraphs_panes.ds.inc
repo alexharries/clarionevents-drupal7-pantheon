@@ -29,34 +29,6 @@ function antiquessites_content_types_paragraphs_panes_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|basic_page|event_programme';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'basic_page';
-  $ds_fieldsetting->view_mode = 'event_programme';
-  $ds_fieldsetting->settings = array(
-    'event_programme' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'highlight_tours' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'show_title' => 1,
-        'title_wrapper' => 'h2',
-        'ctools' => 'a:3:{s:4:"conf";a:15:{s:23:"override_pager_settings";i:0;s:9:"use_pager";i:0;s:14:"nodes_per_page";s:1:"0";s:8:"pager_id";s:1:"0";s:6:"offset";s:1:"0";s:9:"more_link";i:0;s:10:"feed_icons";i:0;s:10:"panel_args";i:0;s:12:"link_to_view";i:0;s:4:"args";s:0:"";s:3:"url";s:0:"";s:7:"display";s:12:"attachment_1";s:14:"override_title";i:1;s:19:"override_title_text";s:21:"Daily Highlight Tours";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"views";s:7:"subtype";s:15:"event_programme";}',
-        'load_terms' => 0,
-        'ft' => array(),
-        'conditions' => array(),
-      ),
-    ),
-  );
-  $export['node|basic_page|event_programme'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|basic_page|exhibitor_downloads_centre';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'basic_page';
@@ -128,14 +100,27 @@ function antiquessites_content_types_paragraphs_panes_ds_field_settings_info() {
       'formatter_settings' => array(
         'show_title' => 1,
         'title_wrapper' => 'h2',
-        'ctools' => 'a:3:{s:4:"conf";a:12:{s:12:"link_to_view";i:0;s:9:"more_link";i:0;s:9:"use_pager";i:0;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:2:"10";s:6:"offset";s:1:"0";s:4:"path";s:0:"";s:9:"arguments";a:1:{s:3:"tid";s:17:"Concierge Partner";}s:15:"fields_override";a:4:{s:18:"field_partner_type";i:0;s:5:"title";i:0;s:10:"field_logo";i:0;s:4:"body";i:1;}s:14:"override_title";i:1;s:19:"override_title_text";s:17:"Concierge Partner";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:21:"partners-panel_pane_2";}',
+        'ctools' => 'a:3:{s:4:"conf";a:12:{s:12:"link_to_view";i:0;s:9:"more_link";i:0;s:9:"use_pager";i:0;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:2:"10";s:6:"offset";s:1:"0";s:4:"path";s:0:"";s:9:"arguments";a:1:{s:3:"tid";s:14:"Dining Partner";}s:15:"fields_override";a:4:{s:18:"field_partner_type";i:0;s:5:"title";i:0;s:10:"field_logo";i:0;s:4:"body";i:1;}s:14:"override_title";i:1;s:19:"override_title_text";s:14:"Dining Partner";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:21:"partners-panel_pane_2";}',
+        'load_terms' => 1,
+        'ft' => array(),
+        'conditions' => array(),
+      ),
+    ),
+    'cultural_partners' => array(
+      'weight' => '10',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 1,
+        'title_wrapper' => 'h2',
+        'ctools' => 'a:3:{s:4:"conf";a:5:{s:9:"arguments";a:1:{s:3:"tid";s:17:"Cultural Partners";}s:15:"fields_override";a:4:{s:18:"field_partner_type";i:0;s:5:"title";i:0;s:10:"field_logo";i:0;s:4:"body";i:1;}s:14:"override_title";i:1;s:19:"override_title_text";s:17:"Cultural Partners";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:21:"partners-panel_pane_1";}',
         'load_terms' => 1,
         'ft' => array(),
         'conditions' => array(),
       ),
     ),
     'event_partners' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -167,14 +152,14 @@ function antiquessites_content_types_paragraphs_panes_ds_field_settings_info() {
       'formatter_settings' => array(
         'show_title' => 1,
         'title_wrapper' => 'h2',
-        'ctools' => 'a:3:{s:4:"conf";a:12:{s:12:"link_to_view";i:0;s:9:"more_link";i:0;s:9:"use_pager";i:0;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:2:"10";s:6:"offset";s:1:"0";s:4:"path";s:0:"";s:9:"arguments";a:1:{s:3:"tid";s:18:"Interiors Partners";}s:15:"fields_override";a:4:{s:18:"field_partner_type";i:0;s:5:"title";i:0;s:10:"field_logo";i:0;s:4:"body";i:1;}s:14:"override_title";i:1;s:19:"override_title_text";s:18:"Interiors Partners";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:21:"partners-panel_pane_2";}',
+        'ctools' => 'a:3:{s:4:"conf";a:12:{s:12:"link_to_view";i:0;s:9:"more_link";i:0;s:9:"use_pager";i:0;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:2:"10";s:6:"offset";s:1:"0";s:4:"path";s:0:"";s:9:"arguments";a:1:{s:3:"tid";s:18:"Interiors Partners";}s:15:"fields_override";a:4:{s:18:"field_partner_type";i:0;s:5:"title";i:0;s:10:"field_logo";i:0;s:4:"body";i:1;}s:14:"override_title";i:1;s:19:"override_title_text";s:17:"Interiors Partner";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:21:"partners-panel_pane_2";}',
         'load_terms' => 1,
         'ft' => array(),
         'conditions' => array(),
       ),
     ),
     'media_partners' => array(
-      'weight' => '9',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -187,7 +172,7 @@ function antiquessites_content_types_paragraphs_panes_ds_field_settings_info() {
       ),
     ),
     'partners' => array(
-      'weight' => '10',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -223,6 +208,11 @@ function antiquessites_content_types_paragraphs_panes_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'press_page';
   $ds_fieldsetting->settings = array(
     'download_logos_and_fair_images' => array(
+      'weight' => '7',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'download_sale_pieces' => array(
       'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
@@ -242,176 +232,13 @@ function antiquessites_content_types_paragraphs_panes_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|event|default';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'event';
-  $ds_fieldsetting->view_mode = 'default';
-  $ds_fieldsetting->settings = array(
-    'field_start_time' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Time',
-          'lbw' => 1,
-          'lbw-el' => 'div',
-          'lbw-cl' => 'event-label',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'event-date',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fis' => TRUE,
-          'fis-el' => 'div',
-          'fis-cl' => 'event-field',
-          'fis-at' => '',
-          'fis-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_speaker' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Speaker(s)',
-          'lbw' => 1,
-          'lbw-el' => 'div',
-          'lbw-cl' => 'event-label',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'event-speakers',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_location' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'event-location',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-  );
-  $export['node|event|default'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|event|teaser';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'event';
-  $ds_fieldsetting->view_mode = 'teaser';
-  $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => 'div',
-        'class' => 'event-title',
-        'ft' => array(),
-        'conditions' => array(),
-      ),
-    ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'event-body',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_start_time' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Time',
-          'lb-el' => 'div',
-          'lb-cl' => 'event-label',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'event-date',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'event-field',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_speaker' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Speakers(s)',
-          'lb-el' => 'div',
-          'lb-cl' => 'event-label',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'event-speakers',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_location' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'event-location',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-  );
-  $export['node|event|teaser'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|exhibitor_profile_page|default';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'exhibitor_profile_page';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'exhibitor_profile_gallery_items' => array(
-      'weight' => '12',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -658,6 +485,7 @@ function antiquessites_content_types_paragraphs_panes_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_field',
         ),
+        'conditions' => array(),
       ),
     ),
   );
@@ -898,19 +726,6 @@ function antiquessites_content_types_paragraphs_panes_ds_field_settings_info() {
             ),
           ),
         ),
-      ),
-    ),
-    'gallery_item_list_by_category' => array(
-      'weight' => '7',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'show_title' => 1,
-        'title_wrapper' => 'h2',
-        'ctools' => 'a:3:{s:4:"conf";a:16:{s:23:"override_pager_settings";i:0;s:9:"use_pager";i:0;s:14:"nodes_per_page";s:1:"0";s:8:"pager_id";s:1:"0";s:6:"offset";s:1:"0";s:9:"more_link";i:0;s:10:"feed_icons";i:0;s:10:"panel_args";i:1;s:12:"link_to_view";i:0;s:4:"args";s:0:"";s:3:"url";s:0:"";s:7:"display";s:7:"block_3";s:7:"context";a:1:{i:0;s:42:"argument_entity_id:node_1.field-categories";}s:14:"override_title";i:1;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"views";s:7:"subtype";s:23:"exhibitor_s_sale_pieces";}',
-        'load_terms' => 1,
-        'ft' => array(),
-        'conditions' => array(),
       ),
     ),
     'title' => array(
@@ -1315,47 +1130,6 @@ function antiquessites_content_types_paragraphs_panes_ds_custom_fields_info() {
     'block_render' => '1',
   );
   $export['download_sale_pieces'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'event_partners';
-  $ds_field->label = 'Event Partners';
-  $ds_field->field_type = 7;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'default' => array(),
-    'settings' => array(
-      'show_title' => array(
-        'type' => 'checkbox',
-      ),
-      'title_wrapper' => array(
-        'type' => 'textfield',
-        'description' => 'Eg: h1, h2, p',
-      ),
-      'ctools' => array(
-        'type' => 'ctools',
-      ),
-    ),
-  );
-  $export['event_partners'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'event_programme';
-  $ds_field->label = 'Event Programme';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'views|event_programme-block_1',
-    'block_render' => '3',
-  );
-  $export['event_programme'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -1906,46 +1680,6 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|basic_page|event_programme';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'basic_page';
-  $ds_layout->view_mode = 'event_programme';
-  $ds_layout->layout = 'bootstrap_12';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'central' => array(
-        0 => 'field_paragraphs',
-        1 => 'highlight_tours',
-        2 => 'event_programme',
-      ),
-    ),
-    'fields' => array(
-      'field_paragraphs' => 'central',
-      'highlight_tours' => 'central',
-      'event_programme' => 'central',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
-    'wrappers' => array(
-      'central' => 'div',
-      'ds_hidden' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'layout_disable_css' => FALSE,
-    'hide_page_title' => '0',
-    'page_option_title' => '',
-  );
-  $export['node|basic_page|event_programme'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|basic_page|exhibitor_downloads_centre';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'basic_page';
@@ -2090,9 +1824,10 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
         7 => 'airline_alliance',
       ),
       'bottom' => array(
-        8 => 'event_partners',
-        9 => 'media_partners',
-        10 => 'partners',
+        8 => 'media_partners',
+        9 => 'event_partners',
+        10 => 'cultural_partners',
+        11 => 'partners',
       ),
     ),
     'fields' => array(
@@ -2104,8 +1839,9 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
       'charity_partner' => 'right',
       'social_partners' => 'right',
       'airline_alliance' => 'right',
-      'event_partners' => 'bottom',
       'media_partners' => 'bottom',
+      'event_partners' => 'bottom',
+      'cultural_partners' => 'bottom',
       'partners' => 'bottom',
     ),
     'classes' => array(
@@ -2147,14 +1883,18 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
         2 => 'press_releases',
       ),
       'bottomleft' => array(
-        3 => 'download_logos_and_fair_images',
+        3 => 'download_sale_pieces',
+      ),
+      'bottomright' => array(
+        4 => 'download_logos_and_fair_images',
       ),
     ),
     'fields' => array(
       'field_paragraphs' => 'top',
       'press_enquiries' => 'central',
       'press_releases' => 'central',
-      'download_logos_and_fair_images' => 'bottomleft',
+      'download_sale_pieces' => 'bottomleft',
+      'download_logos_and_fair_images' => 'bottomright',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -2224,99 +1964,6 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|event|default';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'event';
-  $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'bootstrap_12';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'central' => array(
-        0 => 'field_location',
-        1 => 'field_start_time',
-        2 => 'field_evebts_paragraphs',
-        3 => 'field_speaker',
-        4 => 'field_paragraph_column_2',
-        5 => 'webform',
-      ),
-    ),
-    'fields' => array(
-      'field_location' => 'central',
-      'field_start_time' => 'central',
-      'field_evebts_paragraphs' => 'central',
-      'field_speaker' => 'central',
-      'field_paragraph_column_2' => 'central',
-      'webform' => 'central',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
-    'wrappers' => array(
-      'central' => 'div',
-      'ds_hidden' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'hide_page_title' => '0',
-    'page_option_title' => '',
-  );
-  $export['node|event|default'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|event|teaser';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'event';
-  $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'bootstrap_3_9';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'left' => array(
-        0 => 'field_talk_image',
-      ),
-      'right' => array(
-        1 => 'title',
-        2 => 'field_location',
-        3 => 'field_start_time',
-        4 => 'body',
-        5 => 'field_speaker',
-      ),
-    ),
-    'fields' => array(
-      'field_talk_image' => 'left',
-      'title' => 'right',
-      'field_location' => 'right',
-      'field_start_time' => 'right',
-      'body' => 'right',
-      'field_speaker' => 'right',
-    ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
-    'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
-      'ds_hidden' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'hide_page_title' => '0',
-    'page_option_title' => '',
-  );
-  $export['node|event|teaser'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|exhibitor_profile_page|default';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'exhibitor_profile_page';
@@ -2328,25 +1975,25 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
         0 => 'group_bootstrap_column_1',
         1 => 'group_bootstrap_column_2',
         8 => 'field_logo',
-        9 => 'body',
-        11 => 'sofa_exhibitor',
+        9 => 'sofa_exhibitor',
+        11 => 'body',
       ),
       'left' => array(
         2 => 'field_contact_name',
         3 => 'field_telephone',
         4 => 'field_mobile',
         5 => 'field_email',
-        6 => 'field_stand',
+        14 => 'field_stand',
       ),
       'right' => array(
-        7 => 'field_website',
-        10 => 'field_address',
-        12 => 'exhibitor_social_media_links_entity_view_1',
-        13 => 'field_categories',
-        14 => 'field_pdf',
+        6 => 'field_website',
+        7 => 'field_address',
+        10 => 'exhibitor_social_media_links_entity_view_1',
+        12 => 'field_categories',
+        15 => 'field_pdf',
       ),
       'bottom' => array(
-        15 => 'exhibitor_profile_gallery_items',
+        13 => 'exhibitor_profile_gallery_items',
       ),
     ),
     'fields' => array(
@@ -2356,16 +2003,16 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
       'field_telephone' => 'left',
       'field_mobile' => 'left',
       'field_email' => 'left',
-      'field_stand' => 'left',
       'field_website' => 'right',
-      'field_logo' => 'top',
-      'body' => 'top',
       'field_address' => 'right',
+      'field_logo' => 'top',
       'sofa_exhibitor' => 'top',
       'exhibitor_social_media_links_entity_view_1' => 'right',
+      'body' => 'top',
       'field_categories' => 'right',
-      'field_pdf' => 'right',
       'exhibitor_profile_gallery_items' => 'bottom',
+      'field_stand' => 'left',
+      'field_pdf' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -2437,13 +2084,22 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
       'ds_content' => array(
         0 => 'linkback',
       ),
+      'ds_hidden' => array(
+        1 => 'field_stand',
+      ),
     ),
     'fields' => array(
       'linkback' => 'ds_content',
+      'field_stand' => 'ds_hidden',
     ),
-    'classes' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
     'wrappers' => array(
       'ds_content' => 'div',
+      'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
@@ -2650,7 +2306,7 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'image_gallery';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'bootstrap_6_6_stacked';
+  $ds_layout->layout = 'bootstrap_7_5';
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
@@ -2664,9 +2320,6 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
         5 => 'field_categories',
         6 => 'back_to_node_edit_gallery',
       ),
-      'bottom' => array(
-        7 => 'gallery_item_list_by_category',
-      ),
     ),
     'fields' => array(
       'field_image_s_' => 'left',
@@ -2676,7 +2329,6 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
       'field_exhibitor' => 'right',
       'field_categories' => 'right',
       'back_to_node_edit_gallery' => 'right',
-      'gallery_item_list_by_category' => 'bottom',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -2684,10 +2336,8 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
       ),
     ),
     'wrappers' => array(
-      'top' => 'div',
       'left' => 'div',
       'right' => 'div',
-      'bottom' => 'div',
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
@@ -2696,7 +2346,7 @@ function antiquessites_content_types_paragraphs_panes_ds_layout_settings_info() 
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'hide_page_title' => '2',
-    'page_option_title' => '%node:field-categories',
+    'page_option_title' => '%node:field_categories',
   );
   $export['node|image_gallery|full'] = $ds_layout;
 
@@ -3241,15 +2891,6 @@ function antiquessites_content_types_paragraphs_panes_ds_view_modes_info() {
     'node' => 'node',
   );
   $export['entity_reference_link'] = $ds_view_mode;
-
-  $ds_view_mode = new stdClass();
-  $ds_view_mode->api_version = 1;
-  $ds_view_mode->view_mode = 'event_programme';
-  $ds_view_mode->label = 'Event Programme';
-  $ds_view_mode->entities = array(
-    'node' => 'node',
-  );
-  $export['event_programme'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
