@@ -25,11 +25,20 @@ function antiquessites_events_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_link' => FALSE,
+          'trim_options' => array(),
+          'trim_preserve_tags' => '',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_default',
+        'type' => 'smart_trim_format',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -69,7 +78,7 @@ function antiquessites_events_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 9,
+      'weight' => 6,
     ),
   );
 
@@ -104,27 +113,51 @@ function antiquessites_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 44,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_evebts_paragraphs',
-    'label' => 'Paragraphs',
+    'label' => 'Event Paragraphs',
     'required' => 0,
     'settings' => array(
+      'add_mode' => 'select',
       'allowed_bundles' => array(
-        'button' => 0,
-        'call_to_action' => 0,
+        'attachment' => -1,
+        'block_highlights' => -1,
+        'button' => -1,
+        'call_to_action' => -1,
         'image_gallery' => 'image_gallery',
         'media_image_video_' => 'media_image_video_',
-        'programme' => 0,
-        'slideshow' => 0,
+        'one_column' => 'one_column',
+        'programme' => -1,
+        'slideshow' => -1,
         'table' => 'table',
         'text' => 'text',
+        'three_column' => 'three_column',
+        'two_column_3_9' => 'two_column_3_9',
+        'two_column_6_6' => 'two_column_6_6',
+        'two_column_9_3' => 'two_column_9_3',
       ),
-      'bundle_weights' => array(),
-      'default_edit_mode' => 'open',
+      'bundle_weights' => array(
+        'attachment' => -10,
+        'block_highlights' => -9,
+        'button' => -8,
+        'call_to_action' => -7,
+        'image_gallery' => -6,
+        'media_image_video_' => -5,
+        'one_column' => 0,
+        'programme' => -4,
+        'slideshow' => -3,
+        'table' => -2,
+        'text' => -1,
+        'three_column' => 4,
+        'two_column_3_9' => 1,
+        'two_column_6_6' => 2,
+        'two_column_9_3' => 3,
+      ),
+      'default_edit_mode' => 'closed',
       'title' => 'Paragraph',
       'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
@@ -134,50 +167,7 @@ function antiquessites_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_event_type'.
-  $field_instances['node-event-field_event_type'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'cck_blocks' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_event_type',
-    'label' => 'Event Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 14,
+      'weight' => 7,
     ),
   );
 
@@ -199,12 +189,14 @@ function antiquessites_events_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'conditions' => array(),
-          'more_link' => FALSE,
+          'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
           'trim_length' => 300,
-          'trim_link' => FALSE,
-          'trim_options' => array(),
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 0,
+          ),
           'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
@@ -254,54 +246,7 @@ function antiquessites_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_page_layout'.
-  $field_instances['node-event-field_page_layout'] = array(
-    'bundle' => 'event',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'cck_blocks' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 24,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_page_layout',
-    'label' => 'Layout',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 4,
     ),
   );
 
@@ -330,34 +275,57 @@ function antiquessites_events_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 42,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_paragraph_column_2',
-    'label' => 'Paragraph Column 2',
+    'label' => 'Speaker Paragraphs',
     'required' => 0,
     'settings' => array(
+      'add_mode' => 'select',
       'allowed_bundles' => array(
-        'attachment' => 0,
-        'button' => 0,
-        'call_to_action' => 0,
-        'image_gallery' => 0,
+        'attachment' => -1,
+        'block_highlights' => -1,
+        'button' => -1,
+        'call_to_action' => -1,
+        'image_gallery' => -1,
         'media_image_video_' => 'media_image_video_',
-        'programme' => 0,
-        'slideshow' => 0,
-        'table' => 0,
+        'one_column' => 'one_column',
+        'programme' => -1,
+        'slideshow' => -1,
+        'table' => -1,
         'text' => 'text',
+        'three_column' => 'three_column',
+        'two_column_3_9' => 'two_column_3_9',
+        'two_column_6_6' => 'two_column_6_6',
+        'two_column_9_3' => 'two_column_9_3',
       ),
-      'bundle_weights' => array(),
-      'default_edit_mode' => 'open',
+      'bundle_weights' => array(
+        'attachment' => -10,
+        'block_highlights' => -9,
+        'button' => -8,
+        'call_to_action' => -7,
+        'image_gallery' => -6,
+        'media_image_video_' => -5,
+        'one_column' => 0,
+        'programme' => -4,
+        'slideshow' => -3,
+        'table' => -2,
+        'text' => -1,
+        'three_column' => 4,
+        'two_column_3_9' => 1,
+        'two_column_6_6' => 2,
+        'two_column_9_3' => 3,
+      ),
+      'default_edit_mode' => 'closed',
       'title' => 'Paragraph',
       'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
@@ -367,50 +335,7 @@ function antiquessites_events_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_section'.
-  $field_instances['node-event-field_section'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'cck_blocks' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_section',
-    'label' => 'Section',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 9,
     ),
   );
 
@@ -434,7 +359,7 @@ function antiquessites_events_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -467,7 +392,7 @@ function antiquessites_events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -489,7 +414,7 @@ function antiquessites_events_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'format_type' => 'event_programme_detail',
-          'fromto' => 'value',
+          'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
@@ -537,13 +462,13 @@ function antiquessites_events_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_select',
-      'weight' => 6,
+      'type' => 'date_popup',
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-event-field_talk_image_logo'.
-  $field_instances['node-event-field_talk_image_logo'] = array(
+  // Exported field_instance: 'node-event-field_talk_image'.
+  $field_instances['node-event-field_talk_image'] = array(
     'bundle' => 'event',
     'deleted' => 0,
     'description' => '',
@@ -556,22 +481,28 @@ function antiquessites_events_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'colorbox',
         'settings' => array(
+          'colorbox_caption' => 'auto',
+          'colorbox_caption_custom' => '',
+          'colorbox_gallery' => 'page',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => 'paragraph-fit-within-600x600',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => 'large',
+          'colorbox_node_style_first' => '',
           'conditions' => array(),
           'grid_field_formatter' => array(
             'columns' => 1,
-            'grid_enable' => FALSE,
+            'grid_enable' => 0,
           ),
-          'image_link' => '',
-          'image_style' => '',
         ),
-        'type' => 'image',
+        'type' => 'colorbox',
         'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'cs_adaptive_image',
         'settings' => array(
           'conditions' => array(),
           'grid_field_formatter' => array(
@@ -579,20 +510,33 @@ function antiquessites_events_field_default_field_instances() {
             'grid_enable' => 0,
           ),
           'image_link' => '',
-          'image_style' => 'event_image',
+          'styles' => array(
+            'breakpoint_1' => 320,
+            'breakpoint_2' => 480,
+            'breakpoint_3' => 600,
+            'breakpoint_4' => '',
+            'breakpoint_5' => '',
+            'fallback_style' => 'event_image',
+            'max_style' => 'event_image',
+            'style_1' => 'event_image_-_mobile',
+            'style_2' => 'event_image_-_mobile',
+            'style_3' => 'event_image_-_mobile',
+            'style_4' => '',
+            'style_5' => '',
+          ),
         ),
-        'type' => 'image',
+        'type' => 'cs_adaptive_image',
         'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_talk_image_logo',
-    'label' => 'Talk image logo',
+    'field_name' => 'field_talk_image',
+    'label' => 'Talk Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 38651,
+      'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -603,13 +547,80 @@ function antiquessites_events_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
-      'weight' => 1,
+      'type' => 'media_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_talk_image_hide_in_teaser'.
+  $field_instances['node-event-field_talk_image_hide_in_teaser'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'If you don\'t wish to show this talk\'s image on the talks programme listing pages, tick this box.',
+    'display' => array(
+      'cck_blocks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 47,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_talk_image_hide_in_teaser',
+    'label' => 'Don\'t show talk image in listings?',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 3,
     ),
   );
 
@@ -630,13 +641,13 @@ function antiquessites_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 46,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 43,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -652,22 +663,21 @@ function antiquessites_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 13,
+      'weight' => 1,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Event Type');
-  t('Layout');
+  t('Don\'t show talk image in listings?');
+  t('Event Paragraphs');
+  t('If you don\'t wish to show this talk\'s image on the talks programme listing pages, tick this box.');
   t('Location');
-  t('Paragraph Column 2');
-  t('Paragraphs');
-  t('Section');
   t('Speaker');
+  t('Speaker Paragraphs');
   t('Start Time');
-  t('Talk image logo');
+  t('Talk Image');
   t('Type of Event');
 
   return $field_instances;

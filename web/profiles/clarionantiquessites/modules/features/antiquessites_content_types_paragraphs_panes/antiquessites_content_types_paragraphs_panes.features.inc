@@ -53,46 +53,6 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_image.
-  $styles['event_image'] = array(
-    'label' => 'Event Image',
-    'effects' => array(
-      126 => array(
-        'name' => 'iek_image_resize',
-        'data' => array(
-          'width' => 100,
-          'height' => 272,
-          'blank_margin' => 1,
-          'blank_margin_bg_color' => '#FFFFFF',
-          'position' => 'middle_center',
-          'x' => 0,
-          'y' => 0,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: event_image_-_mobile.
-  $styles['event_image_-_mobile'] = array(
-    'label' => 'Event Image - Mobile',
-    'effects' => array(
-      131 => array(
-        'name' => 'iek_image_resize',
-        'data' => array(
-          'width' => 220,
-          'height' => 220,
-          'blank_margin' => 1,
-          'blank_margin_bg_color' => '#FFFFFF',
-          'position' => 'middle_center',
-          'x' => 0,
-          'y' => 0,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
   // Exported image style: exhibitor_banners.
   $styles['exhibitor_banners'] = array(
     'label' => 'Exhibitor Banners',
@@ -188,12 +148,16 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['gallery_list_thumbs'] = array(
     'label' => 'Gallery list Thumbs',
     'effects' => array(
-      176 => array(
-        'name' => 'image_scale',
+      111 => array(
+        'name' => 'iek_image_resize',
         'data' => array(
           'width' => 193,
           'height' => 133,
-          'upscale' => 0,
+          'blank_margin' => 1,
+          'blank_margin_bg_color' => '#FFFFFF',
+          'position' => 'middle_center',
+          'x' => 0,
+          'y' => 0,
         ),
         'weight' => 2,
       ),
@@ -244,16 +208,6 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['homepage_slider'] = array(
     'label' => 'Homepage Slider - Desktop',
     'effects' => array(
-      141 => array(
-        'name' => 'imagemagick_strip',
-        'data' => array(),
-        'weight' => -10,
-      ),
-      146 => array(
-        'name' => 'canvasactions_interlace',
-        'data' => array(),
-        'weight' => -9,
-      ),
       106 => array(
         'name' => 'image_scale',
         'data' => array(
@@ -261,7 +215,7 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
           'height' => 649,
           'upscale' => 0,
         ),
-        'weight' => -8,
+        'weight' => 2,
       ),
     ),
   );
@@ -356,16 +310,6 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['sale_pieces_gallery'] = array(
     'label' => 'Sale Pieces Gallery',
     'effects' => array(
-      166 => array(
-        'name' => 'imagemagick_strip',
-        'data' => array(),
-        'weight' => -10,
-      ),
-      161 => array(
-        'name' => 'canvasactions_interlace',
-        'data' => array(),
-        'weight' => -9,
-      ),
       21 => array(
         'name' => 'focal_point_scale_and_crop',
         'data' => array(
@@ -376,7 +320,7 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
             'shift_y' => '',
           ),
         ),
-        'weight' => -8,
+        'weight' => 1,
       ),
     ),
   );
@@ -385,7 +329,7 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['square_thumbnail'] = array(
     'label' => 'square_thumbnail',
     'effects' => array(
-      181 => array(
+      141 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 100,
@@ -409,14 +353,6 @@ function antiquessites_content_types_paragraphs_panes_node_info() {
       'name' => t('Basic Page'),
       'base' => 'node_content',
       'description' => t('Used for static pages that are not updated very often.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-    'event' => array(
-      'name' => t('Event'),
-      'base' => 'node_content',
-      'description' => t('Creates an events for the exhibitition'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
