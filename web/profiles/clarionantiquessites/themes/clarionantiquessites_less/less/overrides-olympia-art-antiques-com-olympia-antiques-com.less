@@ -5,74 +5,148 @@
  * Specific customisations for the Olympia Art Antiques site.
  */
 
-body {
-  font-size: 14px;
-}
-
-body, h1, h2, h3, h4, h5, h6, h1, h2, h3, p, div {
-  font-family: 'Lato', sans-serif;
-  //font-style: normal;
-  //font-weight: normal;
-}
-
-// Center H1 and H2 paragraphs headings.
-h1.paragraphs-title,
-h2.paragraphs-title {
-  text-align: center;
-}
-
-.thumbnail {
-  .caption {
-    background: rgba(255, 108, 12, 0.84);
+body.conf-path-clarion-olympia-art-antiques-summer,
+body.conf-path-clarion-olympia-antiques-winter {
+  & {
+    font-size: 14px;
   }
-}
 
-body.front {
-  #header {
-    .container > .row {
-      @media @wide {
-        position: absolute;
-      }
+  &, h1, h2, h3, h4, h5, h6, h1, h2, h3, p, div {
+    font-family: 'Lato', sans-serif;
+    //font-style: normal;
+    //font-weight: normal;
+  }
 
-      z-index: 99;
-      max-width: 1170px;
+  // Center H1 and H2 paragraphs headings.
+  h1.paragraphs-title,
+  h2.paragraphs-title {
+    text-align: center;
+  }
+
+  .thumbnail {
+    .caption {
+      background: rgba(255, 108, 12, 0.84);
     }
   }
 
-  h1, h2 {
-    color: @brand-black;
-  }
+  &.front {
+    #header {
+      .container > .row {
+        @media @wide {
+          position: absolute;
+        }
 
-  .page-header {
-    display: none;
-  }
-}
-
-.highlighted {
-  border-bottom: 1px solid @gray-lighter;
-  .container {
-    position: static;
-
-    .sign-up-container {
-      border: 1px solid @brand-black;
-      color: inherit;
-      background-color: transparent;
-    }
-
-    input {
-      &::-webkit-input-placeholder {
-        color: @brand-black !important;
+        z-index: 99;
+        max-width: 1170px;
       }
     }
 
-    .btn {
-      background: transparent !important;
+    h1, h2 {
+      color: @brand-black;
     }
 
-    .flexslider {
-      .slides {
-        .container {
-          margin-bottom: 0 !important;
+    .page-header {
+      display: none;
+    }
+  }
+
+  .highlighted {
+    border-bottom: 1px solid @gray-lighter;
+    .container {
+      position: static;
+
+      .sign-up-container {
+        border: 1px solid @brand-black;
+        color: inherit;
+        background-color: transparent;
+      }
+
+      input {
+        &::-webkit-input-placeholder {
+          color: @brand-black !important;
+        }
+      }
+
+      .btn {
+        background: transparent !important;
+      }
+
+      .flexslider {
+        .slides {
+          .container {
+            margin-bottom: 0 !important;
+            img {
+              display: none;
+
+              @media @tablet {
+                display: block;
+              }
+            }
+          }
+        }
+
+        .slider {
+          @media @tablet {
+            top: 109px;
+            position: absolute;
+            width: 640px;
+            margin-left: 40px;
+          }
+
+          @media @normal {
+            margin-left: 0px;
+            top: 59px;
+          }
+
+          @media @wide {
+            top: -167px;
+          }
+
+          .wrapper {
+            @media @tablet {
+              width: 640px;
+            }
+
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+
+            .heading {
+              margin-bottom: 5px;
+              color: @brand-primary;
+              font-size: 20px;
+              text-transform: uppercase;
+
+              @media @normal {
+                font-size: 24px;
+              }
+
+            }
+
+            .body {
+              color: @brand-grey;
+              font-size: 20px;
+              font-style: italic;
+
+              @media @normal {
+                font-size: 24px;
+              }
+            }
+          }
+
+          .btn {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
+    .container-fluid {
+      padding: 0px;
+
+      .flexslider {
+        border: none;
+
+        .slides {
           img {
             display: none;
 
@@ -81,203 +155,198 @@ body.front {
             }
           }
         }
-      }
 
-      .slider {
         @media @tablet {
-          top: 109px;
-          position: absolute;
-          width: 640px;
-          margin-left: 40px;
+          .flex-direction-nav {
+            .flex-prev {
+              left: 30px;
+            }
+
+            .flex-next {
+              right: 30px;
+            }
+          }
         }
 
-        @media @normal {
-          margin-left: 0px;
-          top: 59px;
-        }
-
-        @media @wide {
-          top: -167px;
-        }
-
-        .wrapper {
+        .slider {
           @media @tablet {
+            top: 109px;
+            position: absolute;
             width: 640px;
+            margin-left: 40px;
           }
 
-          background: rgba(255, 255, 255, 0.6);
-          padding: 30px;
+          @media @normal {
+            margin-left: 0px;
+            top: 59px;
+          }
 
-          .heading {
-            margin-bottom: 5px;
-            color: @brand-primary;
-            font-size: 20px;
-            text-transform: uppercase;
+          @media @wide {
+            top: 264px;
+          }
 
-            @media @normal {
-              font-size: 24px;
+          .wrapper {
+            @media @tablet {
+              width: 640px;
             }
 
-          }
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
 
-          .body {
-            color: @brand-grey;
-            font-size: 20px;
-            font-style: italic;
+            .heading {
+              margin-bottom: 5px;
+              color: @brand-primary;
+              font-size: 20px;
+              text-transform: uppercase;
 
-            @media @normal {
-              font-size: 24px;
+              @media @normal {
+                font-size: 24px;
+              }
+            }
+
+            .body {
+              color: @brand-grey;
+              font-size: 20px;
+              font-style: italic;
+
+              @media @normal {
+                font-size: 24px;
+              }
             }
           }
-        }
 
-        .btn {
-          margin-top: 20px;
+          .btn {
+            margin-top: 20px;
+          }
         }
       }
     }
   }
 
-  .container-fluid {
-    padding: 0px;
-
-    .flexslider {
-      border: none;
-
-      .slides {
-        img {
-          display: none;
-
-          @media @tablet {
-            display: block;
+  .view-exhibitor-list {
+    .view-content {
+      #views-bootstrap-grid-1 {
+        .row {
+          .exhibitor-block {
+            .description {
+              font-style: italic;
+            }
           }
         }
       }
+    }
+  }
+
+  .node-event,
+  .node-type-event {
+    .event-speakers,
+    .views-field-field_speaker {
+      color: @brand-black;
+      text-transform: uppercase;
+    }
+
+    figure {
+      border-top: 0;
+
+      figcaption {
+        border-top: 0;
+      }
+    }
+  }
+
+  .view-partners {
+    .row {
+      .col-sm-6 {
+        & > div {
+          min-height: 290px;
+        }
+      }
+    }
+  }
+
+  // Header event date sizes.
+  #header {
+    .event-date,
+    .other-event-dates {
+      color: @brand-primary;
+    }
+
+    .event-date {
+      display: inline-block;
+      font-size: 14px;
 
       @media @tablet {
-        .flex-direction-nav {
-          .flex-prev {
-            left: 30px;
-          }
-
-          .flex-next {
-            right: 30px;
-          }
-        }
+        font-size: 22px;
       }
+      @media @normal {
+        font-size: 28px;
+      }
+    }
+  }
 
-      .slider {
-        @media @tablet {
-          top: 109px;
-          position: absolute;
-          width: 640px;
-          margin-left: 40px;
-        }
+  // Spacing below the carousel on antiques_winter.
+  .highlighted {
+    margin-bottom: 64px;
+    border-bottom: 1px solid @brand-primary;
+  }
 
-        @media @normal {
-          margin-left: 0px;
-          top: 59px;
-        }
+  .paragraphs-item-block-highlights .body {
+    font-size: 14px;
+  }
 
-        @media @wide {
-          top: 264px;
-        }
-
-        .wrapper {
-          @media @tablet {
-            width: 640px;
-          }
-
-          background: rgba(255, 255, 255, 0.6);
-          padding: 30px;
-
-          .heading {
-            margin-bottom: 5px;
-            color: @brand-primary;
-            font-size: 20px;
-            text-transform: uppercase;
-
-            @media @normal {
-              font-size: 24px;
-            }
-          }
-
-          .body {
-            color: @brand-grey;
-            font-size: 20px;
-            font-style: italic;
-
-            @media @normal {
-              font-size: 24px;
-            }
-          }
-        }
-
-        .btn {
-          margin-top: 20px;
+  .view-partners {
+    .row {
+      .col-sm-6 {
+        & > div {
+          font-size: 14px;
         }
       }
     }
   }
-}
 
-.view-exhibitor-list {
-  .view-content {
-    #views-bootstrap-grid-1 {
-      .row {
-        .exhibitor-block {
-          .description {
-            font-style: italic;
+  .view-mode-dealers_teaser {
+    .paragraphs-items-field-question-list {
+      ol {
+        li {
+          p {
+            font-size: 12px;
           }
         }
       }
     }
   }
-}
 
-.node-type-event {
-  .event-speakers,
-  .views-field-field_speaker {
-    color: @brand-black;
-    text-transform: uppercase;
+  // Hide the flexnav paging icons on the homepage.
+  &.front .flex-control-nav {
+    display: none;
   }
-}
 
-.view-partners {
-  .row {
-    .col-sm-6 {
-      & > div {
-        min-height: 290px;
+  footer {
+    font-size: 14px;
+    margin-top: 50px;
+    background-color: @brand-black;
+
+    .panel-footer-logo {
+      a {
+        text-indent: -10000em;
+        display: block;
+        max-width: 174px;
+        width: 100%;
+        height: 92px;
+        background: transparent url(../images/olympia-art-antiques-footer-logo-white.png) no-repeat center center;
+        background-size: contain;
+        background-position: center center;
+
+        img {
+          display: none;
+        }
       }
     }
-  }
-}
 
-footer {
-  font-size: 14px;
-  margin-top: 50px;
-  background-color: @brand-black;
-
-  .panel-footer-logo {
-    a {
-      text-indent: -10000em;
-      display: block;
-      max-width: 174px;
-      width: 100%;
-      height: 92px;
-      background: transparent url(../images/olympia-art-antiques-footer-logo-white.png) no-repeat center center;
-      background-size: contain;
-      background-position: center center;
-
-      img {
-        display: none;
+    .nav {
+      > li > a {
+        font-size: 14px;
       }
-    }
-  }
-
-  .nav {
-    > li > a {
-      font-size: 14px;
     }
   }
 }
@@ -298,106 +367,15 @@ body.conf-path-clarion-olympia-antiques-winter {
       }
     }
   }
-}
 
-// Logo for the olympia-art-antiques site.
-body.conf-path-clarion-olympia-art-antiques-summer {
-  footer {
-    .panel-footer-logo {
-      a {
-        text-indent: -10000em;
-        display: block;
-        max-width: 174px;
-        width: 100%;
-        height: 92px;
-        background: transparent url(../images/olympia-art-antiques-footer-logo-white.png) no-repeat center center;
-        background-size: contain;
-        background-position: center center;
-
-        img {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-// Header event date sizes.
-#header {
-  .event-date,
-  .other-event-dates {
-    color: @brand-primary;
+  // Header logo shenanigans.
+  #header h1.home-link-no-logo a {
+    max-width: 263px;
+    height: 112px;
+    background-image: url('../images/olympia-antiques.png');
   }
 
-  .event-date {
-    display: inline-block;
-    font-size: 14px;
-
-    @media @tablet {
-      font-size: 22px;
-    }
-    @media @normal {
-      font-size: 28px;
-    }
-  }
-}
-
-// Spacing below the carousel on antiques_winter.
-.highlighted {
-  margin-bottom: 64px;
-  border-bottom: 1px solid @brand-primary;
-}
-
-// Header logo shenanigans.
-body.conf-path-clarion-olympia-antiques-winter #header h1.home-link-no-logo a {
-  max-width: 263px;
-  height: 112px;
-  background-image: url('../images/olympia-antiques.png');
-}
-
-body.conf-path-clarion-olympia-art-antiques-summer #header h1.home-link-no-logo a {
-  max-width: 263px;
-  height: 100px;
-  background-image: url('../images/olympia-art-antiques.png');
-
-  @media @normal {
-    height: 138px;
-  }
-}
-
-.paragraphs-item-block-highlights .body {
-  font-size: 14px;
-}
-
-.view-partners {
-  .row {
-    .col-sm-6 {
-      & > div {
-        font-size: 14px;
-      }
-    }
-  }
-}
-
-.view-mode-dealers_teaser {
-  .paragraphs-items-field-question-list {
-    ol {
-      li {
-        p {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-}
-
-// Hide the flexnav paging icons on the homepage.
-body.front .flex-control-nav {
-  display: none;
-}
-
-// Center events/talks on their page.
-body.conf-path-clarion-olympia-antiques-winter {
+  // Center events/talks on their page.
   .view-event-programme.view-display-id-block_1 {
     .row {
       > .event-row.col-sm-6 {
@@ -412,9 +390,20 @@ body.conf-path-clarion-olympia-antiques-winter {
   }
 }
 
-// Shoe-horning the H&GF logo into the OAA header :)
+// OAA-specific styles.
 body.conf-path-clarion-olympia-art-antiques-summer {
   #header {
+    h1.home-link-no-logo a {
+      max-width: 263px;
+      height: 100px;
+      background-image: url('../images/olympia-art-antiques.png');
+
+      @media @normal {
+        height: 138px;
+      }
+    }
+
+    // Shoe-horning the H&GF logo into the OAA header :)
     .hgf-logo-container {
       position: absolute;
       top: 0;
@@ -545,7 +534,12 @@ body.conf-path-clarion-olympia-art-antiques-summer {
     }
   }
 
+  #copyright {
+    margin-top: 2em;
+  }
+
   footer {
+    // Footer logos.
     a.olympia-art-antiques-footer-logo {
       background: transparent url('../images/olympia-art-antiques-footer-logo-white.png') no-repeat;
       width: 174px;
@@ -565,7 +559,7 @@ body.conf-path-clarion-olympia-art-antiques-summer {
 
       display: inline-block;
       vertical-align: top;
-      padding-left:  2em;
+      padding-left: 2em;
 
       span.hgf-logo-link {
         background: transparent url('../images/20180102-hgf-logo-white-on-transparent.png') no-repeat;
@@ -602,9 +596,23 @@ body.conf-path-clarion-olympia-art-antiques-summer {
     #quick-links .region-footer-column-four {
       margin-top: 0;
     }
-  }
 
-  #copyright {
-    margin-top: 2em;
+    // Logo for the olympia-art-antiques site.
+    .panel-footer-logo {
+      a {
+        text-indent: -10000em;
+        display: block;
+        max-width: 174px;
+        width: 100%;
+        height: 92px;
+        background: transparent url(../images/olympia-art-antiques-footer-logo-white.png) no-repeat center center;
+        background-size: contain;
+        background-position: center center;
+
+        img {
+          display: none;
+        }
+      }
+    }
   }
 }

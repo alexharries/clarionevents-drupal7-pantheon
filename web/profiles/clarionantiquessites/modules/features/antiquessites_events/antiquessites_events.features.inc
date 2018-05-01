@@ -33,20 +33,7 @@ function antiquessites_events_image_default_styles() {
   $styles['event_image'] = array(
     'label' => 'Event Image',
     'effects' => array(
-      186 => array(
-        'name' => 'iek_image_resize',
-        'data' => array(
-          'width' => 100,
-          'height' => 272,
-          'blank_margin' => 1,
-          'blank_margin_bg_color' => '#FFFFFF',
-          'position' => 'middle_center',
-          'x' => 0,
-          'y' => 0,
-        ),
-        'weight' => 1,
-      ),
-      191 => array(
+      126 => array(
         'name' => 'iek_image_resize',
         'data' => array(
           'width' => 100,
@@ -66,7 +53,7 @@ function antiquessites_events_image_default_styles() {
   $styles['event_image_-_mobile'] = array(
     'label' => 'Event Image - Mobile',
     'effects' => array(
-      196 => array(
+      131 => array(
         'name' => 'iek_image_resize',
         'data' => array(
           'width' => 220,

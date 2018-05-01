@@ -35,7 +35,7 @@ function antiquessites_events_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_event_programme_detail';
-  $strongarm->value = 'D d M G:i';
+  $strongarm->value = 'l d F G:i';
   $export['date_format_event_programme_detail'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -96,39 +96,54 @@ function antiquessites_events_strongarm() {
       'entity_reference_link' => array(
         'custom_settings' => FALSE,
       ),
-      'dealers_teaser' => array(
-        'custom_settings' => FALSE,
-      ),
-      'list_view' => array(
-        'custom_settings' => FALSE,
-      ),
       'event_programme' => array(
+        'custom_settings' => FALSE,
+      ),
+      'exhibitor_downloads_centre' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_gallery' => array(
+        'custom_settings' => FALSE,
+      ),
+      'partner_page_vm' => array(
+        'custom_settings' => FALSE,
+      ),
+      'press_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'cck_blocks' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '10',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '11',
         ),
         'xmlsitemap' => array(
-          'weight' => '3',
+          'weight' => '12',
+        ),
+        'redirect' => array(
+          'weight' => '13',
         ),
       ),
       'display' => array(
         'webform' => array(
           'default' => array(
-            'weight' => '22',
+            'weight' => '45',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '21',
+            'weight' => '41',
             'visible' => FALSE,
           ),
         ),
@@ -159,6 +174,83 @@ function antiquessites_events_strongarm() {
   $strongarm->name = 'metatag_enable_node__event';
   $strongarm->value = TRUE;
   $export['metatag_enable_node__event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_author_event';
+  $strongarm->value = 1;
+  $export['node_export_reset_author_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_book_mlid_event';
+  $strongarm->value = 1;
+  $export['node_export_reset_book_mlid_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_changed_event';
+  $strongarm->value = 1;
+  $export['node_export_reset_changed_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_created_event';
+  $strongarm->value = 1;
+  $export['node_export_reset_created_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_last_comment_timestamp_event';
+  $strongarm->value = 1;
+  $export['node_export_reset_last_comment_timestamp_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_menu_event';
+  $strongarm->value = 1;
+  $export['node_export_reset_menu_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_path_event';
+  $strongarm->value = 1;
+  $export['node_export_reset_path_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_promote_event';
+  $strongarm->value = 0;
+  $export['node_export_reset_promote_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_revision_timestamp_event';
+  $strongarm->value = 1;
+  $export['node_export_reset_revision_timestamp_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_status_event';
+  $strongarm->value = 0;
+  $export['node_export_reset_status_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_export_reset_sticky_event';
+  $strongarm->value = 0;
+  $export['node_export_reset_sticky_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -204,6 +296,48 @@ function antiquessites_events_strongarm() {
   $strongarm->name = 'pathauto_node_event_pattern';
   $strongarm->value = 'visiting/event/[node:title]';
   $export['pathauto_node_event_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prev_next_node_type_event';
+  $strongarm->value = 0;
+  $export['prev_next_node_type_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prev_next_node_type_event_current';
+  $strongarm->value = '0';
+  $export['prev_next_node_type_event_current'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prev_next_node_type_event_indexing_criteria';
+  $strongarm->value = 'nid';
+  $export['prev_next_node_type_event_indexing_criteria'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prev_next_node_type_event_indexing_criteria_current';
+  $strongarm->value = 'nid';
+  $export['prev_next_node_type_event_indexing_criteria_current'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prev_next_node_type_event_same_type';
+  $strongarm->value = 0;
+  $export['prev_next_node_type_event_same_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prev_next_node_type_event_same_type_current';
+  $strongarm->value = '0';
+  $export['prev_next_node_type_event_same_type_current'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

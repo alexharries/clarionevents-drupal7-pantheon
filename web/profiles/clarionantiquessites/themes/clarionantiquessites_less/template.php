@@ -159,8 +159,7 @@ function clarionantiquessites_less_css_alter(&$css) {
   // "profiles/clarionantiquessites/themes/clarionantiquessites_less/css/style.css"?
   $path_to_theme_styles = drupal_get_path('theme', 'clarionantiquessites_less') . '/css/';
 
-  if (array_key_exists($path_to_theme_styles . 'style.css', $css)
-    && array_key_exists(SITE_MACHINE_NAME, $sites_directories_to_css_files_mappings)) {
+  if (array_key_exists($path_to_theme_styles . 'style.css', $css) && array_key_exists(SITE_MACHINE_NAME, $sites_directories_to_css_files_mappings)) {
     // Yes. Replace it with a file like "style-antiquesforeveryone.css".
     $replacement_css_file_path = $path_to_theme_styles . 'style-' . $sites_directories_to_css_files_mappings[SITE_MACHINE_NAME] . '.css';
 
@@ -222,20 +221,72 @@ function clarionantiquessites_less_js_alter(&$js) {
 
 /**
  * hook_preprocess_field()
+ *
  * Rewrite field display.
  */
-function clarionantiquessites_less_preprocess_field(&$vars) {
-  if (!empty($vars['element']['#object']->type) &&
-    ($vars['element']['#object']->type == 'exhibitor_profile_page')
-  ) {
-    if (in_array('field-name-field-categories', $vars['classes_array'])) {
+function clarionantiquessites_less_preprocess_field(&$variables) {
+  if (!empty($variables['element']['#object']->type) && ($variables['element']['#object']->type == 'exhibitor_profile_page')) {
+    if (in_array('field-name-field-categories', $variables['classes_array'])) {
       $count = 0;
-      foreach ($vars['items'] as $item) {
-        if (!empty($vars['element']['#object']->field_categories[LANGUAGE_NONE][$count]['tid'])) {
-          $vars['items'][$count]['#href'] = 'category-exhibitor/' . $vars['element']['#object']->field_categories[LANGUAGE_NONE][$count]['tid'];
+      foreach ($variables['items'] as $item) {
+        if (!empty($variables['element']['#object']->field_categories[LANGUAGE_NONE][$count]['tid'])) {
+          $variables['items'][$count]['#href'] = url('category-exhibitor/' . $variables['element']['#object']->field_categories[LANGUAGE_NONE][$count]['tid']);
         }
         $count++;
       }
     }
   }
+
+  // On event node teasers, if field_talk_image_hide_in_teaser is checked,
+  // remove the preview image.
+  if ($variables['element']['#field_name'] == 'field_talk_image') {
+    if ($node = &$variables['element']['#object']) {
+      if (!empty($node->field_talk_image_hide_in_teaser[LANGUAGE_NONE][0]['value']) && $node->field_talk_image_hide_in_teaser[LANGUAGE_NONE][0]['value']) {
+        // I'm just going to register my abject hate for Display Suite here.
+        // For some stupid reason, it's not possible to use a preprocess
+        // field hook in DS to simply remove the content of the field,
+        // because if you output an empty string from this theme call,
+        // common.inc will then render this element instead of rendering
+        // its children. See line 6075 of common.inc which begins with
+        // "If #theme was not set and the element has children, render them now."
+        // The exact issue is that $elements['#children'] is '' - this is
+        // checked at "if ($elements['#children'] == '') {", currently line
+        // 6078 in common.inc - and it doesn't seem to be possible to change
+        // any values in $elements from this preprocess function because
+        // $elements is kept outside of this function, despite a copy of
+        // $elements existing in the $variables array. But it's a copy, so
+        // you can't change its values from here. As a result, you need to
+        // output _something_ here. Argh...
+        $variables['items'] = [
+          [
+            '#type' => 'markup',
+            '#markup' => '<!-- This content hidden in ' . __FUNCTION__ . ' -->',
+          ],
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Implements theme_preprocess_node.
+ *
+ * @param $variables
+ */
+function clarionantiquessites_less_preprocess_node(&$variables) {
+  $node = &$variables['node'];
+
+  //  // On event node teasers, if field_talk_image_hide_in_teaser is checked,
+  //  // remove the preview image.
+  //  if (($node->type == 'event') && ($variables['view_mode'] == 'teaser')) {
+  //    if (!empty($variables['field_talk_image_hide_in_teaser'][LANGUAGE_NONE][0]['value']) &&
+  //      $variables['field_talk_image_hide_in_teaser'][LANGUAGE_NONE][0]['value']) {
+  //      hide($variables['content']['field_talk_image']);
+  //      hide($node->field_talk_image);
+  //      unset($variables['content']['field_talk_image']);
+  //      unset($variables['field_talk_image']);
+  //      unset($node->field_talk_image);
+  //      $node->title = 'bollocks, trevor';
+  //    }
+  //  }
 }

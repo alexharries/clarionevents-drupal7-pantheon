@@ -299,7 +299,7 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_bases(
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 49661,
+      'default_image' => 31501,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
@@ -1443,9 +1443,6 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_bases(
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_stand',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1499,12 +1496,7 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_bases(
     'indexes' => array(),
     'locked' => 0,
     'module' => 'tablefield',
-    'settings' => array(
-      'cell_processing' => 1,
-      'export' => 1,
-      'lock_values' => 0,
-      'restrict_rebuild' => 0,
-    ),
+    'settings' => array(),
     'translatable' => 0,
     'type' => 'tablefield',
   );
@@ -1532,6 +1524,35 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_bases(
     ),
     'translatable' => 0,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_talk_image_hide_in_teaser'.
+  $field_bases['field_talk_image_hide_in_teaser'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_talk_image_hide_in_teaser',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'global_block_settings' => 1,
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_telephone'.
@@ -1609,30 +1630,6 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_bases(
     ),
     'translatable' => 0,
     'type' => 'link_field',
-  );
-
-  // Exported field_base: 'field_type_of_event'.
-  $field_bases['field_type_of_event'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_type_of_event',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        1 => 'HIGHLIGHTS TOURS',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_url'.
