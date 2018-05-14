@@ -175,4 +175,12 @@
     }
   };
 
+  // On the exhibitor listing view page, move the "Select exhibitor" drop-down
+  // to the left of the categories drop-down.
+  // .view-exhibitor-list .attachment .view-content select
+  Drupal.behaviors.moveSelectExhibitorDropdownOnExhibitorView = {
+    attach: function(context, settings) {
+      $('.view-exhibitor-list .attachment .view-content select').detach().prependTo('.views-exposed-form .form-item-field-categories-tid');
+    }
+  };
 })(jQuery);
