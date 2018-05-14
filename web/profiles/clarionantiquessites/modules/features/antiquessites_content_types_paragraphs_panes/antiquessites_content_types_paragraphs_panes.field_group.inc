@@ -24,14 +24,12 @@ function antiquessites_content_types_paragraphs_panes_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_logo',
-      1 => 'sofa_exhibitor',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Bootstrap Column',
       'instance_settings' => array(
-        'id' => '',
-        'classes' => 'col-xs-12 col-sm-3 col-md-3 col-lg-3 contact-image',
+        'classes' => 'col-xs-12 col-sm-3 col-md-3 col-lg-3 contact-description',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -60,8 +58,7 @@ function antiquessites_content_types_paragraphs_panes_field_group_info() {
     'format_settings' => array(
       'label' => 'Bootstrap Column',
       'instance_settings' => array(
-        'id' => '',
-        'classes' => 'col-xs-12 col-sm-9 col-md-9  col-lg-9 contact-description',
+        'classes' => 'col-xs-12 col-sm-9 col-md-9  col-lg-9 contact-image',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -106,7 +103,7 @@ function antiquessites_content_types_paragraphs_panes_field_group_info() {
   $field_groups['group_contact_details|node|exhibitor_profile_page|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_homepage_block|node|basic_page|form';
   $field_group->group_name = 'group_homepage_block';
