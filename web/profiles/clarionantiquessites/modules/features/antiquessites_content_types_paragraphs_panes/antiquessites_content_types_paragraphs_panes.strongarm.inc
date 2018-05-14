@@ -27,6 +27,13 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_slider';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_slider'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'diff_show_preview_changes_node_partners_pages';
   $strongarm->value = 1;
   $export['diff_show_preview_changes_node_partners_pages'] = $strongarm;
@@ -34,9 +41,23 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_slider';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_slider'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'diff_view_mode_preview_node_partners_pages';
   $strongarm->value = 'full';
   $export['diff_view_mode_preview_node_partners_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_slider';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -75,9 +96,12 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
         'custom_settings' => FALSE,
       ),
       'full_width' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'two_column' => array(
+        'custom_settings' => TRUE,
+      ),
+      'dealers_teaser' => array(
         'custom_settings' => FALSE,
       ),
       'entity_reference_link' => array(
@@ -89,57 +113,32 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
       'exhibitor_profile' => array(
         'custom_settings' => FALSE,
       ),
-      'press_page' => array(
-        'custom_settings' => TRUE,
-      ),
-      'partner_page_vm' => array(
-        'custom_settings' => TRUE,
-      ),
-      'exhibitor_downloads_centre' => array(
-        'custom_settings' => TRUE,
+      'list_view' => array(
+        'custom_settings' => FALSE,
       ),
       'event_programme' => array(
         'custom_settings' => TRUE,
-      ),
-      'featured_gallery' => array(
-        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'xmlsitemap' => array(
-          'weight' => '3',
+          'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '30',
         ),
       ),
-      'display' => array(
-        'partners_logos_entity_view_1' => array(
-          'default' => array(
-            'weight' => '2',
-            'visible' => FALSE,
-          ),
-          'partner_page_vm' => array(
-            'weight' => '40',
-            'visible' => FALSE,
-          ),
-          'event_programme' => array(
-            'weight' => '38',
-            'visible' => FALSE,
-          ),
-          'press_page' => array(
-            'weight' => '10',
-            'visible' => FALSE,
-          ),
-        ),
-      ),
+      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__basic_page'] = $strongarm;
@@ -195,19 +194,10 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
       'entity_reference_link' => array(
         'custom_settings' => TRUE,
       ),
-      'event_programme' => array(
+      'dealers_teaser' => array(
         'custom_settings' => FALSE,
       ),
-      'exhibitor_downloads_centre' => array(
-        'custom_settings' => FALSE,
-      ),
-      'partner_page_vm' => array(
-        'custom_settings' => FALSE,
-      ),
-      'press_page' => array(
-        'custom_settings' => FALSE,
-      ),
-      'featured_gallery' => array(
+      'list_view' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -225,20 +215,15 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
         'xmlsitemap' => array(
           'weight' => '8',
         ),
+        'redirect' => array(
+          'weight' => '15',
+        ),
       ),
       'display' => array(
         'exhibitor_social_media_links_entity_view_1' => array(
           'default' => array(
             'weight' => '8',
             'visible' => TRUE,
-          ),
-          'entity_reference_link' => array(
-            'weight' => '10',
-            'visible' => FALSE,
-          ),
-          'exhibitor_list' => array(
-            'weight' => '10',
-            'visible' => FALSE,
           ),
         ),
       ),
@@ -297,21 +282,6 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
       'entity_reference_link' => array(
         'custom_settings' => TRUE,
       ),
-      'featured_gallery' => array(
-        'custom_settings' => TRUE,
-      ),
-      'event_programme' => array(
-        'custom_settings' => FALSE,
-      ),
-      'exhibitor_downloads_centre' => array(
-        'custom_settings' => FALSE,
-      ),
-      'partner_page_vm' => array(
-        'custom_settings' => FALSE,
-      ),
-      'press_page' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -328,7 +298,28 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
           'weight' => '10',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'gallery_entity_view_1' => array(
+          'gallery_display' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+        ),
+        'gallery_entity_view_2' => array(
+          'gallery_display' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '23',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__image_gallery'] = $strongarm;
@@ -539,7 +530,53 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__social_media';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'entity_reference_link' => array(
+        'custom_settings' => FALSE,
+      ),
+      'exhibitor_list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'exhibitor_profile' => array(
+        'custom_settings' => FALSE,
+      ),
+      'full_width' => array(
+        'custom_settings' => FALSE,
+      ),
+      'gallery_display' => array(
+        'custom_settings' => FALSE,
+      ),
+      'partner_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'two_column' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
@@ -606,9 +643,6 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
         'custom_settings' => FALSE,
       ),
       'exhibitor_profile' => array(
-        'custom_settings' => FALSE,
-      ),
-      'entity_reference_link' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -681,6 +715,15 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
         'custom_settings' => FALSE,
       ),
       'entity_reference_link' => array(
+        'custom_settings' => FALSE,
+      ),
+      'dealers_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_programme' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_view' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -886,8 +929,7 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_basic_page';
   $strongarm->value = array(
-    0 => 'moderation',
-    1 => 'revision',
+    0 => 'status',
   );
   $export['node_options_basic_page'] = $strongarm;
 
@@ -1021,7 +1063,7 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_partners_pages';
-  $strongarm->value = '0';
+  $strongarm->value = '2';
   $export['node_preview_partners_pages'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1042,7 +1084,7 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_slider';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['node_preview_slider'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1126,7 +1168,7 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_social_media';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_social_media'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1349,7 +1391,7 @@ function antiquessites_content_types_paragraphs_panes_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_exhibitor_category';
   $strongarm->value = array(
-    'status' => '1',
+    'status' => '0',
     'priority' => '0.5',
   );
   $export['xmlsitemap_settings_taxonomy_term_exhibitor_category'] = $strongarm;

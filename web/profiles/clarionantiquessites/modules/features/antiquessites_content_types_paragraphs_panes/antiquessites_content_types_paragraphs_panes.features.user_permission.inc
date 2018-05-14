@@ -34,6 +34,17 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'create field_highlighted_exhibitor'.
+  $permissions['create field_highlighted_exhibitor'] = array(
+    'name' => 'create field_highlighted_exhibitor',
+    'roles' => array(
+      'Marketing exec' => 'Marketing exec',
+      'Senior Marketing exec' => 'Senior Marketing exec',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create field_press_area'.
   $permissions['create field_press_area'] = array(
     'name' => 'create field_press_area',
@@ -70,6 +81,17 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
   // Exported permission: 'edit field_featured_item'.
   $permissions['edit field_featured_item'] = array(
     'name' => 'edit field_featured_item',
+    'roles' => array(
+      'Marketing exec' => 'Marketing exec',
+      'Senior Marketing exec' => 'Senior Marketing exec',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_highlighted_exhibitor'.
+  $permissions['edit field_highlighted_exhibitor'] = array(
+    'name' => 'edit field_highlighted_exhibitor',
     'roles' => array(
       'Marketing exec' => 'Marketing exec',
       'Senior Marketing exec' => 'Senior Marketing exec',
@@ -123,6 +145,17 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit own field_highlighted_exhibitor'.
+  $permissions['edit own field_highlighted_exhibitor'] = array(
+    'name' => 'edit own field_highlighted_exhibitor',
+    'roles' => array(
+      'Marketing exec' => 'Marketing exec',
+      'Senior Marketing exec' => 'Senior Marketing exec',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own field_press_area'.
   $permissions['edit own field_press_area'] = array(
     'name' => 'edit own field_press_area',
@@ -159,6 +192,17 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
   // Exported permission: 'view field_featured_item'.
   $permissions['view field_featured_item'] = array(
     'name' => 'view field_featured_item',
+    'roles' => array(
+      'Marketing exec' => 'Marketing exec',
+      'Senior Marketing exec' => 'Senior Marketing exec',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_highlighted_exhibitor'.
+  $permissions['view field_highlighted_exhibitor'] = array(
+    'name' => 'view field_highlighted_exhibitor',
     'roles' => array(
       'Marketing exec' => 'Marketing exec',
       'Senior Marketing exec' => 'Senior Marketing exec',
@@ -207,6 +251,17 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
     'name' => 'view own field_featured_item',
     'roles' => array(
       'Intern' => 'Intern',
+      'Marketing exec' => 'Marketing exec',
+      'Senior Marketing exec' => 'Senior Marketing exec',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_highlighted_exhibitor'.
+  $permissions['view own field_highlighted_exhibitor'] = array(
+    'name' => 'view own field_highlighted_exhibitor',
+    'roles' => array(
       'Marketing exec' => 'Marketing exec',
       'Senior Marketing exec' => 'Senior Marketing exec',
       'administrator' => 'administrator',
