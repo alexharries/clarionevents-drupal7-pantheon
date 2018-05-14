@@ -35,7 +35,7 @@ function antiquessites_events_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_event_programme_detail';
-  $strongarm->value = 'l d F G:i';
+  $strongarm->value = 'D d M G:i';
   $export['date_format_event_programme_detail'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -96,54 +96,39 @@ function antiquessites_events_strongarm() {
       'entity_reference_link' => array(
         'custom_settings' => FALSE,
       ),
+      'dealers_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_view' => array(
+        'custom_settings' => FALSE,
+      ),
       'event_programme' => array(
-        'custom_settings' => FALSE,
-      ),
-      'exhibitor_downloads_centre' => array(
-        'custom_settings' => FALSE,
-      ),
-      'featured_gallery' => array(
-        'custom_settings' => FALSE,
-      ),
-      'partner_page_vm' => array(
-        'custom_settings' => FALSE,
-      ),
-      'press_page' => array(
-        'custom_settings' => FALSE,
-      ),
-      'cck_blocks' => array(
-        'custom_settings' => TRUE,
-      ),
-      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '5',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '4',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
-        ),
-        'redirect' => array(
-          'weight' => '13',
+          'weight' => '3',
         ),
       ),
       'display' => array(
         'webform' => array(
           'default' => array(
-            'weight' => '45',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '41',
+            'weight' => '21',
             'visible' => FALSE,
           ),
         ),
