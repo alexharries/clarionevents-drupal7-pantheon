@@ -207,6 +207,8 @@ function antiquessites_content_types_paragraphs_panes_user_default_permissions()
       'Marketing exec' => 'Marketing exec',
       'Senior Marketing exec' => 'Senior Marketing exec',
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );

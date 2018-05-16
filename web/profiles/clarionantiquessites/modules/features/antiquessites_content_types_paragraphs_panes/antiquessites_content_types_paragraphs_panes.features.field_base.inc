@@ -1026,7 +1026,7 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_bases(
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 0,
+      'default_image' => 73821,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
