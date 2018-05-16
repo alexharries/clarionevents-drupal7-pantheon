@@ -17,23 +17,10 @@ function antiquessites_events_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'basic_page';
   $ds_fieldsetting->view_mode = 'event_programme';
   $ds_fieldsetting->settings = array(
-    'event_programme' => array(
+    'talks_programme' => array(
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'highlight_tours' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'show_title' => 1,
-        'title_wrapper' => 'h2',
-        'ctools' => 'a:3:{s:4:"conf";a:15:{s:23:"override_pager_settings";i:0;s:9:"use_pager";i:0;s:14:"nodes_per_page";s:1:"0";s:8:"pager_id";s:1:"0";s:6:"offset";s:1:"0";s:9:"more_link";i:0;s:10:"feed_icons";i:0;s:10:"panel_args";i:0;s:12:"link_to_view";i:0;s:4:"args";s:0:"";s:3:"url";s:0:"";s:7:"display";s:12:"attachment_1";s:14:"override_title";i:1;s:19:"override_title_text";s:65:"Highlights Tours – Discover the Wealth of Treasures at the Fair";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:5:"views";s:7:"subtype";s:15:"event_programme";}',
-        'load_terms' => 0,
-        'ft' => array(),
-        'conditions' => array(),
-      ),
     ),
   );
   $export['node|basic_page|event_programme'] = $ds_fieldsetting;
@@ -71,7 +58,7 @@ function antiquessites_events_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'Speaker(s)',
+          'lb' => 'Speaker',
           'lbw' => 1,
           'lbw-el' => 'div',
           'lbw-cl' => 'event-label',
@@ -88,27 +75,6 @@ function antiquessites_events_ds_field_settings_info() {
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
           'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_location' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'event-location',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_talk_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb-at' => 'style="float: right; width: 49.5%"',
         ),
       ),
     ),
@@ -160,13 +126,11 @@ function antiquessites_events_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'event-field',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'event-field',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
         ),
       ),
     ),
@@ -174,7 +138,7 @@ function antiquessites_events_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'Speakers(s)',
+          'lb' => 'Speaker',
           'lb-el' => 'div',
           'lb-cl' => 'event-label',
           'ow' => TRUE,
@@ -183,13 +147,6 @@ function antiquessites_events_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -278,14 +235,14 @@ function antiquessites_events_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'central' => array(
-        0 => 'highlight_tours',
-        1 => 'event_programme',
+        0 => 'body',
+        1 => 'talks_programme',
         2 => 'field_paragraphs',
       ),
     ),
     'fields' => array(
-      'highlight_tours' => 'central',
-      'event_programme' => 'central',
+      'body' => 'central',
+      'talks_programme' => 'central',
       'field_paragraphs' => 'central',
     ),
     'classes' => array(
@@ -295,7 +252,6 @@ function antiquessites_events_ds_layout_settings_info() {
     ),
     'wrappers' => array(
       'central' => 'div',
-      'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
@@ -313,27 +269,29 @@ function antiquessites_events_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'event';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'bootstrap_12';
+  $ds_layout->layout = 'bootstrap_3_9';
   $ds_layout->settings = array(
     'regions' => array(
-      'central' => array(
-        0 => 'field_talk_image',
+      'left' => array(
+        0 => 'field_talk_image_logo',
+      ),
+      'right' => array(
         1 => 'field_location',
         2 => 'field_start_time',
         3 => 'body',
         4 => 'field_evebts_paragraphs',
-        5 => 'field_speaker',
-        6 => 'field_paragraph_column_2',
+        5 => 'field_paragraph_column_2',
+        6 => 'field_speaker',
       ),
     ),
     'fields' => array(
-      'field_talk_image' => 'central',
-      'field_location' => 'central',
-      'field_start_time' => 'central',
-      'body' => 'central',
-      'field_evebts_paragraphs' => 'central',
-      'field_speaker' => 'central',
-      'field_paragraph_column_2' => 'central',
+      'field_talk_image_logo' => 'left',
+      'field_location' => 'right',
+      'field_start_time' => 'right',
+      'body' => 'right',
+      'field_evebts_paragraphs' => 'right',
+      'field_paragraph_column_2' => 'right',
+      'field_speaker' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -341,15 +299,14 @@ function antiquessites_events_ds_layout_settings_info() {
       ),
     ),
     'wrappers' => array(
-      'central' => 'div',
-      'ds_hidden' => 'div',
+      'left' => 'div',
+      'right' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
-    'layout_disable_css' => FALSE,
     'hide_page_title' => '0',
     'page_option_title' => '',
   );
@@ -365,7 +322,7 @@ function antiquessites_events_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'field_talk_image',
+        0 => 'field_talk_image_logo',
       ),
       'right' => array(
         1 => 'title',
@@ -376,7 +333,7 @@ function antiquessites_events_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'field_talk_image' => 'left',
+      'field_talk_image_logo' => 'left',
       'title' => 'right',
       'field_location' => 'right',
       'field_start_time' => 'right',
@@ -391,13 +348,13 @@ function antiquessites_events_ds_layout_settings_info() {
     'wrappers' => array(
       'left' => 'div',
       'right' => 'div',
-      'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'hide_page_title' => '0',
     'page_option_title' => '',
   );
