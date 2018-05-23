@@ -29,6 +29,13 @@ function antiquessites_content_types_paragraphs_panes_ctools_plugin_api($module 
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function antiquessites_content_types_paragraphs_panes_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function antiquessites_content_types_paragraphs_panes_image_default_styles() {
@@ -38,17 +45,17 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['block_hightlights_-_desktop'] = array(
     'label' => 'Block Hightlights - Desktop',
     'effects' => array(
-      121 => array(
+      176 => array(
         'name' => 'focal_point_scale_and_crop',
         'data' => array(
-          'width' => 600,
-          'height' => 363,
+          'width' => 1200,
+          'height' => 563,
           'focal_point_advanced' => array(
             'shift_x' => '',
             'shift_y' => '',
           ),
         ),
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
   );
@@ -117,7 +124,7 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['exhibitor_logo_style'] = array(
     'label' => 'Exhibitor logo style',
     'effects' => array(
-      136 => array(
+      171 => array(
         'name' => 'image_scale',
         'data' => array(
           'width' => 480,
@@ -148,7 +155,7 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['gallery_list_thumbs'] = array(
     'label' => 'Gallery list Thumbs',
     'effects' => array(
-      111 => array(
+      166 => array(
         'name' => 'iek_image_resize',
         'data' => array(
           'width' => 193,
@@ -168,16 +175,15 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['homepage_gallery_slider'] = array(
     'label' => 'homepage gallery slider',
     'effects' => array(
-      71 => array(
-        'name' => 'iek_image_resize',
+      216 => array(
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
-          'width' => 435,
-          'height' => 327,
-          'blank_margin' => 1,
-          'blank_margin_bg_color' => '#FFFFFF',
-          'position' => 'middle_center',
-          'x' => 0,
-          'y' => 0,
+          'width' => 205,
+          'height' => 205,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
         ),
         'weight' => 1,
       ),
@@ -208,14 +214,17 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['homepage_slider'] = array(
     'label' => 'Homepage Slider - Desktop',
     'effects' => array(
-      106 => array(
-        'name' => 'image_scale',
+      66 => array(
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
-          'width' => '',
-          'height' => 649,
-          'upscale' => 0,
+          'width' => 1200,
+          'height' => 390,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
         ),
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
   );
@@ -228,11 +237,7 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
         'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 480,
-          'height' => 700,
-          'focal_point_advanced' => array(
-            'shift_x' => '',
-            'shift_y' => '',
-          ),
+          'height' => 238,
         ),
         'weight' => 1,
       ),
@@ -243,13 +248,14 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['homepage_slider_-_tablet'] = array(
     'label' => 'Homepage Slider - Tablet',
     'effects' => array(
-      86 => array(
-        'name' => 'focal_point_scale_and_crop',
+      226 => array(
+        'name' => 'image_scale',
         'data' => array(
           'width' => 768,
           'height' => 380,
+          'upscale' => 0,
         ),
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
   );
@@ -329,7 +335,7 @@ function antiquessites_content_types_paragraphs_panes_image_default_styles() {
   $styles['square_thumbnail'] = array(
     'label' => 'square_thumbnail',
     'effects' => array(
-      141 => array(
+      221 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 100,

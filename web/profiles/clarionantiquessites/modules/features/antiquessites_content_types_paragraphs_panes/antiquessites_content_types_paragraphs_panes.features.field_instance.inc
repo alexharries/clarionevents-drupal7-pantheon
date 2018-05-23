@@ -10,6 +10,92 @@
 function antiquessites_content_types_paragraphs_panes_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-basic_page-body'.
+  $field_instances['node-basic_page-body'] = array(
+    'bundle' => 'basic_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'cck_blocks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'event_programme' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_plain',
+        'weight' => 0,
+      ),
+      'full_width' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+      'two_column' => array(
+        'label' => 'above',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'conditions' => array(),
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_link' => FALSE,
+          'trim_options' => array(),
+          'trim_preserve_tags' => '',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-basic_page-field_featured_highlights'.
   $field_instances['node-basic_page-field_featured_highlights'] = array(
     'bundle' => 'basic_page',
@@ -49,6 +135,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full_width' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'partner_page_vm' => array(
         'label' => 'above',
         'settings' => array(),
@@ -60,6 +152,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 36,
+      ),
+      'two_column' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -146,6 +244,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'type' => 'hidden',
         'weight' => 32,
       ),
+      'full_width' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'partner_page_vm' => array(
         'label' => 'above',
         'settings' => array(),
@@ -157,6 +261,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 39,
+      ),
+      'two_column' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -181,6 +291,68 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
       ),
       'type' => 'text_textfield',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-basic_page-field_layout'.
+  $field_instances['node-basic_page-field_layout'] = array(
+    'bundle' => 'basic_page',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Choose number of columns your page should have.',
+    'display' => array(
+      'cck_blocks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'event_programme' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'full_width' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'two_column' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_layout',
+    'label' => 'Layout',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
     ),
   );
 
@@ -215,6 +387,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'type' => 'hidden',
         'weight' => 33,
       ),
+      'full_width' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'partner_page_vm' => array(
         'label' => 'above',
         'settings' => array(),
@@ -226,6 +404,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 40,
+      ),
+      'two_column' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -267,6 +451,85 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
       ),
       'type' => 'advanced_link',
       'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-basic_page-field_paragraph_column_2'.
+  $field_instances['node-basic_page-field_paragraph_column_2'] = array(
+    'bundle' => 'basic_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'cck_blocks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'event_programme' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'full_width' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'two_column' => array(
+        'label' => 'above',
+        'module' => 'owlcarousel_fields',
+        'settings' => array(
+          'conditions' => array(),
+          'grid_field_formatter' => array(
+            'columns' => 1,
+            'grid_enable' => FALSE,
+          ),
+          'settings_group' => 'owlcarousel_settings_default',
+          'view_mode' => 'full',
+        ),
+        'type' => 'owlcarousel_pa_formatter',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_paragraph_column_2',
+    'label' => 'Paragraph Column 2',
+    'required' => 0,
+    'settings' => array(
+      'allowed_bundles' => array(
+        'attachment' => 'attachment',
+        'button' => 0,
+        'call_to_action' => 'call_to_action',
+        'image_gallery' => 'image_gallery',
+        'media_image_video_' => 'media_image_video_',
+        'programme' => 'programme',
+        'slideshow' => 'slideshow',
+        'table' => 'table',
+        'text' => 'text',
+      ),
+      'bundle_weights' => array(),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 11,
     ),
   );
 
@@ -472,6 +735,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'type' => 'hidden',
         'weight' => 30,
       ),
+      'full_width' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'partner_page_vm' => array(
         'label' => 'above',
         'settings' => array(),
@@ -483,6 +752,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 37,
+      ),
+      'two_column' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -533,6 +808,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'type' => 'hidden',
         'weight' => 31,
       ),
+      'full_width' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'partner_page_vm' => array(
         'label' => 'above',
         'settings' => array(),
@@ -544,6 +825,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 38,
+      ),
+      'two_column' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1040,6 +1327,72 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
     ),
   );
 
+  // Exported field_instance:
+  // 'node-exhibitor_profile_page-field_enhanced_exhibitor'.
+  $field_instances['node-exhibitor_profile_page-field_enhanced_exhibitor'] = array(
+    'bundle' => 'exhibitor_profile_page',
+    'default_value' => array(
+      0 => array(
+        'value' => 'No',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'cck_blocks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
+      ),
+      'entity_reference_link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'exhibitor_list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'exhibitor_profile' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_enhanced_exhibitor',
+    'label' => 'Enhanced',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-exhibitor_profile_page-field_facebook_url'.
   $field_instances['node-exhibitor_profile_page-field_facebook_url'] = array(
     'bundle' => 'exhibitor_profile_page',
@@ -1199,6 +1552,78 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
   );
 
   // Exported field_instance:
+  // 'node-exhibitor_profile_page-field_highlighted_exhibitor'.
+  $field_instances['node-exhibitor_profile_page-field_highlighted_exhibitor'] = array(
+    'bundle' => 'exhibitor_profile_page',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Tick to mark this exhibitor as a "section one" exhibitor; they will be shown with a thicker border and highlight colours in the exhibitor listing pages.',
+    'display' => array(
+      'cck_blocks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 56,
+      ),
+      'entity_reference_link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'exhibitor_list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'exhibitor_profile' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_highlighted_exhibitor',
+    'label' => 'Section One (Highlighted) Exhibitor?',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-exhibitor_profile_page-field_information_about_publishi'.
   $field_instances['node-exhibitor_profile_page-field_information_about_publishi'] = array(
     'bundle' => 'exhibitor_profile_page',
@@ -1255,7 +1680,7 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
       'module' => 'markup',
       'settings' => array(),
       'type' => 'markup',
-      'weight' => 20,
+      'weight' => 14,
     ),
   );
 
@@ -1430,12 +1855,13 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_logo',
     'label' => 'Logo',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 31761,
+      'default_image' => 73820,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '10 MB',
@@ -4179,6 +4605,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -4236,6 +4668,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4299,6 +4737,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'type' => 'image',
         'weight' => 1,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4356,6 +4800,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4411,6 +4861,12 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
         ),
         'type' => 'link_default',
         'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5825,6 +6281,60 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-slideshow-field_caption_2'.
+  $field_instances['paragraphs_item-slideshow-field_caption_2'] = array(
+    'bundle' => 'slideshow',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'slider' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_caption_2',
+    'label' => 'Caption 2',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-slideshow-field_description'.
   $field_instances['paragraphs_item-slideshow-field_description'] = array(
     'bundle' => 'slideshow',
@@ -5950,6 +6460,61 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
       ),
       'type' => 'advanced_link',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-slideshow-field_slide_description'.
+  $field_instances['paragraphs_item-slideshow-field_slide_description'] = array(
+    'bundle' => 'slideshow',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'slider' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_slide_description',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
     ),
   );
 
@@ -6959,8 +7524,10 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
   t('Body text');
   t('Button');
   t('Caption');
+  t('Caption 2');
   t('Categories');
   t('Category logo');
+  t('Choose number of columns your page should have.');
   t('Contact name');
   t('Content Left');
   t('Content Middle');
@@ -6968,6 +7535,7 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
   t('Country logo');
   t('Description');
   t('Email');
+  t('Enhanced');
   t('Exhibitor');
   t('Facebook URL');
   t('Fax');
@@ -7001,6 +7569,7 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
   t('Price');
   t('Programme Title');
   t('Promote on homepage');
+  t('Section One (Highlighted) Exhibitor?');
   t('Size');
   t('Slide');
   t('Slider Image');
@@ -7008,6 +7577,7 @@ function antiquessites_content_types_paragraphs_panes_field_default_field_instan
   t('Stand');
   t('Table');
   t('Telephone');
+  t('Tick to mark this exhibitor as a "section one" exhibitor; they will be shown with a thicker border and highlight colours in the exhibitor listing pages.');
   t('Time');
   t('Title');
   t('Title (for ordering)');

@@ -22,7 +22,7 @@ function antiquessites_content_types_paragraphs_panes_default_ctools_custom_cont
     'title' => '<none>',
     'body' => '<div class="row">
             <div class="col-md-12">
-              <div id="lnkPanel" data-link="http://fineartandantiquesfair.seetickets.com/event/olympia-international-art-antiques-fair/olympia-exhibition-centre/854367" data-target="_blank" class="panel-brown-dark panel-call-to-action">
+              <div id="lnkPanel" data-link="http://fineartandantiquesfair.seetickets.com/event/olympia-international-art-antiques-fair/olympia-exhibition-centre/854367" data-target="_blank" class="panel-brown-dark panel-red panel-call-to-action">
                 <div class="panel-small-caption">
                   Now on sale
                 </div>
@@ -53,9 +53,9 @@ function antiquessites_content_types_paragraphs_panes_default_ctools_custom_cont
     'title' => '<none>',
     'body' => '          <div class="row">
             <div class="col-md-12">
-              <div id="lnkPanel" data-link="/exhibitors" data-target="_self" class="panel-teal panel-call-to-action teal">
+              <div id="lnkPanel" data-link="/exhibitors" data-target="_self" class="panel-brown-dark panel-call-to-action teal">
                 <div class="panel-small-caption">
-                  View the 2015
+                  View the
                 </div>
                 <div class="panel-large-caption">
                   Exhibitor List
@@ -82,7 +82,7 @@ function antiquessites_content_types_paragraphs_panes_default_ctools_custom_cont
   $content->settings = array(
     'admin_title' => '',
     'title' => '<none>',
-    'body' => '<div class="panel-teal-dark panel-call-to-action">
+    'body' => '<div class="panel-brown-dark panel-call-to-action">
             <div class="panel-small-caption">
               fair
             </div>
@@ -107,8 +107,7 @@ function antiquessites_content_types_paragraphs_panes_default_ctools_custom_cont
     'title' => '<none>',
     'body' => '<div id="fair-video">
                 <div class="embed-responsive embed-responsive-16by9">
-                 <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/Re36Mb53cmw" allowfullscreen></iframe>
-                  <!---<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Re36Mb53cmw" allowfullscreen></iframe>-->
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b3LyUI62oEU?&rel=0" allowfullscreen></iframe>
                 </div>
                 <hr class="video-link-divider">
               </div>',
@@ -156,12 +155,12 @@ function antiquessites_content_types_paragraphs_panes_default_ctools_custom_cont
     'title' => '',
     'body' => '<div class="row">
             <div class="col-md-12">
-              <div id="lnkPanel" data-link="/visiting/olympia-showcase" data-target="_self" class="panel-brown-dark panel-call-to-action guest-exhibition">
+              <div id="lnkPanel" data-link="/events" data-target="_self" class="panel-brown-dark panel-red panel-call-to-action guest-exhibition">
                 <div class="panel-small-caption">
-                  apply now
+                  view the
                 </div>
                 <div class="panel-large-caption">
-                  olympia showcase
+                  talks programme
                 </div>
                 <hr class="panel-link-divider">
                 <div class="panel-link text-right">
@@ -296,7 +295,7 @@ function antiquessites_content_types_paragraphs_panes_default_ctools_custom_cont
   $content->settings = array(
     'admin_title' => '',
     'title' => '<none>',
-    'body' => '<p><a href="http://www.markcolliton.com/tours/olympia2013_side/tour_1_1.html" target="_blank"><img alt="" class="img-responsive" src="/sites/antiques_summer/files/virtual_tour.jpg" style="width: 480px; height: 251px;" /></a></p>
+    'body' => '<p><a href="http://www.markcolliton.com/tours/winterfair2013/tour_1_1.html" target="_blank"><img alt="" class="img-responsive" src="/sites/antiques_winter/files/360_1.png" style="height: 210px; width: 458px;" /></a></p>
 ',
     'format' => 'full_html',
     'substitute' => 1,
@@ -351,14 +350,13 @@ function antiquessites_content_types_paragraphs_panes_default_ctools_custom_cont
     Olympia Art & Antiques Fair
   </div>
   <div class="panel-date-caption">
-    31 Oct – 6 Nov 2016
-</div>
+    31st October-6th November 2016
+  </div>
   <hr class="panel-link-divider">
   <div class="panel-link text-right">
     <span class="glyphicon glyphicon-menu-right small" aria-hidden="true"></span>
   </div>
-</div>
-',
+</div>',
     'format' => 'ds_code',
     'substitute' => 1,
   );

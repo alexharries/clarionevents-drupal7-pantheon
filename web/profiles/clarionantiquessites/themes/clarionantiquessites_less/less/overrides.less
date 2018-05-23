@@ -1619,31 +1619,37 @@ h1.block-title {
       padding-left: 0px;
       padding-top: 3px;
     }
+
     .views-widget {
-      display: inline-block;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 60px;
+      position: absolute;
+      margin-left: 0;
+      top: 30px;
+
+      @media @tablet {
+        position: absolute;
+        top: -55px;
+        left: 50%;
+        max-width: 49%;
+      }
+
+      @media @normal {
+        //left: 686px;
+      }
+
+      @media @wide {
+        //left: 880px;
+      }
 
       select {
-        left: 0;
-        width: 100%;
-        max-width: 100%;
-        margin-top: 60px;
-        position: absolute;
-        margin-left: 0;
-        top: 30px;
+        width: 49%;
+        display: inline-block;
 
-        @media @tablet {
-          position: absolute;
-          top: -55px;
-          left: 466px;
-          max-width: 250px;
-        }
-
-        @media @normal {
-          left: 686px;
-        }
-
-        @media @wide {
-          left: 880px;
+        &:first-child {
+          margin-right: 1%;
         }
       }
     }
@@ -1689,7 +1695,6 @@ h1.block-title {
 
 .view-exhibitor-list {
   .attachment {
-
     .view-display-id-attachment_1 {
       overflow: hidden;
       margin-top: 47px;
@@ -1814,14 +1819,12 @@ h1.block-title {
       position: absolute;
       z-index: 999999999999;
       width: 100%;
-      /* padding: 0; */
       background-color: #FFF;
-      /* list-style: none; */
       left: 0;
       border: 1px #e1e0e1 solid;
       border-top: none;
-      /* height: 249px; */
       box-shadow: 2px 2px 2px #e1e0e1;
+
       li span.category-leaf {
         font-size: 12px;
       }
@@ -1829,61 +1832,88 @@ h1.block-title {
   }
 
   .view-content {
+    .row {
+      margin-bottom: 30px;
+    }
+  }
 
-    #views-bootstrap-grid-1 {
-      .row {
-        margin-bottom: 30px;
+  .exhibitor-block {
+    min-height: auto;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
 
-        .exhibitor-block {
-          min-height: auto;
-          margin-bottom: 30px;
-          padding-bottom: 20px;
-          border: 1px solid @brand-primary;
+    @media @tablet {
+      min-height: 375px;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
 
-          @media @tablet {
-            min-height: 375px;
-            margin-bottom: 0px;
-            padding-bottom: 0px;
-          }
+    .gallery-image {
+      margin-top: 10px;
+      text-align: center;
 
-          .gallery-image {
-            margin-top: 10px;
-            text-align: center;
-
-            img {
-              display: inline-block;
-              text-align: center;
-            }
-          }
-
-          .gallery-item-separator {
-            border-top: 1px solid black;
-          }
-
-          .stand {
-            color: @brand-black;
-            text-transform: uppercase;
-            font-size: 16px;
-            font-weight: bold;
-          }
-
-          .name {
-            color: @brand-primary;
-            text-transform: uppercase;
-            font-size: 16px;
-          }
-
-          .description {
-            color: @brand-grey;
-            //font-size: 16px;
-          }
-        }
+      img {
+        display: inline-block;
+        text-align: center;
       }
     }
 
+    .stand {
+      color: @brand-black;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .name {
+      color: @brand-primary;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .description {
+      color: @brand-grey;
+    }
+
+    .gallery-item-separator {
+      border-top: 1px solid black;
+    }
+
+    &.section-one-exhibitor .gallery-item-separator {
+      border-top-color: @brand-primary;
+    }
+  }
+
+  // Highlighted exhibitors.
+  .exhibitor-list-key {
+    text-align: right;
+  }
+
+  .exhibitor-block,
+  span.exhibitor-list-key-item {
+    border: @gray 1px solid;
+  }
+
+  span.exhibitor-list-key-item {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    margin: 0 0.25em;
+    text-transform: uppercase;
+    font-size: 0.85em;
+  }
+
+  .exhibitor-block.section-one-exhibitor,
+  span.exhibitor-list-key-item.exhibitor-list-key-item-highlighted {
+    border-color: @brand-primary;
+    border-width: 2px;
+  }
+
+  .exhibitor-block.section-one-exhibitor,
+  .exhibitor-block.section-one-exhibitor *,
+  span.exhibitor-list-key-item.exhibitor-list-key-item-highlighted {
+    font-weight: bold;
   }
 }
-
 // END: EXHIBITOR LIST
 
 // EXHIBITOR PROFILE PAGE
