@@ -818,3 +818,27 @@ function greyhead_customisations_field_widget_form_alter(&$element, &$form_state
     }
   }
 }
+
+/**
+ * Implements hook_mail_alter().
+ */
+function greyhead_customisations_mail_alter(&$email) {
+  // If we know the environment type, and it's not a production environment,
+  // don't allow e-mails to be sent.
+  if (module_exists('greyhead_environment_warning') && !greyhead_environment_warning_is_production()) {
+    $message = 'Greyhead Customisations prevented an e-mail with the subject "@subject" to @to being sent, because this is not a production environment (this environment is: @environment).';
+
+    $variables = [
+      '@subject' => $email['subject'],
+      '@to' => $email['to'],
+      '@environment' => CURRENT_ENVIRONMENT,
+      '!email' => print_r($email, TRUE),
+    ];
+
+    drupal_set_message(t($message . ' You can find this e-mail in the Watchdog log.', $variables), 'warning');
+
+    watchdog('greyhead_customisations', $message . ' The e-mail was: <pre>!email</pre>', $variables, WATCHDOG_DEBUG);
+
+    $email['to'] = '';
+  }
+}
