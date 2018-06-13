@@ -129,11 +129,11 @@ var Drupal = Drupal || {};
  */
 function theBabyShowReplaceImageWithYouchoobVideo(containerSelectorClass, youtubeVideoId) {
   var $ = jQuery;
-  
+
   console.log('theBabyShowReplaceImageWithYouchoobVideo');
   console.log(containerSelectorClass, 'containerSelectorClass');
   console.log(youtubeVideoId, 'youtubeVideoId');
-  $('.' + containerSelectorClass + ' picture').replaceWith('<iframe id="' + containerSelectorClass + '-iframe" width="393" height="193" src="https://www.youtube-nocookie.com/embed/' + youtubeVideoID + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+  $('.' + containerSelectorClass + ' picture').replaceWith('<iframe id="' + containerSelectorClass + '-iframe" width="393" height="193" src="https://www.youtube-nocookie.com/embed/' + youtubeVideoId + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
   var iframeWidth = parseInt($('.' + containerSelectorClass + ' .field-name-field-homepage-leader-image .field-item').width(), 10);
   console.log(iframeWidth, 'paragraphsItemIframeWidth');
   var iframeHeight = (iframeWidth / 4) * 2;
