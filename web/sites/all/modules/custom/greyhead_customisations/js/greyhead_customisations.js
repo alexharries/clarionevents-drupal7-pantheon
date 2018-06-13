@@ -128,6 +128,8 @@ var Drupal = Drupal || {};
  * @param youtubeVideoId
  */
 function theBabyShowReplaceImageWithYouchoobVideo(containerSelectorClass, youtubeVideoId) {
+  var $ = jQuery;
+  
   console.log('theBabyShowReplaceImageWithYouchoobVideo');
   console.log(containerSelectorClass, 'containerSelectorClass');
   console.log(youtubeVideoId, 'youtubeVideoId');
