@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Clarion Events Pardot Integration feature.
+ */
+
+include_once 'clarion_events_pardot_integration.features.inc';
