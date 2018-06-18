@@ -1,0 +1,17 @@
+name = Clarion Events Pardot Integration
+description = Provides the Pardot module and tracking account and campaign IDs.
+core = 7.x
+package = Clarion Events
+version = 7.x-1.0-20180618
+dependencies[] = ctools
+dependencies[] = pardot
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = pardot_a_id
+features[variable][] = pardot_c_id
+features[variable][] = pardot_pages
+features[variable][] = pardot_roles
+features[variable][] = pardot_validate_url
+features[variable][] = pardot_visibility_pages
+features[variable][] = pardot_visibility_roles
