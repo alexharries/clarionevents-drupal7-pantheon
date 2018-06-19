@@ -258,9 +258,9 @@ function pardot_webform_components_form_validate($form, $form_state) {
 
           // If the Pardot cookie exists.
           if (isset($cookie['pardot'])) {
-            // Check for HTTP code, we need a 200.
+            // Check for HTTP code, we need a 200 (OK) or 302 (Found)
             $http_code = curl_getinfo($check_url, CURLINFO_HTTP_CODE);
-            if ($http_code != 200) {
+            if ($http_code != 200 && $http_code != 302) {
               // Set form error.
               form_set_error('url', t('The Post url is not valid.'));
             }
