@@ -10,19 +10,19 @@
 function clarion_events_pardot_integration_strongarm() {
   $export = array();
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pardot_a_id';
-  $strongarm->value = '508231';
-  $export['pardot_a_id'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pardot_c_id';
-  $strongarm->value = '9960';
-  $export['pardot_c_id'] = $strongarm;
+//  $strongarm = new stdClass();
+//  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+//  $strongarm->api_version = 1;
+//  $strongarm->name = 'pardot_a_id';
+//  $strongarm->value = '508231';
+//  $export['pardot_a_id'] = $strongarm;
+//
+//  $strongarm = new stdClass();
+//  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+//  $strongarm->api_version = 1;
+//  $strongarm->name = 'pardot_c_id';
+//  $strongarm->value = '9960';
+//  $export['pardot_c_id'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
