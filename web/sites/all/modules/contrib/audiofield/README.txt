@@ -20,6 +20,8 @@ default, but you may choose one of several other supported players:
 6. jPlayer
     Install the jPlayer module
     http://drupal.org/project/jplayer
+6. wavesurfer.js 2.0
+    https://github.com/katspaugh/wavesurfer.js/
 
 The resulting folder structure should resemble the following (you may need to
 rename the folders and files to match):
@@ -39,6 +41,9 @@ rename the folders and files to match):
 > The jPlayer player should be at:
 /sites/all/libraries/player/jplayer/jquery.jplayer.min.js
 
+> The wavesurfer.js player should be at:
+/sites/all/libraries/player/wavesurfer/dist/wavesurfer.min.js
+
 This module gives you the ability to choose the audio player you would like to
 use on your web site from many audio players, from the configuration page.
 
@@ -52,10 +57,9 @@ Other modules can extend this support by implementing hook_audiofield_players().
 
 DISPLAY FORMATTERS
 --------------------------------------------------------------------------------
-There are 3 display formatters:
-1. Audio player with download
-2. Audio player only
-3. Audio player only with details
+The display formatter is called "AudioField Player". You can choose which type
+of player you want to use, as well as other settings in the formatter settings
+located under Content -> Fields -> Manage Display.
 
 MAINTAINERS
 --------------------------------------------------------------------------------
