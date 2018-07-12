@@ -18,11 +18,15 @@ class SearchApiAttachmentsAlterSettings extends SearchApiAbstractAlterCallback {
    */
   public function alterItems(array &$items) {
 
-    if ($this->index->getEntityType() == 'file') {
+    if ($this->index->getEntityType() == 'file' || $this->isMultipleIndexWithFile()) {
       foreach ($items as &$item) {
         $file = array();
-        foreach ($item as $key => $value) {
-          $file[$key] = $value;
+        if ($this->isMultipleIndexWithFile()) {
+          $file = (array) $item->file;
+        } else {
+          foreach ($item as $key => $value) {
+            $file[$key] = $value;
+          }
         }
         if ($this->isFileIndexable($file, $item)) {
           $item->attachments_content = $this->getFileContent($file);
@@ -181,14 +185,14 @@ class SearchApiAttachmentsAlterSettings extends SearchApiAbstractAlterCallback {
    */
   public function propertyInfo() {
     $ret = array();
-    if ($this->index->getEntityType() == 'file') {
+    if ($this->index->getEntityType() == 'file' || $this->isMultipleIndexWithFile()) {
       $ret['attachments_content'] = array(
         'label' => 'File content',
         'description' => 'File content',
         'type' => 'text',
       );
     }
-    else {
+    if ($this->index->getEntityType() != 'file') {
       $fields = $this->getFileFields();
       foreach ($fields as $name => $field) {
         $ret['attachments_' . $name] = array(
@@ -199,6 +203,10 @@ class SearchApiAttachmentsAlterSettings extends SearchApiAbstractAlterCallback {
       }
     }
     return $ret;
+  }
+
+  protected function isMultipleIndexWithFile() {
+    return $this->index->item_type == 'multiple' && isset($this->index->options['datasource']['types']) && in_array('file', $this->index->options['datasource']['types']);
   }
 
   /**
