@@ -136,7 +136,7 @@ class SearchApiAttachmentsEntityreferenceAlterSettings extends SearchApiAttachme
     foreach ($files as $file) {
       $file = (array) $file;
       // Private file restriction.
-      if (!$this->is_temporary($file) && !($this->options['excluded_private'] && $this->is_private($file))) {
+      if (!$this->isTemporary($file) && !($this->options['excluded_private'] && $this->isPrivate($file))) {
         // Extension restriction.
         if (!in_array($file['filemime'], $exclude)) {
           // File size restriction.

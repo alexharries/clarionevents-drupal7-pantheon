@@ -34,7 +34,7 @@ class SearchApiAttachmentsMultipleEntitiesAlterSettings extends SearchApiAttachm
               }
               foreach ($value as $file) {
                 // Private file restriction.
-                if (!$this->is_temporary($file) && !($this->options['excluded_private'] && $this->is_private($file))) {
+                if (!$this->isTemporary($file) && !($this->options['excluded_private'] && $this->isPrivate($file))) {
                   // Extension restriction.
                   if (!in_array($file['filemime'], $exclude)) {
                     // File size restriction.
