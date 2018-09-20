@@ -9820,6 +9820,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
     float: left;
   }
 }
+/* line 883, ../sass/_overrides.scss */
+.contextual-links-region {
+  position: static;
+}
+
 /* line 3, ../sass/_great_big_mass_of_styles.scss */
 .social-media li {
   float: left;
