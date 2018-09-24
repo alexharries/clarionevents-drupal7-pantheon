@@ -93,10 +93,14 @@ function page_content_type_field_default_field_bases() {
   // Exported field_base: 'field_slideshow'.
   $field_bases['field_slideshow'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_slideshow',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'global_block_settings' => 1,
     'indexes' => array(),
     'locked' => 0,
     'module' => 'paragraphs',

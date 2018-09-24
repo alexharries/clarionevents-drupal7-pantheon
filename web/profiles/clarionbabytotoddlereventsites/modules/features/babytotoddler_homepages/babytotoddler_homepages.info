@@ -1,7 +1,7 @@
 name = Homepages
 core = 7.x
 package = Baby To Toddler Events
-version = 7.x-1.0-20171101
+version = 7.x-1.0-20180925
 dependencies[] = babytotoddler_paragraphs
 dependencies[] = ctools
 dependencies[] = entityreference
@@ -11,6 +11,7 @@ dependencies[] = image
 dependencies[] = media
 dependencies[] = options
 dependencies[] = page_content_type
+dependencies[] = paragraph_page
 dependencies[] = paragraphs
 dependencies[] = strongarm
 dependencies[] = text
