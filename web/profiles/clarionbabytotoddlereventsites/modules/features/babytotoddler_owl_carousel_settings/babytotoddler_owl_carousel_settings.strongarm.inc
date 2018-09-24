@@ -91,7 +91,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_auto_play_owlcarousel_settings_exhibitor-carousel';
-  $strongarm->value = '2000';
+  $strongarm->value = '10000';
   $export['owlcarousel_auto_play_owlcarousel_settings_exhibitor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -112,7 +112,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_auto_play_owlcarousel_settings_sponsor-carousel';
-  $strongarm->value = '2000';
+  $strongarm->value = '10000';
   $export['owlcarousel_auto_play_owlcarousel_settings_sponsor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1080,7 +1080,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_pagination_speed_owlcarousel_settings_exhibitor-carousel';
-  $strongarm->value = '800';
+  $strongarm->value = '1000';
   $export['owlcarousel_pagination_speed_owlcarousel_settings_exhibitor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1101,7 +1101,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_pagination_speed_owlcarousel_settings_sponsor-carousel';
-  $strongarm->value = '800';
+  $strongarm->value = '1000';
   $export['owlcarousel_pagination_speed_owlcarousel_settings_sponsor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1255,7 +1255,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_rewind_speed_owlcarousel_settings_exhibitor-carousel';
-  $strongarm->value = '1000';
+  $strongarm->value = '2000';
   $export['owlcarousel_rewind_speed_owlcarousel_settings_exhibitor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1276,7 +1276,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_rewind_speed_owlcarousel_settings_sponsor-carousel';
-  $strongarm->value = '1000';
+  $strongarm->value = '2000';
   $export['owlcarousel_rewind_speed_owlcarousel_settings_sponsor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1395,7 +1395,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_slide_speed_owlcarousel_settings_exhibitor-carousel';
-  $strongarm->value = '200';
+  $strongarm->value = '1000';
   $export['owlcarousel_slide_speed_owlcarousel_settings_exhibitor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1416,7 +1416,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_slide_speed_owlcarousel_settings_sponsor-carousel';
-  $strongarm->value = '200';
+  $strongarm->value = '1000';
   $export['owlcarousel_slide_speed_owlcarousel_settings_sponsor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
