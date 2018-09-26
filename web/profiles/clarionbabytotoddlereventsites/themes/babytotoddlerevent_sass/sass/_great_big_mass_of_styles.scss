@@ -1,3 +1,29 @@
+// Usefulness.
+// N.b. Sorry for all the "!important"s, but there's no other easy & sane way to
+// override the various CSS attributes when we apply this class to elephants
+// in the main menu.
+.small {
+  font-size: 0.8em !important;
+}
+
+.with-arrow {
+  position: relative !important;
+  display: inline-block !important;
+  margin-left: 1em !important;
+  padding-left: 1.5em !important;
+  margin-top: 1em !important;
+  padding-top: 1em !important;
+  border-top: #fff 1px dotted !important;
+
+  &:before {
+    display: block !important;
+    position: absolute !important;
+    left: 0.5em !important;
+    top: 1em !important;
+    content: "\00BB" !important;
+  }
+}
+
 // SOCIAL MEDIA
 .social-media {
   li {
@@ -168,12 +194,9 @@
       padding: 15px;
 
       .navbar-nav {
-
         > li {
-
           > a {
             color: $navbar-default-link-color;
-            font-size: 20px;
 
             &:hover,
             &:focus {
@@ -212,6 +235,14 @@
         padding-top: 60px;
       }
 
+    }
+  }
+}
+
+.navbar-nav {
+  > li {
+    > a {
+      font-size: 20px;
     }
   }
 }
@@ -2009,3 +2040,4 @@ body {
     font-size: 24px;
   }
 }
+
