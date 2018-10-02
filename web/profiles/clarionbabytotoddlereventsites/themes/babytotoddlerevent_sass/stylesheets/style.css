@@ -9834,7 +9834,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 /* line 954, ../sass/_overrides.scss */
 .contextual-links-region {
-  position: static;
+  position: relative;
 }
 
 /* line 5, ../sass/_great_big_mass_of_styles.scss */
@@ -10613,7 +10613,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 
 /* line 697, ../sass/_great_big_mass_of_styles.scss */
 .highlights-block {
-  background-color: #cfbc70;
+  background-color: #db8b89;
   color: #ffffff;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;

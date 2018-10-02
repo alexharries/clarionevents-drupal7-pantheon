@@ -952,5 +952,5 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 // Don't allow .contextual-links-region to sit on top of its own block's
 // content.
 .contextual-links-region {
-  position: static;
+  position: relative;
 }
