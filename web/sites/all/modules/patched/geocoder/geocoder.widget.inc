@@ -456,7 +456,7 @@ function geocoder_widget_get_field_value($entity_type, $field_instance, $entity 
         }
 
         // No cache record, so fetch live.
-        if ($geometry === NULL) {
+        if (!$geometry) {
           // Geocode any value from our source field.
           try {
             $geometry = call_user_func($handler['field_callback'], $field_info, $item, $handler_settings);
@@ -507,8 +507,18 @@ function geocoder_widget_get_field_concat($items) {
   // Check if we should concatenate
   $concat = '';
   foreach ($items as $item) {
+    // If we have an item which doesn't contain a value array, but has other
+    // fields - for example addressfields, which have thoroughfare, locality,
+    // administrative area etc - implode those fields into a single value
+    // string.
+    if (!isset($item['value']) && !empty($item)) {
+      $item['value'] = implode(',', $item);
+    }
+
+    // If we have a value key, cast it to string and append its content to
+    // $concat.
     if (!empty($item['value'])) {
-      $concat .= trim($item['value']) . ', ';
+      $concat .= trim((string)$item['value']) . ', ';
     }
   }
   $concat = trim($concat, ', ');
@@ -633,7 +643,13 @@ function geocoder_widget_parse_addressfield($field_item) {
     $address[] = $field_item['country'];
   }
 
-  return implode(',', array_filter($address));
+  $return = implode(',', array_filter($address));
+
+  if (empty($return) && array_key_exists('value', $field_item)) {
+    $return = $field_item['value'];
+  }
+
+  return $return;
 }
 
 /**

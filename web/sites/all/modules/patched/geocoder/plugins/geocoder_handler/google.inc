@@ -195,7 +195,7 @@ function geocoder_google_field($field, $field_item, $options = array()) {
   if ($field['type'] == 'text' || $field['type'] == 'text_long' || $field['type'] == 'text_with_summary' || $field['type'] == 'computed') {
     return geocoder_google($field_item['value'], $options);
   }
-  if ($field['type'] == 'addressfield' && module_exists('addressfield') && !addressfield_field_is_empty($field_item, $field)) {
+  if ($field['type'] == 'addressfield' && module_exists('addressfield')) {
     $address = geocoder_widget_parse_addressfield($field_item);
     if(empty($address)) {
       return FALSE;

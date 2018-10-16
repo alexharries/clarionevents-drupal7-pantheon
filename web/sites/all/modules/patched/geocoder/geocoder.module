@@ -396,3 +396,27 @@ function geocoder_cache_set($geometry, $handler, $data, $options) {
 function geocoder_flush_caches() {
   return array('cache_geocoder');
 }
+
+/**
+ * Implements hook_geocoder_geocode_values_alter.
+ *
+ * @param $source_field_values
+ * @param $field_info
+ * @param $handler_settings
+ * @param $field_instance
+ */
+function geocoder_geocoder_geocode_values_alter(&$source_field_values, $field_info, $handler_settings, $field_instance) {
+  // For address fields, concatenate the address array parts down into a
+  // single value string.
+  if ($field_info['type'] == 'addressfield') {
+    // It's an addressfield. Concatenate the source field values down into a
+    // single value array per item.
+    foreach ($source_field_values as $number => &$source_field_value) {
+      $new_source_field_value = array(
+        'value' => implode(',', $source_field_value),
+      );
+
+      $source_field_value = $new_source_field_value;
+    }
+  }
+}
