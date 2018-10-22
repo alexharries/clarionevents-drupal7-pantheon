@@ -12034,3 +12034,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .paragraphs-item--heading-and-jump-link h3 {
   font-size: 24px;
 }
+
+/* line 2046, ../sass/_great_big_mass_of_styles.scss */
+.clearboth {
+  clear: both;
+}
