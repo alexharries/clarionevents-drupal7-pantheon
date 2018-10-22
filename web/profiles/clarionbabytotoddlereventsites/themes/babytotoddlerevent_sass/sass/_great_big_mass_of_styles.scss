@@ -2041,3 +2041,8 @@ body {
   }
 }
 
+// Add a .clearboth class so we can clear JS tag blocks underneath content
+// blocks.
+.clearboth {
+  clear: both;
+}
