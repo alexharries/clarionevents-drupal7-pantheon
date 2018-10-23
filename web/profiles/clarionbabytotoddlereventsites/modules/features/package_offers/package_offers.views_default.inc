@@ -31,7 +31,7 @@ function package_offers_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'responsive_grid';
   $handler->display->display_options['style_options']['columns'] = '2';
-  $handler->display->display_options['style_options']['column_classes'] = 'columns col-xs-12 col-sm-12 col-md-6';
+  $handler->display->display_options['style_options']['column_classes'] = 'columns col-xs-12 col-md-6';
   $handler->display->display_options['style_options']['row_classes'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Field: Logo */
@@ -42,11 +42,11 @@ function package_offers_views_default_views() {
   $handler->display->display_options['fields']['field_logo_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_logo_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_logo_1']['element_wrapper_class'] = 'col-sm-2';
+  $handler->display->display_options['fields']['field_logo_1']['element_wrapper_class'] = 'col-sm-4';
   $handler->display->display_options['fields']['field_logo_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo_1']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
+    'image_style' => 'packages-thumbnail',
+    'image_link' => 'content',
     'conditions' => array(
       0 => array(
         'condition' => '',
@@ -66,34 +66,14 @@ function package_offers_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Field: Field: Logo */
-  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_logo']['element_wrapper_class'] = 'col-sm-2';
-  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_logo']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-    'conditions' => array(
-      0 => array(
-        'condition' => '',
-      ),
-    ),
-  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="wrapper col-xs-12">
-<div class="col-sm-2 center-image">[field_logo_1]</div>
+<div class="col-sm-4 center-image">[field_logo_1]</div>
 <div class="col-sm-8">[rendered_entity]</div>
-<div class="hidden-xs col-sm-2">[field_logo]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
