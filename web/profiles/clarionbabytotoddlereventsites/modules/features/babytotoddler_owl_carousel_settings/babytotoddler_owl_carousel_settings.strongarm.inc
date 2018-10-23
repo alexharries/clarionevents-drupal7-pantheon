@@ -91,7 +91,7 @@ function babytotoddler_owl_carousel_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_auto_play_owlcarousel_settings_exhibitor-carousel';
-  $strongarm->value = '10000';
+  $strongarm->value = '5000';
   $export['owlcarousel_auto_play_owlcarousel_settings_exhibitor-carousel'] = $strongarm;
 
   $strongarm = new stdClass();
