@@ -12039,3 +12039,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .clearboth {
   clear: both;
 }
+
+/* line 2050, ../sass/_great_big_mass_of_styles.scss */
+.larger {
+  font-size: 1.2em;
+}
