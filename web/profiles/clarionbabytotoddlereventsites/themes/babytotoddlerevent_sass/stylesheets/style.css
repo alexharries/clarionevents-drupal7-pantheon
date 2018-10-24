@@ -12017,69 +12017,74 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   width: 100%;
 }
 
-/* line 2036, ../sass/_great_big_mass_of_styles.scss */
+/* line 2035, ../sass/_great_big_mass_of_styles.scss */
+.content-middle {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* line 2039, ../sass/_great_big_mass_of_styles.scss */
 .content-middle .content-left {
   margin-top: 1em;
   margin-bottom: 2em;
 }
-/* line 2041, ../sass/_great_big_mass_of_styles.scss */
+/* line 2044, ../sass/_great_big_mass_of_styles.scss */
 .content-middle .content-right {
   margin-top: 2em;
   margin-bottom: 1em;
 }
 
-/* line 2047, ../sass/_great_big_mass_of_styles.scss */
+/* line 2050, ../sass/_great_big_mass_of_styles.scss */
 .auto-margin-img img {
   margin: auto;
 }
 
-/* line 2052, ../sass/_great_big_mass_of_styles.scss */
+/* line 2055, ../sass/_great_big_mass_of_styles.scss */
 .full-width-image img {
   width: 100%;
 }
 
-/* line 2058, ../sass/_great_big_mass_of_styles.scss */
+/* line 2061, ../sass/_great_big_mass_of_styles.scss */
 .no-rounded-img img {
   border-radius: 0 !important;
 }
 
-/* line 2068, ../sass/_great_big_mass_of_styles.scss */
+/* line 2071, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-item--heading-and-jump-link h2 {
   font-size: 30px;
 }
-/* line 2072, ../sass/_great_big_mass_of_styles.scss */
+/* line 2075, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-item--heading-and-jump-link h3 {
   font-size: 24px;
 }
 
-/* line 2079, ../sass/_great_big_mass_of_styles.scss */
+/* line 2082, ../sass/_great_big_mass_of_styles.scss */
 .clearboth {
   clear: both;
 }
 
-/* line 2083, ../sass/_great_big_mass_of_styles.scss */
+/* line 2086, ../sass/_great_big_mass_of_styles.scss */
 .larger {
   font-size: 1.2em;
 }
 
-/* line 2090, ../sass/_great_big_mass_of_styles.scss */
+/* line 2093, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption {
   padding: 0.25em;
   background: rgba(0, 0, 0, 0.33);
   font-size: 1em;
 }
 @media screen and (min-width: 1200px) {
-  /* line 2090, ../sass/_great_big_mass_of_styles.scss */
+  /* line 2093, ../sass/_great_big_mass_of_styles.scss */
   .paragraphs-items .paragraphs-item--image-carousel .carousel-caption {
     font-size: 1.25em;
     padding: 0.5em;
   }
 }
-/* line 2100, ../sass/_great_big_mass_of_styles.scss */
+/* line 2103, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption * {
   line-height: 1.2em;
 }
-/* line 2104, ../sass/_great_big_mass_of_styles.scss */
+/* line 2107, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption h2 {
   margin: 0 0 0.25em 0;
   font-size: 1.75em;
