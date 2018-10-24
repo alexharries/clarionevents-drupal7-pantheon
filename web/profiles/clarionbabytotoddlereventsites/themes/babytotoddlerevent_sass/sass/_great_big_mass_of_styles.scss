@@ -521,7 +521,6 @@ body {
   display: inline;
 }
 
-
 // Hide Owl carousel pagination dots on mowblie, but show prev/next.
 // Above mobile breakpoint, switch around so we show the dots but not the
 // prev/next.
@@ -608,7 +607,6 @@ body {
 }
 
 .node-homepage {
-
   &.view-mode-slideshow {
 
     .image {
@@ -641,13 +639,27 @@ body {
     }
   }
 
-  &.view-mode-full {
+  .paragraphs-items-field-leaders {
     background-color: $brand-primary;
     border-radius: 20px;
     margin-top: 15px;
     padding: 7.5px 0;
     color: #ffffff;
 
+    // Quick 'n dirty clearfix.
+    &::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }
+
+  // Add a small margin to the body field on the homepage.
+  .field-name-body {
+    padding: 0.5em 1em;
+  }
+
+  &.view-mode-full {
     .entity-paragraphs-item {
       padding: 7.5px 15px;
 
@@ -2070,4 +2082,29 @@ body {
 
 .larger {
   font-size: 1.2em;
+}
+
+// Adjust the display of the paragraph page carousel slides' captions.
+.paragraphs-items {
+  .paragraphs-item--image-carousel {
+    .carousel-caption {
+      padding: 0.25em;
+      background: rgba(0,0,0,0.33);
+      font-size: 1em;
+
+      @media #{$wide} {
+        font-size: 1.25em;
+        padding: 0.5em;
+      }
+
+      * {
+        line-height: 1.2em;
+      }
+
+      h2 {
+        margin: 0 0 0.25em 0;
+        font-size: 1.75em;
+      }
+    }
+  }
 }
