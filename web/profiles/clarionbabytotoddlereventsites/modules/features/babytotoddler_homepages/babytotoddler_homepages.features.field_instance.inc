@@ -25,9 +25,12 @@ function babytotoddler_homepages_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'image_separator' => array(
         'label' => 'hidden',
@@ -95,7 +98,7 @@ function babytotoddler_homepages_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 15,
       ),
       'image_separator' => array(
         'label' => 'above',
@@ -188,7 +191,7 @@ function babytotoddler_homepages_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 14,
       ),
       'image_separator' => array(
         'label' => 'above',
@@ -248,7 +251,7 @@ function babytotoddler_homepages_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 16,
       ),
       'image_separator' => array(
         'label' => 'hidden',
@@ -351,7 +354,7 @@ function babytotoddler_homepages_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'image_separator' => array(
         'label' => 'hidden',
@@ -444,7 +447,7 @@ function babytotoddler_homepages_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 17,
       ),
       'image_separator' => array(
         'label' => 'above',
@@ -543,7 +546,7 @@ function babytotoddler_homepages_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 13,
       ),
       'image_separator' => array(
         'label' => 'above',
