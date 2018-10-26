@@ -108,7 +108,7 @@
             </div>
           </div>
           <?php endif; ?>
-          
+
           <div class="row no-gutter">
             <div class="left col-xs-3 col-sm-4 col-lg-4">
               <a href="#" class="toggle-nav btn btn-lg"><i class="fa fa-bars"></i></a>
@@ -126,7 +126,7 @@
                 </div>
               <?php endif; ?>
             </div>
-            
+
           <?php if (!empty($page['header_right'])): ?>
             <div class="right col-xs-9 col-xs-offset-3 col-sm-4 col-sm-offset-0 col-lg-4">
               <?php print render($page['header_right']); ?>
@@ -140,7 +140,7 @@
     <?php if (!empty($page['highlighted'])): ?>
       <div class="highlighted"><?php print render($page['highlighted']); ?></div>
     <?php endif; ?>
-      
+
     <div class="main-container">
 
       <header role="banner" id="page-header">
@@ -174,25 +174,25 @@
           <?php if (!empty($action_links)): ?>
             <ul class="action-links"><?php print render($action_links); ?></ul>
           <?php endif; ?>
-          
+
           <div class="content">
           <?php print render($page['content']); ?>
           </div>
-          
-          <div class="content-middle row">
-          	<?php if (!empty($page['content_left'])): ?>  
-            <div class="content-left col-sm-6 col-lg-8">
+
+          <div class="content-middle">
+          	<?php if (!empty($page['content_left'])): ?>
+            <div class="content-left content-middle-row">
               <?php print render($page['content_left']); ?>
             </div>
           <?php endif; ?>
-          <?php if (!empty($page['content_right'])): ?>  
-            <div class="content-right col-sm-6 col-lg-4">
+          <?php if (!empty($page['content_right'])): ?>
+            <div class="content-right content-middle-row">
               <?php print render($page['content_right']); ?>
             </div>
           <?php endif; ?>
           </div>
-          
-          <?php if (!empty($page['content_bottom'])): ?>  
+
+          <?php if (!empty($page['content_bottom'])): ?>
             <div class="content-bottom">
               <?php print render($page['content_bottom']); ?>
             </div>
@@ -210,24 +210,24 @@
     </div>
 
     <footer class="footer container-fluid">
-    <?php if (!empty($page['footer_top'])): ?>  
+    <?php if (!empty($page['footer_top'])): ?>
       <div class="top row">
         <?php print render($page['footer_top']); ?>
       </div>
     <?php endif; ?>
 
-    <?php if (!empty($page['footer_middle'])): ?>  
+    <?php if (!empty($page['footer_middle'])): ?>
       <div class="middle row">
         <?php print render($page['footer_middle']); ?>
       </div>
     <?php endif; ?>
-    
-    <?php if (!empty($page['footer_middle_bottom'])): ?>  
+
+    <?php if (!empty($page['footer_middle_bottom'])): ?>
       <div class="middle-bottom row no-gutter">
         <?php print render($page['footer_middle_bottom']); ?>
       </div>
     <?php endif; ?>
-      
+
     <?php if (!empty($page['footer_bottom'])): ?>
       <div class="bottom row">
         <?php print render($page['footer_bottom']); ?>

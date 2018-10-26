@@ -521,7 +521,6 @@ body {
   display: inline;
 }
 
-
 // Hide Owl carousel pagination dots on mowblie, but show prev/next.
 // Above mobile breakpoint, switch around so we show the dots but not the
 // prev/next.
@@ -608,7 +607,6 @@ body {
 }
 
 .node-homepage {
-
   &.view-mode-slideshow {
 
     .image {
@@ -641,13 +639,27 @@ body {
     }
   }
 
-  &.view-mode-full {
+  .paragraphs-items-field-leaders {
     background-color: $brand-primary;
     border-radius: 20px;
     margin-top: 15px;
     padding: 7.5px 0;
     color: #ffffff;
 
+    // Quick 'n dirty clearfix.
+    &::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }
+
+  // Add a small margin to the body field on the homepage.
+  .field-name-body {
+    padding: 0.5em 1em;
+  }
+
+  &.view-mode-full {
     .entity-paragraphs-item {
       padding: 7.5px 15px;
 
@@ -700,7 +712,7 @@ body {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  margin-top: 15px;
+  margin-top: 2.5em;
 
   h2 {
     text-align: center;
@@ -753,11 +765,12 @@ body {
 
 .cross-site-link,
 .twitter-feed {
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  border-radius: 1em;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
   padding: 0 1em 1em 1em;
   color: $brand-white;
+  font-size: 1.25em;
 
   a {
     color: $brand-white;
@@ -769,17 +782,29 @@ body {
   }
 
   h2 {
-    //color: $brand-white;
+    color: $brand-white;
     text-align: center;
-    margin: 0;
-    font-size: 14px;
-    padding: 5px 0;
+    font-size: 24px;
+    margin-top: 0;
+    padding: 0.5em 0 0 0;
 
     @media #{$wide} {
       font-size: 30px;
-      padding: 18px 0;
     }
   }
+
+  //h2 {
+  //  //color: $brand-white;
+  //  text-align: center;
+  //  margin: 0;
+  //  font-size: 1.5em;
+  //  padding: 0.5em 0;
+  //
+  //  @media #{$wide} {
+  //    font-size: 2em;
+  //    padding: 0.75em 0;
+  //  }
+  //}
 }
 
 .cross-site-link {
@@ -2007,8 +2032,19 @@ body {
   }
 }
 
-.content-middle.row {
-  margin-top: 15px;
+.content-middle {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .content-left {
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+
+  .content-right {
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
 }
 
 .auto-margin-img img {
@@ -2041,3 +2077,37 @@ body {
   }
 }
 
+// Add a .clearboth class so we can clear JS tag blocks underneath content
+// blocks.
+.clearboth {
+  clear: both;
+}
+
+.larger {
+  font-size: 1.2em;
+}
+
+// Adjust the display of the paragraph page carousel slides' captions.
+.paragraphs-items {
+  .paragraphs-item--image-carousel {
+    .carousel-caption {
+      padding: 0.25em;
+      background: rgba(0,0,0,0.33);
+      font-size: 1em;
+
+      @media #{$wide} {
+        font-size: 1.25em;
+        padding: 0.5em;
+      }
+
+      * {
+        line-height: 1.2em;
+      }
+
+      h2 {
+        margin: 0 0 0.25em 0;
+        font-size: 1.75em;
+      }
+    }
+  }
+}

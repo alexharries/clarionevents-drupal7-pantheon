@@ -55,6 +55,22 @@ function package_offers_image_default_styles() {
     ),
   );
 
+  // Exported image style: packages-thumbnail.
+  $styles['packages-thumbnail'] = array(
+    'label' => 'Package Thumbnail',
+    'effects' => array(
+      567 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 300,
+          'height' => 300,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 

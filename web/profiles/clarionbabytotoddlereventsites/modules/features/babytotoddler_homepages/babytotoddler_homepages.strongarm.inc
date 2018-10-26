@@ -122,6 +122,18 @@ function babytotoddler_homepages_strongarm() {
       'newsletter_block' => array(
         'custom_settings' => TRUE,
       ),
+      'cck_blocks' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'sponsor_landscape' => array(
+        'custom_settings' => FALSE,
+      ),
+      'three_column' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
