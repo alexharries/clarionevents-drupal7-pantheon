@@ -20,9 +20,18 @@
 <div class="container-fluid">
   <div class="row">
     <?php foreach ($rows as $row_number => $row): ?>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <?php print $row; ?>
-      </div>
+    <div class="col-xs-12 col-md-4">
+      <?php print $row; ?>
+    </div>
+
+    <?php
+    // Break the row every third item to make sure items clear properly
+    // at full-width, unless this is the last item.
+    if ((($row_number + 1) % 3 == 0) && (count($rows) > ($row_number + 1))): ?>
+  </div>
+  <div class="row">
+    <?php endif; ?>
+
     <?php endforeach; ?>
   </div>
-
+</div>
