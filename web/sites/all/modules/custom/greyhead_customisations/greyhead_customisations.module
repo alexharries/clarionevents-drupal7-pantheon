@@ -227,12 +227,17 @@ function greyhead_customisations_form_alter(&$form, $form_state, $form_id) {
 
           // Also make sure that the menu link checkbox is checked and disabled,
           // and add some help text to explain.
-          $form['menu']['enabled']['#default_value']
-            = $form['menu']['enabled']['#value']
-            = $form['menu']['enabled']['#disabled'] = TRUE;
+          $form['menu']['enabled']['#default_value'] = $form['menu']['enabled']['#value'] = TRUE;
+          $form['menu']['enabled']['#access'] = FALSE;
           $form['menu']['enabled']['#title'] = t('This type of page must always have a menu link');
         }
       }
+    }
+
+    // Require new revisions on all node edits.
+    if (!empty($form['revision_information'])) {
+      $form['revision_information']['revision']['#value'] = TRUE;
+      $form['revision_information']['revision']['#access'] = FALSE;
     }
   }
 
