@@ -17,51 +17,21 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 
-<!--  Developer warning: this template contains a hard-coded
-      Owl Carousel implementation. Arg :-( -->
-<div class="owl-carousel-highlights carousel-left">
-  <?php $count = 0 ?>
-  <?php foreach ($rows as $id => $row): ?>
+<div class="container-fluid">
+  <div class="row">
+    <?php foreach ($rows as $row_number => $row): ?>
+    <div class="col-xs-12 col-md-4">
+      <?php print $row; ?>
+    </div>
 
-    <?php //Create div container ?>
-    <?php if ($count == 0): ?>
-      <div class="col-xs-12 col-sm-12" <?php if ($classes_array[$id]) {
-        print ' class="' . $classes_array[$id] . '"';
-      } ?>>
+    <?php
+    // Break the row every third item to make sure items clear properly
+    // at full-width, unless this is the last item.
+    if ((($row_number + 1) % 3 == 0) && (count($rows) > ($row_number + 1))): ?>
+  </div>
+  <div class="row">
     <?php endif; ?>
 
-    <?php //Increase the counter ?>
-    <?php $count++; ?>
-
-    <?php //Print Row ?>
-    <?php print $row; ?>
-
-    <?php //Close the div after two element get printed ?>
-    <?php if ($count == 2): ?>
-      </div>
-      <?php $count = 0; ?>
-    <?php endif; ?>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
+  </div>
 </div>
-
-<script type="text/javascript">
-  <?php //Call OWL carousel ?>
-  jQuery(document).ready(function() {
-    jQuery(".owl-carousel-highlights").owlCarousel({
-
-      // Most important owl features
-      items: 3,
-      itemsCustom: false,
-      itemsDesktop: [1199, 3],
-      itemsDesktopSmall: [980, 2],
-      itemsTablet: [768, 2],
-      itemsTabletSmall: false,
-      itemsMobile: [479, 1],
-      singleItem: false,
-      itemsScaleUp: false,
-      autoplayTimeout: 2000,
-      navigation: true,
-      navigationText: ["&laquo; previous", "next &raquo;"],
-    });
-  });
-</script>
