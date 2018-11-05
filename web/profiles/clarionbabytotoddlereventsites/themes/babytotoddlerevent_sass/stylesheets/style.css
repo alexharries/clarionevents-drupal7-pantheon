@@ -10552,62 +10552,17 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /* line 676, ../sass/_great_big_mass_of_styles.scss */
 .node-homepage.view-mode-full .entity-paragraphs-item .body, .node-landing-page .leader-container .entity-paragraphs-item .body {
   text-align: center;
-  display: block;
-  display: -webkit-box !important;
-  -webkit-box-orient: vertical;
-  position: relative;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 !important;
-  line-height: 1.375;
-  -webkit-line-clamp: 2;
-  height: 2.75em;
 }
 @media screen and (min-width: 768px) {
   /* line 676, ../sass/_great_big_mass_of_styles.scss */
   .node-homepage.view-mode-full .entity-paragraphs-item .body, .node-landing-page .leader-container .entity-paragraphs-item .body {
     text-align: left;
-    display: block;
-    display: -webkit-box !important;
-    -webkit-box-orient: vertical;
-    position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 0 !important;
-    line-height: 1.375;
-    -webkit-line-clamp: 4;
-    height: 5.5em;
     font-size: 16px;
-  }
-}
-@media screen and (min-width: 992px) {
-  /* line 676, ../sass/_great_big_mass_of_styles.scss */
-  .node-homepage.view-mode-full .entity-paragraphs-item .body, .node-landing-page .leader-container .entity-paragraphs-item .body {
-    display: block;
-    display: -webkit-box !important;
-    -webkit-box-orient: vertical;
-    position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 0 !important;
-    line-height: 1.375;
-    -webkit-line-clamp: 2;
-    height: 2.75em;
   }
 }
 @media screen and (min-width: 1200px) {
   /* line 676, ../sass/_great_big_mass_of_styles.scss */
   .node-homepage.view-mode-full .entity-paragraphs-item .body, .node-landing-page .leader-container .entity-paragraphs-item .body {
-    display: block;
-    display: -webkit-box !important;
-    -webkit-box-orient: vertical;
-    position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 0 !important;
-    line-height: 1.375;
-    -webkit-line-clamp: 2;
-    height: 2.75em;
     font-size: 18px;
   }
 }
@@ -12069,23 +12024,50 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 
 /* line 2093, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption {
-  padding: 0.25em;
-  background: rgba(0, 0, 0, 0.33);
+  padding: 0.75em;
+  background: rgba(255, 255, 255, 0.5);
   font-size: 1em;
+  bottom: 25px;
+  left: 6%;
+  right: 6%;
+}
+/* line 2101, ../sass/_great_big_mass_of_styles.scss */
+.paragraphs-items .paragraphs-item--image-carousel .carousel-caption, .paragraphs-items .paragraphs-item--image-carousel .carousel-caption h2, .paragraphs-items .paragraphs-item--image-carousel .carousel-caption a {
+  color: #7c6a68;
+  text-shadow: 0 1px 2px white;
 }
 @media screen and (min-width: 1200px) {
   /* line 2093, ../sass/_great_big_mass_of_styles.scss */
   .paragraphs-items .paragraphs-item--image-carousel .carousel-caption {
     font-size: 1.25em;
-    padding: 0.5em;
+    padding: 1em;
+    bottom: 50px;
   }
 }
-/* line 2103, ../sass/_great_big_mass_of_styles.scss */
+/* line 2114, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption * {
   line-height: 1.2em;
 }
-/* line 2107, ../sass/_great_big_mass_of_styles.scss */
+/* line 2118, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption h2 {
   margin: 0 0 0.25em 0;
-  font-size: 1.75em;
+  font-size: 1.25em;
+}
+@media screen and (min-width: 1200px) {
+  /* line 2118, ../sass/_great_big_mass_of_styles.scss */
+  .paragraphs-items .paragraphs-item--image-carousel .carousel-caption h2 {
+    font-size: 1.75em;
+  }
+}
+/* line 2128, ../sass/_great_big_mass_of_styles.scss */
+.paragraphs-items .paragraphs-item--image-carousel .carousel-indicators {
+  bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+@media screen and (min-width: 1200px) {
+  /* line 2128, ../sass/_great_big_mass_of_styles.scss */
+  .paragraphs-items .paragraphs-item--image-carousel .carousel-indicators {
+    bottom: 0;
+  }
 }
