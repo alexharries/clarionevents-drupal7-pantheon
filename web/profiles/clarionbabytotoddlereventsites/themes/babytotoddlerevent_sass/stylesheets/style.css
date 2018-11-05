@@ -12071,3 +12071,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
     bottom: 0;
   }
 }
+/* line 2138, ../sass/_great_big_mass_of_styles.scss */
+.paragraphs-items .paragraphs-item--image-carousel .carousel-control {
+  width: 5%;
+}
