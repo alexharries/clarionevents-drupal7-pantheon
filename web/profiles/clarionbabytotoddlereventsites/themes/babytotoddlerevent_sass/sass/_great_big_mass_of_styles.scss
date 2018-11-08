@@ -675,20 +675,20 @@ body {
 
       .body {
         text-align: center;
-        @include line-clamp(2);
+        //@include line-clamp(2);
 
         @media #{$tablet} {
           text-align: left;
-          @include line-clamp(4);
+          //@include line-clamp(4);
           font-size: 16px;
         }
 
         @media #{$normal} {
-          @include line-clamp(2);
+          //@include line-clamp(2);
         }
 
         @media #{$wide} {
-          @include line-clamp(2);
+          //@include line-clamp(2);
           font-size: 18px;
         }
 
@@ -2091,13 +2091,24 @@ body {
 .paragraphs-items {
   .paragraphs-item--image-carousel {
     .carousel-caption {
-      padding: 0.25em;
-      background: rgba(0,0,0,0.33);
+      padding: 0.75em;
+      background: rgba(255, 255, 255, 0.5);
       font-size: 1em;
+      bottom: 25px;
+      left: 6%;
+      right: 6%;
+
+      &,
+      & h2,
+      & a {
+        color: $text-color;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 1);
+      }
 
       @media #{$wide} {
         font-size: 1.25em;
-        padding: 0.5em;
+        padding: 1em;
+        bottom: 50px;
       }
 
       * {
@@ -2106,8 +2117,26 @@ body {
 
       h2 {
         margin: 0 0 0.25em 0;
-        font-size: 1.75em;
+        font-size: 1.25em;
+
+        @media #{$wide} {
+          font-size: 1.75em;
+        }
       }
+    }
+
+    .carousel-indicators {
+      bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      @media #{$wide} {
+        bottom: 0;
+      }
+    }
+
+    .carousel-control {
+      width: 5%;
     }
   }
 }
