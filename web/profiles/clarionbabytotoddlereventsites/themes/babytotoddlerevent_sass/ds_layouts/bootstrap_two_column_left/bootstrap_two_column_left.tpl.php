@@ -10,9 +10,9 @@
   <?php if (isset($title_suffix['contextual_links'])): ?>
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
-  
+
   <div class="row">
-    <?php print $top; ?>
+    <?php if (!empty($top)): print $top; endif; ?>
     <<?php print $top_right_wrapper; ?> class="<?php print $top_right_classes; ?> col-sm-9 col-sm-push-3">
       <?php print $top_right;?>
     </<?php print $top_right_wrapper; ?>>
@@ -20,7 +20,7 @@
       <?php print $top_left;?>
     </<?php print $top_left_wrapper; ?>>
   </div>
-  
+
   <?php if (!empty($bottom)): ?>
   <div class="row">
     <<?php print $bottom_wrapper; ?> class="<?php print $bottom_classes; ?>">
