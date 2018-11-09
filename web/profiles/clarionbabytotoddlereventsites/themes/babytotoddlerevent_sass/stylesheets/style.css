@@ -12023,6 +12023,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 
 /* line 2093, ../sass/_great_big_mass_of_styles.scss */
+.paragraphs-items .paragraphs-item--image-carousel.container-fluid {
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 2099, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption {
   padding: 0.75em;
   background: rgba(255, 255, 255, 0.5);
@@ -12031,47 +12036,47 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   left: 6%;
   right: 6%;
 }
-/* line 2101, ../sass/_great_big_mass_of_styles.scss */
+/* line 2107, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption, .paragraphs-items .paragraphs-item--image-carousel .carousel-caption h2, .paragraphs-items .paragraphs-item--image-carousel .carousel-caption a {
   color: #7c6a68;
   text-shadow: 0 1px 2px white;
 }
 @media screen and (min-width: 1200px) {
-  /* line 2093, ../sass/_great_big_mass_of_styles.scss */
+  /* line 2099, ../sass/_great_big_mass_of_styles.scss */
   .paragraphs-items .paragraphs-item--image-carousel .carousel-caption {
     font-size: 1.25em;
     padding: 1em;
     bottom: 50px;
   }
 }
-/* line 2114, ../sass/_great_big_mass_of_styles.scss */
+/* line 2120, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption * {
   line-height: 1.2em;
 }
-/* line 2118, ../sass/_great_big_mass_of_styles.scss */
+/* line 2124, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-caption h2 {
   margin: 0 0 0.25em 0;
   font-size: 1.25em;
 }
 @media screen and (min-width: 1200px) {
-  /* line 2118, ../sass/_great_big_mass_of_styles.scss */
+  /* line 2124, ../sass/_great_big_mass_of_styles.scss */
   .paragraphs-items .paragraphs-item--image-carousel .carousel-caption h2 {
     font-size: 1.75em;
   }
 }
-/* line 2128, ../sass/_great_big_mass_of_styles.scss */
+/* line 2134, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-indicators {
   bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 @media screen and (min-width: 1200px) {
-  /* line 2128, ../sass/_great_big_mass_of_styles.scss */
+  /* line 2134, ../sass/_great_big_mass_of_styles.scss */
   .paragraphs-items .paragraphs-item--image-carousel .carousel-indicators {
     bottom: 0;
   }
 }
-/* line 2138, ../sass/_great_big_mass_of_styles.scss */
+/* line 2144, ../sass/_great_big_mass_of_styles.scss */
 .paragraphs-items .paragraphs-item--image-carousel .carousel-control {
   width: 5%;
 }
