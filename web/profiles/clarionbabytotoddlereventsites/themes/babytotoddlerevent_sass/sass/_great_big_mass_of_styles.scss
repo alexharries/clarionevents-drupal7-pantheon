@@ -2087,9 +2087,15 @@ body {
   font-size: 1.2em;
 }
 
-// Adjust the display of the paragraph page carousel slides' captions.
 .paragraphs-items {
   .paragraphs-item--image-carousel {
+    // Don't outset carousel slides.
+    &.container-fluid {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    // Adjust the display of the paragraph page carousel slides' captions.
     .carousel-caption {
       padding: 0.75em;
       background: rgba(255, 255, 255, 0.5);
