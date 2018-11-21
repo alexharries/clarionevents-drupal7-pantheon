@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Sponsors & Exhibitors feature.
+ */
+
+include_once 'babytotoddler_sponsors_exhibitors.features.inc';
