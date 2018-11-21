@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * exhibitor_profiles.features.field_instance.inc
@@ -92,11 +93,7 @@ function exhibitor_profiles_field_default_field_instances() {
   // Exported field_instance: 'node-exhibitor_profile-field_exhibitor_email'.
   $field_instances['node-exhibitor_profile-field_exhibitor_email'] = array(
     'bundle' => 'exhibitor_profile',
-    'default_value' => array(
-      0 => array(
-        'value' => 'example@example.com',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -148,10 +145,41 @@ function exhibitor_profiles_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_exhibitor_email',
     'label' => 'Email',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'editor' => 'editor',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -6,
+            ),
+            'editor' => array(
+              'weight' => -8,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -203,7 +231,7 @@ function exhibitor_profiles_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'picture',
         'settings' => array(
           'colorbox_settings' => array(
             'colorbox_caption' => 'auto',
@@ -216,10 +244,11 @@ function exhibitor_profiles_field_default_field_instances() {
           'conditions' => array(),
           'fallback_image_style' => '',
           'image_link' => '',
-          'image_style' => '',
+          'lazyload' => '',
+          'lazyload_aspect_ratio' => '',
           'picture_mapping' => 'categories',
         ),
-        'type' => 'image',
+        'type' => 'picture',
         'weight' => 5,
       ),
       'highlights_teaser' => array(

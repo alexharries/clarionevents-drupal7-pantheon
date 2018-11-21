@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Sponsors feature.
+ */
+
+include_once 'babytotoddler_sponsors.features.inc';
