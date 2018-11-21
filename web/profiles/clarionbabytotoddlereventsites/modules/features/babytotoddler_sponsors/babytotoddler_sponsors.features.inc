@@ -2,17 +2,14 @@
 
 /**
  * @file
- * babytotoddler_sponsors_exhibitors.features.inc
+ * babytotoddler_sponsors.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function babytotoddler_sponsors_exhibitors_ctools_plugin_api($module = NULL, $api = NULL) {
+function babytotoddler_sponsors_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
-    return array("version" => "1");
-  }
-  if ($module == "feeds" && $api == "feeds_importer_default") {
     return array("version" => "1");
   }
   if ($module == "field_group" && $api == "field_group") {
@@ -26,71 +23,15 @@ function babytotoddler_sponsors_exhibitors_ctools_plugin_api($module = NULL, $ap
 /**
  * Implements hook_views_api().
  */
-function babytotoddler_sponsors_exhibitors_views_api($module = NULL, $api = NULL) {
+function babytotoddler_sponsors_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_image_default_styles().
  */
-function babytotoddler_sponsors_exhibitors_image_default_styles() {
+function babytotoddler_sponsors_image_default_styles() {
   $styles = array();
-
-  // Exported image style: exhibitor_list_image.
-  $styles['exhibitor_list_image'] = array(
-    'label' => 'Exhibitor List Image',
-    'effects' => array(
-      316 => array(
-        'name' => 'imagemagick_strip',
-        'data' => array(),
-        'weight' => 1,
-      ),
-      321 => array(
-        'name' => 'canvasactions_interlace',
-        'data' => array(),
-        'weight' => 2,
-      ),
-      331 => array(
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 100,
-          'height' => 100,
-          'upscale' => 0,
-        ),
-        'weight' => 4,
-      ),
-    ),
-  );
-
-  // Exported image style: featured_exhibitors_carousel_thumb.
-  $styles['featured_exhibitors_carousel_thumb'] = array(
-    'label' => 'Featured Exhibitors Carousel Thumb',
-    'effects' => array(
-      461 => array(
-        'name' => 'imagemagick_strip',
-        'data' => array(),
-        'weight' => -10,
-      ),
-      456 => array(
-        'name' => 'canvasactions_interlace',
-        'data' => array(),
-        'weight' => -9,
-      ),
-      466 => array(
-        'name' => 'iek_image_resize',
-        'data' => array(
-          'width' => 288,
-          'height' => 207,
-          'blank_margin' => 1,
-          'blank_margin_bg_color' => '#FFFFFF',
-          'position' => 'middle_center',
-          'x' => 0,
-          'y' => 0,
-        ),
-        'weight' => -8,
-      ),
-    ),
-  );
 
   // Exported image style: headline_sponsor.
   $styles['headline_sponsor'] = array(
@@ -212,16 +153,8 @@ function babytotoddler_sponsors_exhibitors_image_default_styles() {
 /**
  * Implements hook_node_info().
  */
-function babytotoddler_sponsors_exhibitors_node_info() {
+function babytotoddler_sponsors_node_info() {
   $items = array(
-    'exhibitor_profile' => array(
-      'name' => t('Exhibitor Profile'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'sponsor' => array(
       'name' => t('Sponsor'),
       'base' => 'node_content',
