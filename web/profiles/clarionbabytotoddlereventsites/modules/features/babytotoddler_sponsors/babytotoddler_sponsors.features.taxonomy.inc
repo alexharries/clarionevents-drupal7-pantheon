@@ -2,17 +2,17 @@
 
 /**
  * @file
- * exhibitor_profiles.features.taxonomy.inc
+ * babytotoddler_sponsors.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function exhibitor_profiles_taxonomy_default_vocabularies() {
+function babytotoddler_sponsors_taxonomy_default_vocabularies() {
   return array(
-    'categories' => array(
-      'name' => 'Categories',
-      'machine_name' => 'categories',
+    'sponsor_type' => array(
+      'name' => 'Sponsor type',
+      'machine_name' => 'sponsor_type',
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',

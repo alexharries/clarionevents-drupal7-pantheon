@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * exhibitor_profiles.features.field_base.inc
@@ -46,6 +47,7 @@ function exhibitor_profiles_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
+    'global_block_settings' => 1,
     'indexes' => array(
       'format' => array(
         0 => 'format',
