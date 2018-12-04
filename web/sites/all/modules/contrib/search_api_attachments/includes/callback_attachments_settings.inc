@@ -98,8 +98,16 @@ class SearchApiAttachmentsAlterSettings extends SearchApiAbstractAlterCallback {
       $max_file_size = '0';
     }
 
+    // Checking for missing content.
+    if (empty($file)) {
+      watchdog('search_api_attachments', 'file is empty for item %item_title (%item_nid)',
+        array(
+          '%item_title' => empty($item->title) ? t('empty') : $item->title,
+          '%item_nid' => empty($item->nid) ? (empty($item->id) ? t('empty') : $item->id) : $item->nid),
+        WATCHDOG_ERROR);
+    }
     // Private file restriction.
-    if (!$this->isTemporary($file) && !($this->options['excluded_private'] && $this->isPrivate($file))) {
+    else if (!$this->isTemporary($file) && !($this->options['excluded_private'] && $this->isPrivate($file))) {
       // Extension restriction.
       if (!in_array($file['filemime'], $exclude)) {
         // File size restriction.
